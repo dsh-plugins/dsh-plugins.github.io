@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>dsh-plugins OG</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #070a12;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+  .bg {
+    position: absolute; inset: 0;
+    background: url("og-bg.jpg") center / cover no-repeat;
+  }
+  .scrim {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(90deg, rgba(7,10,18,0.88) 0%, rgba(7,10,18,0.55) 45%, rgba(7,10,18,0.15) 100%),
+      linear-gradient(0deg, rgba(7,10,18,0.72) 0%, transparent 40%);
+  }
+  .frame { position: absolute; inset: 0; padding: 48px 56px; display: flex; flex-direction: column; }
+  .top { display: flex; align-items: center; gap: 16px; }
+  .wordmark { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+  .wordmark b { color: #7c9bf0; }
+  .domain {
+    margin-left: auto; font-family: Consolas, monospace; font-size: 17px;
+    color: rgba(232,237,247,0.65); border: 1px solid rgba(255,255,255,0.22);
+    padding: 7px 14px; border-radius: 999px; letter-spacing: 0.5px;
+  }
+  .mid { margin-top: auto; }
+  .h1 { font-size: 52px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.08; }
+  .h1 .grad {
+    background: linear-gradient(110deg, #7c9bf0 0%, #a78bfa 45%, #67e8f9 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .sub { margin-top: 18px; font-size: 24px; font-weight: 500; color: rgba(232,237,247,0.88); line-height: 1.4; }
+  .chips { display: flex; gap: 12px; margin-top: 30px; }
+  .chip {
+    font-family: Consolas, monospace; font-size: 16px; padding: 9px 16px;
+    border-radius: 999px; border: 1px solid rgba(255,255,255,0.28);
+    color: rgba(232,237,247,0.92); background: rgba(10,14,26,0.5);
+  }
+  .chip.hl { border-color: rgba(124,155,240,0.6); color: #c7d5ff; background: rgba(91,127,229,0.16); }
+  .chip.cy { border-color: rgba(103,232,249,0.45); color: #b9f2ff; background: rgba(34,211,238,0.12); }
+  .bottom { margin-top: auto; display: flex; align-items: center; justify-content: space-between; }
+  .tag { font-family: Consolas, monospace; font-size: 17px; color: rgba(232,237,247,0.62); }
+  .tag b { color: #67e8f9; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="scrim"></div>
+  <div class="frame">
+    <div class="top">
+      <!-- logo mark -->
+      <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
+        <defs>
+          <linearGradient id="g" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#5B7FE5"/><stop offset="0.55" stop-color="#7C5CE0"/><stop offset="1" stop-color="#8B5CF6"/>
+          </linearGradient>
+        </defs>
+        <rect x="3" y="3" width="58" height="58" rx="16" fill="url(#g)"/>
+        <g transform="translate(32 33) rotate(-42) translate(-12 -12)">
+          <path d="M12 22v-5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M9 8V2" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M15 8V2" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+        </g>
+      </svg>
+      <span class="wordmark">dsh<b>-plugins</b></span>
+      <span class="domain">dsh-plug.in</span>
+    </div>
+
+    <div class="mid">
+      <div class="h1">Plug into<br /><span class="grad">DeepSeek Harness</span></div>
+      <div class="sub">为 DeepSeek Harness 而生的开源插件集 —— 把每种工作，交给对的模型</div>
+      <div class="chips">
+        <span class="chip hl">dsh-auxiliary</span>
+        <span class="chip cy">dsh-thought-buddy</span>
+        <span class="chip">LGPL-3.0 · BSD-3-Clause</span>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <span class="tag"><b>github.com/dsh-plugins</b> · open source</span>
+      <span class="tag">Vue · Vite · TypeScript</span>
+    </div>
+  </div>
+</body>
+</html>
