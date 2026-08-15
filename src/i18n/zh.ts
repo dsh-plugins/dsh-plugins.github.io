@@ -29,12 +29,12 @@ export const zh = {
       cmdAux: 'dsh plugin add @dsh-plugin/dsh-auxiliary',
       cmdBuddy: 'dsh plugin add @dsh-plugin/dsh-thought-buddy',
       line1: '✓ plugin installed · routes registered',
-      line2: '✓ 2 plugins · zero core changes',
+      line2: '✓ 3 个开源仓库 · 核心零修改',
     },
   },
 
   stats: {
-    plugins: '开源插件',
+    plugins: '开源仓库',
     packages: 'npm 包',
     routes: '类模型路由',
     deps: '运行时依赖（buddy）',
@@ -132,9 +132,9 @@ export const zh = {
     lead: '我们相信：好插件应该即插即用、不碰核心、文档双语、许可开放。',
     points: [
       { icon: 'plug', title: '即插即用', desc: '安装即生效：auxiliary 保存即热重配，buddy 刷新即出现。' },
-      { icon: 'core', title: '不碰核心', desc: '全部基于 DSH 官方扩展点（接缝、瀑布、插槽），核心包零修改。' },
-      { icon: 'docs', title: '双语文档', desc: '每个仓库都维护 README 与简体中文版，含完整配置与架构说明。' },
-      { icon: 'license', title: '开放许可', desc: 'LGPL-3.0 与 BSD-3-Clause，欢迎 fork、改进与二次分发。' },
+      { icon: 'shield', title: '不碰核心', desc: '全部基于 DSH 官方扩展点（接缝、瀑布、插槽），核心包零修改。' },
+      { icon: 'book', title: '双语文档', desc: '每个仓库都维护 README 与简体中文版，含完整配置与架构说明。' },
+      { icon: 'check', title: '开放许可', desc: 'LGPL-3.0 与 BSD-3-Clause，欢迎 fork、改进与二次分发。' },
     ],
     maintainer: '维护者',
   },

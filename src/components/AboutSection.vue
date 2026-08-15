@@ -4,8 +4,6 @@ import IconGlyph from './ui/IconGlyph.vue'
 import Reveal from './ui/Reveal.vue'
 
 const { t, d } = useI18n()
-
-const pointIcons = ['plug', 'core', 'docs', 'license'] as const
 </script>
 
 <template>
@@ -31,7 +29,7 @@ const pointIcons = ['plug', 'core', 'docs', 'license'] as const
 
             <div class="org-facts">
               <div class="fact-row"><span>created</span><strong>2026-08-15</strong></div>
-              <div class="fact-row"><span>public repos</span><strong>2 · 1 private</strong></div>
+              <div class="fact-row"><span>public repos</span><strong>3</strong></div>
               <div class="fact-row"><span>members</span><strong>1</strong></div>
               <div class="fact-row"><span>npm scope</span><strong>@dsh-plugin</strong></div>
               <div class="fact-row"><span>licenses</span><strong>LGPL-3.0 · BSD-3-Clause</strong></div>
@@ -43,7 +41,7 @@ const pointIcons = ['plug', 'core', 'docs', 'license'] as const
           <Reveal v-for="(p, i) in d.about.points" :key="p.title" :delay="i * 90">
             <div class="about-point">
               <span class="about-point-icon">
-                <IconGlyph :name="pointIcons[i]" :size="17" :stroke="1.8" />
+                <IconGlyph :name="p.icon" :size="17" :stroke="1.8" />
               </span>
               <div>
                 <h3 class="about-point-title">{{ p.title }}</h3>

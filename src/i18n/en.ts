@@ -31,12 +31,12 @@ export const en: Dict = {
       cmdAux: 'dsh plugin add @dsh-plugin/dsh-auxiliary',
       cmdBuddy: 'dsh plugin add @dsh-plugin/dsh-thought-buddy',
       line1: '✓ plugin installed · routes registered',
-      line2: '✓ 2 plugins · zero core changes',
+      line2: '✓ 3 public repos · zero core changes',
     },
   },
 
   stats: {
-    plugins: 'Open-source plugins',
+    plugins: 'Open-source repos',
     packages: 'npm packages',
     routes: 'Model routes',
     deps: 'Runtime deps (buddy)',
@@ -134,9 +134,9 @@ export const en: Dict = {
     lead: 'Our beliefs: plugins should plug in immediately, never touch the core, ship bilingual docs and stay openly licensed.',
     points: [
       { icon: 'plug', title: 'Plug & play', desc: 'Install and it works: auxiliary reconfigures live on save, buddy appears on refresh.' },
-      { icon: 'core', title: 'No core changes', desc: 'Everything uses official DSH extension points — seams, waterfalls, slots. Core: untouched.' },
-      { icon: 'docs', title: 'Bilingual docs', desc: 'Every repo keeps a README plus a Simplified Chinese edition, with config and architecture.' },
-      { icon: 'license', title: 'Open licenses', desc: 'LGPL-3.0 and BSD-3-Clause — fork, improve, redistribute.' },
+      { icon: 'shield', title: 'No core changes', desc: 'Everything uses official DSH extension points — seams, waterfalls, slots. Core: untouched.' },
+      { icon: 'book', title: 'Bilingual docs', desc: 'Every repo keeps a README plus a Simplified Chinese edition, with config and architecture.' },
+      { icon: 'check', title: 'Open licenses', desc: 'LGPL-3.0 and BSD-3-Clause — fork, improve, redistribute.' },
     ],
     maintainer: 'Maintainer',
   },

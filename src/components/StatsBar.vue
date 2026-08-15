@@ -5,7 +5,7 @@ import Reveal from './ui/Reveal.vue'
 const { t } = useI18n()
 
 const stats = [
-  { value: '2', key: 'plugins' },
+  { value: '3', key: 'plugins' },
   { value: '2', key: 'packages' },
   { value: '7', key: 'routes' },
   { value: '0', key: 'deps' },
