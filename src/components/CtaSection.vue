@@ -52,7 +52,9 @@ const { t } = useI18n()
   text-align: center;
   padding: var(--sp-9) var(--sp-6);
   border-radius: var(--r-xl);
-  background: linear-gradient(140deg, oklch(0.17 0.05 265 / 0.95), oklch(0.13 0.045 290 / 0.95));
+  background:
+    linear-gradient(140deg, oklch(0.16 0.045 265 / 0.72), oklch(0.12 0.04 290 / 0.66)),
+    url('/images/cta-bg.jpg') center / cover no-repeat;
   border: 1px solid var(--border);
   overflow: hidden;
 }
