@@ -123,7 +123,8 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 
 .nav-inner {
   height: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: var(--sp-5);
 }
@@ -133,6 +134,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   align-items: center;
   gap: 10px;
   flex: none;
+  justify-self: start;
 }
 
 .brand-name {
@@ -153,7 +155,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   display: flex;
   align-items: center;
   gap: 2px;
-  margin-inline: auto;
+  justify-self: center;
 }
 
 .nav-link {
@@ -175,7 +177,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   display: flex;
   align-items: center;
   gap: var(--sp-3);
-  margin-inline-start: auto;
+  justify-self: end;
 }
 
 .lang-toggle {
@@ -237,8 +239,21 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 }
 
 @media (max-width: 860px) {
+  .nav-inner {
+    display: flex;
+  }
+
+  .brand {
+    justify-self: auto;
+  }
+
   .nav-links {
     display: none;
+  }
+
+  .nav-actions {
+    justify-self: auto;
+    margin-inline-start: auto;
   }
 
   .github-btn {
