@@ -9,6 +9,7 @@ export const zh = {
     install: '安装',
     ecosystem: '生态',
     about: '关于',
+    join: '加入我们',
     github: 'GitHub 组织',
     lang: 'EN',
     langTitle: 'Switch to English',

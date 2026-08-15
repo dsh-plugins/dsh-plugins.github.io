@@ -11,6 +11,7 @@ export const en: Dict = {
     install: 'Install',
     ecosystem: 'Ecosystem',
     about: 'About',
+    join: 'Join Us',
     github: 'GitHub Org',
     lang: '中文',
     langTitle: '切换到中文',

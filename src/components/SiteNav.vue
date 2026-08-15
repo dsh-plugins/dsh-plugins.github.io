@@ -6,6 +6,9 @@ import IconGlyph from './ui/IconGlyph.vue'
 
 const { t } = useI18n()
 
+const JOIN_URL =
+  'https://github.com/dsh-plugins/.github/issues/new?template=%E5%8A%A0%E5%85%A5%E6%88%91%E4%BB%AC.yml'
+
 const links = [
   { key: 'plugins', href: '#plugins' },
   { key: 'features', href: '#features' },
@@ -46,6 +49,10 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
         <button class="lang-toggle" type="button" :title="t('nav.langTitle')" @click="$emit('toggle-lang')">
           {{ t('nav.lang') }}
         </button>
+        <a class="btn btn--ghost btn--sm join-btn" :href="JOIN_URL" target="_blank" rel="noopener">
+          {{ t('nav.join') }}
+          <IconGlyph name="external" :size="12" :stroke="2" />
+        </a>
         <a class="btn btn--ghost btn--sm github-btn" :href="'https://github.com/dsh-plugins'" target="_blank" rel="noopener">
           <IconGlyph name="github" :size="15" :stroke="2" />
           <span>{{ t('nav.github') }}</span>
@@ -75,9 +82,19 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
         </a>
         <a
           class="nav-mobile-link nav-mobile-link--ext"
+          :href="JOIN_URL"
+          target="_blank"
+          rel="noopener"
+          @click="menuOpen = false"
+        >
+          {{ t('nav.join') }} <IconGlyph name="external" :size="14" />
+        </a>
+        <a
+          class="nav-mobile-link nav-mobile-link--ext"
           :href="'https://github.com/dsh-plugins'"
           target="_blank"
           rel="noopener"
+          @click="menuOpen = false"
         >
           {{ t('nav.github') }} <IconGlyph name="external" :size="14" />
         </a>
