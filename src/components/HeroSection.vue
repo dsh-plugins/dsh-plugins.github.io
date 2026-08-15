@@ -249,9 +249,12 @@ const cmd = (id: 'auxiliary' | 'buddy') =>
 
 .hero-lead {
   margin-top: var(--sp-5);
-  max-width: 58ch;
+  margin-inline: auto;
+  max-width: 60ch;
+  text-align: center;
   color: var(--text-2);
   font-size: calc(var(--fs-body) + 1px);
+  text-wrap: balance;
 }
 
 .hero-actions {
@@ -265,6 +268,7 @@ const cmd = (id: 'auxiliary' | 'buddy') =>
 /* terminal */
 .terminal {
   width: min(680px, 100%);
+  margin-inline: auto;
   margin-top: var(--sp-8);
   text-align: start;
   border-radius: var(--r-lg);

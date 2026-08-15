@@ -21,7 +21,7 @@ export const en: Dict = {
     eyebrow: 'open source · for DeepSeek Harness',
     titleA: 'Plug into',
     titleB: 'plugins that route every job to the right model',
-    sub: 'dsh-plugins is an open-source plugin organization for DeepSeek Harness (DSH). We build small, sharp plugins around the model seam and the web UI — auxiliary model routing, vision understanding, context compaction, an animated status buddy. Plug in, zero core changes.',
+    sub: 'dsh-plugins is an open-source plugin organization for DeepSeek Harness (DSH). We build small, sharp plugins around the model seam and the web UI: auxiliary model routing, vision understanding, context compaction, an animated status buddy. Plug in, zero core changes.',
     ctaPlugins: 'Browse plugins',
     ctaGithub: 'GitHub Org',
     terminal: {

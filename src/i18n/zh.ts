@@ -19,7 +19,7 @@ export const zh = {
     eyebrow: 'open source · for DeepSeek Harness',
     titleA: '接入',
     titleB: '插件，让每种工作走对的模型',
-    sub: 'dsh-plugins 是面向 DeepSeek Harness (DSH) 的开源插件组织。我们围绕模型接缝与 Web 界面做小而锐利的插件——辅助模型路由、视觉理解、上下文压缩、动画状态伙伴，即插即用，不碰核心。',
+    sub: 'dsh-plugins 是面向 DeepSeek Harness (DSH) 的开源插件组织。我们围绕模型接缝与 Web 界面做小而锐利的插件：辅助模型路由、视觉理解、上下文压缩、动画状态伙伴，即插即用，不碰核心。',
     ctaPlugins: '浏览插件',
     ctaGithub: 'GitHub 组织',
     terminal: {
