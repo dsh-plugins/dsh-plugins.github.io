@@ -157,7 +157,7 @@ export const zh = {
     npm: 'npm 包',
     licenseAux: 'dsh-auxiliary · LGPL-3.0',
     licenseBuddy: 'dsh-thought-buddy · BSD-3-Clause',
-    builtWith: 'Built with Vue 3 · Vite · TypeScript',
+    disclaimer: '非 DeepSeek 官方产品。未获 DeepSeek 许可，亦与 DeepSeek 无任何关联。',
     rights: '© 2026 dsh-plugins organization. All rights reserved.',
   },
 }

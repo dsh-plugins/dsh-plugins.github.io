@@ -159,7 +159,7 @@ export const en: Dict = {
     npm: 'npm Packages',
     licenseAux: 'dsh-auxiliary · LGPL-3.0',
     licenseBuddy: 'dsh-thought-buddy · BSD-3-Clause',
-    builtWith: 'Built with Vue 3 · Vite · TypeScript',
+    disclaimer: 'Not an official DeepSeek product. Not licensed by DeepSeek, nor affiliated with DeepSeek in any way.',
     rights: '© 2026 dsh-plugins organization. All rights reserved.',
   },
 }

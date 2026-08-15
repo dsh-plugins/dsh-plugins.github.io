@@ -54,7 +54,7 @@ const linkItems = [
 
     <div class="footer-bottom container-wide">
       <span class="footer-rights">{{ t('footer.rights') }}</span>
-      <span class="footer-built">{{ t('footer.builtWith') }}</span>
+      <span class="footer-disclaimer">{{ t('footer.disclaimer') }}</span>
     </div>
   </footer>
 </template>
@@ -136,13 +136,19 @@ const linkItems = [
 
 .footer-bottom {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--sp-4);
+  gap: var(--sp-2) var(--sp-4);
   padding-block: var(--sp-5);
   border-top: 1px solid var(--border);
   font-size: var(--fs-xs);
   color: var(--text-3);
+}
+
+.footer-disclaimer {
+  max-width: 46ch;
+  text-align: right;
 }
 
 @media (max-width: 760px) {
