@@ -216,6 +216,14 @@ const cmd = (id: 'auxiliary' | 'buddy') =>
   justify-content: center;
 }
 
+.hero-eyebrow::after {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
 .hero-title {
   font-size: var(--fs-display);
   font-weight: 800;
