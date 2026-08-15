@@ -29,9 +29,12 @@ pnpm preview     # serve the production build
 ├── public/                 # copied verbatim into dist/
 │   ├── CNAME               # dsh-plug.in (custom domain)
 │   ├── .nojekyll           # skip GitHub Pages Jekyll processing
-│   ├── favicon.svg         # brand mark
-│   ├── logo.svg            # brand mark (full)
-│   └── og.png              # Open Graph banner (1200×630)
+│   ├── favicon-32.png       # favicon 32px (org avatar)
+│   ├── favicon-180.png      # favicon / apple-touch-icon 180px
+│   ├── logo-avatar.png      # navbar brand mark (org avatar)
+│   ├── org-avatar.png       # org avatar source (460×460)
+│   ├── logo.svg             # brand mark (full)
+│   └── og.png               # Open Graph banner (1200×630)
 ├── scripts/og/             # OG banner sources + regeneration
 │   ├── og.html             # composed banner (art + type)
 │   ├── og-bg.jpg           # cropped/compressed art (1200×630)
