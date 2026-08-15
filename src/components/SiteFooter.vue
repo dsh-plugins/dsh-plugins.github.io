@@ -136,10 +136,10 @@ const linkItems = [
 
 .footer-bottom {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--sp-2) var(--sp-4);
+  text-align: center;
+  gap: var(--sp-2);
   padding-block: var(--sp-5);
   border-top: 1px solid var(--border);
   font-size: var(--fs-xs);
@@ -147,8 +147,7 @@ const linkItems = [
 }
 
 .footer-disclaimer {
-  max-width: 46ch;
-  text-align: right;
+  white-space: nowrap;
 }
 
 @media (max-width: 760px) {
@@ -158,9 +157,11 @@ const linkItems = [
   }
 
   .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
     gap: var(--sp-2);
+  }
+
+  .footer-disclaimer {
+    white-space: normal;
   }
 }
 </style>
