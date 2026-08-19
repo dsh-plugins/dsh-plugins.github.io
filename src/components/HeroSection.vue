@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useI18n } from '../i18n'
-import { plugins } from '../data/plugins'
+import { plugins, type PluginId } from '../data/plugins'
 import IconGlyph from './ui/IconGlyph.vue'
 import DivingBuddy from './ui/DivingBuddy.vue'
 import CopyButton from './ui/CopyButton.vue'
@@ -9,9 +9,9 @@ import Reveal from './ui/Reveal.vue'
 
 const { t } = useI18n()
 
-const activeTab = ref<'auxiliary' | 'buddy'>('auxiliary')
+const activeTab = ref<PluginId>(plugins[0].id)
 
-const cmd = (id: 'auxiliary' | 'buddy') =>
+const cmd = (id: PluginId) =>
   plugins.find((p) => p.id === id)!.installCmd
 </script>
 

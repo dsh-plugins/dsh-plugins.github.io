@@ -7,11 +7,23 @@ import IconGlyph from './ui/IconGlyph.vue'
 const props = defineProps<{ plugin: PluginMeta }>()
 const { t, d } = useI18n()
 
-const dict = computed(() =>
-  props.plugin.i18n === 'plugins.auxiliary'
-    ? d.value.plugins.auxiliary
-    : d.value.plugins.buddy,
-)
+const dict = computed(() => (d.value.plugins as Record<string, any>)[props.plugin.id])
+
+/** Per-plugin card icon name (falls back to the plugin name for the icon). */
+const iconName = computed<string>(() => {
+  const map: Record<string, string> = {
+    auxiliary: 'stack',
+    loader: 'box',
+    approve: 'shield',
+    review: 'chevron',
+    sidebar: 'layout',
+    buddy: 'robot',
+    stable: 'hash',
+  }
+  return map[props.plugin.id] ?? 'plug'
+})
+
+const chipClass = computed<string>(() => `chip--${props.plugin.theme}`)
 </script>
 
 <template>
@@ -21,14 +33,14 @@ const dict = computed(() =>
   >
     <header class="plugin-head">
       <div class="plugin-icon" :class="`plugin-icon--${plugin.theme}`">
-        <IconGlyph :name="plugin.id === 'auxiliary' ? 'stack' : 'robot'" :size="22" :stroke="1.8" />
+        <IconGlyph :name="iconName" :size="22" :stroke="1.8" />
       </div>
       <div class="plugin-id">
         <h3 class="plugin-name">
           <span class="plugin-name__mono">{{ plugin.name }}</span>
         </h3>
         <p class="plugin-meta">
-          <span class="chip" :class="plugin.theme === 'brand' ? 'chip--brand' : 'chip--cyan'">
+          <span class="chip" :class="chipClass">
             {{ plugin.language }}
           </span>
           <span class="chip">{{ plugin.license }}</span>
@@ -103,6 +115,18 @@ const dict = computed(() =>
   background: radial-gradient(60% 100% at 85% 0%, rgb(34 211 238 / 0.12), transparent 70%);
 }
 
+.plugin-card--violet::before {
+  background: radial-gradient(60% 100% at 85% 0%, rgb(139 92 246 / 0.14), transparent 70%);
+}
+
+.plugin-card--emerald::before {
+  background: radial-gradient(60% 100% at 85% 0%, rgb(52 211 153 / 0.12), transparent 70%);
+}
+
+.plugin-card--amber::before {
+  background: radial-gradient(60% 100% at 85% 0%, rgb(251 191 36 / 0.12), transparent 70%);
+}
+
 .plugin-card:hover {
   transform: translateY(-4px);
   border-color: var(--border-strong);
@@ -135,6 +159,24 @@ const dict = computed(() =>
   color: #b9f2ff;
   background: rgb(34 211 238 / 0.12);
   border: 1px solid rgb(34 211 238 / 0.28);
+}
+
+.plugin-icon--violet {
+  color: #e2d4ff;
+  background: rgb(139 92 246 / 0.14);
+  border: 1px solid rgb(139 92 246 / 0.3);
+}
+
+.plugin-icon--emerald {
+  color: #b9f6dd;
+  background: rgb(52 211 153 / 0.13);
+  border: 1px solid rgb(52 211 153 / 0.28);
+}
+
+.plugin-icon--amber {
+  color: #ffe3b3;
+  background: rgb(251 191 36 / 0.13);
+  border: 1px solid rgb(251 191 36 / 0.28);
 }
 
 .plugin-id {
@@ -237,6 +279,21 @@ const dict = computed(() =>
 .plugin-feature-icon--cyan {
   color: #9fecfb;
   background: rgb(34 211 238 / 0.14);
+}
+
+.plugin-feature-icon--violet {
+  color: #d6c5ff;
+  background: rgb(139 92 246 / 0.16);
+}
+
+.plugin-feature-icon--emerald {
+  color: #9ff0cd;
+  background: rgb(52 211 153 / 0.15);
+}
+
+.plugin-feature-icon--amber {
+  color: #ffd893;
+  background: rgb(251 191 36 / 0.15);
 }
 
 .plugin-feature-text {

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from '../i18n'
+import { plugins } from '../data/plugins'
 import LogoMark from './ui/LogoMark.vue'
 import IconGlyph from './ui/IconGlyph.vue'
 
@@ -31,8 +32,9 @@ const linkItems = [
         </a>
         <p class="footer-tagline">{{ t('footer.tagline') }}</p>
         <div class="footer-licenses">
-          <span class="chip chip--brand">{{ t('footer.licenseAux') }}</span>
-          <span class="chip chip--cyan">{{ t('footer.licenseBuddy') }}</span>
+          <span v-for="p in plugins" :key="p.id" class="chip" :class="`chip--${p.theme}`">
+            {{ p.name }} · {{ p.license }}
+          </span>
         </div>
       </div>
 

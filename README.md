@@ -75,4 +75,5 @@ msedge --headless=new --disable-gpu --force-device-scale-factor=1 `
 ## License
 
 Site content © 2026 dsh-plugins organization. The plugins themselves are
-licensed separately (dsh-auxiliary · LGPL-3.0, dsh-thought-buddy · BSD-3-Clause).
+licensed separately (see `src/data/plugins.ts`): LGPL-3.0, BSD-3-Clause,
+MIT and GPL-3.0.

@@ -4,6 +4,16 @@ import IconGlyph from './ui/IconGlyph.vue'
 import Reveal from './ui/Reveal.vue'
 
 const { t, d } = useI18n()
+
+const members = [
+  { login: 'CooStack' },
+  { login: 'Gu-ZT' },
+  { login: 'Gugle2308' },
+  { login: 'mmyddd' },
+  { login: 'qincaizheng' },
+  { login: 'WhereisFff' },
+  { login: 'ZhuRuoLing' },
+] as const
 </script>
 
 <template>
@@ -18,21 +28,29 @@ const { t, d } = useI18n()
 
             <div class="maintainer">
               <span class="maintainer-label">{{ t('about.maintainer') }}</span>
-              <a class="maintainer-person" href="https://github.com/Gu-ZT" target="_blank" rel="noopener">
-                <span class="maintainer-avatar" aria-hidden="true">
-                  <IconGlyph name="heart" :size="14" :stroke="1.8" />
-                </span>
-                Gu-ZT
-                <IconGlyph name="external" :size="12" :stroke="2" />
-              </a>
+              <div class="maintainer-list">
+                <a
+                  v-for="m in members"
+                  :key="m.login"
+                  class="maintainer-person"
+                  :href="`https://github.com/${m.login}`"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class="maintainer-avatar" aria-hidden="true">
+                    <IconGlyph name="heart" :size="14" :stroke="1.8" />
+                  </span>
+                  {{ m.login }}
+                </a>
+              </div>
             </div>
 
             <div class="org-facts">
               <div class="fact-row"><span>created</span><strong>2026-08-15</strong></div>
-              <div class="fact-row"><span>public repos</span><strong>3</strong></div>
-              <div class="fact-row"><span>members</span><strong>1</strong></div>
+              <div class="fact-row"><span>public repos</span><strong>10</strong></div>
+              <div class="fact-row"><span>members</span><strong>7</strong></div>
               <div class="fact-row"><span>npm scope</span><strong>@dsh-plugin</strong></div>
-              <div class="fact-row"><span>licenses</span><strong>LGPL-3.0 · BSD-3-Clause</strong></div>
+              <div class="fact-row"><span>licenses</span><strong>LGPL-3.0 · BSD-3-Clause · MIT · GPL-3.0</strong></div>
             </div>
           </div>
         </Reveal>
@@ -69,17 +87,25 @@ const { t, d } = useI18n()
 
 .maintainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--sp-3);
   margin-top: var(--sp-6);
 }
 
 .maintainer-label {
+  flex: none;
+  padding-top: 8px;
   font-size: var(--fs-xs);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-3);
   font-family: var(--font-mono);
+}
+
+.maintainer-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
 }
 
 .maintainer-person {

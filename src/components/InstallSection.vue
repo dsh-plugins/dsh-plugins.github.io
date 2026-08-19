@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from '../i18n'
-import { plugins } from '../data/plugins'
+import { plugins, type PluginId } from '../data/plugins'
 import IconGlyph from './ui/IconGlyph.vue'
 import CopyButton from './ui/CopyButton.vue'
 import Reveal from './ui/Reveal.vue'
@@ -8,7 +8,7 @@ import Reveal from './ui/Reveal.vue'
 const { t, d } = useI18n()
 
 /** The exact prompt a user pastes to their DSH agent (from each README). */
-function agentPrompt(id: 'auxiliary' | 'buddy'): string {
+function agentPrompt(id: PluginId): string {
   const pkg = plugins.find((p) => p.id === id)!
   return [
     `Install the ${pkg.name} plugin into the profile I specify (or ask me if I didn't name one). The npm package name is \`${pkg.name}\`; use the GitHub source \`github:dsh-plugins/${pkg.name}\`, or \`file:<path>\` for local development.`,

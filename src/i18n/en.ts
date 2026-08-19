@@ -21,8 +21,8 @@ export const en: Dict = {
     status: 'Deep diving...',
     eyebrow: 'open source · for DeepSeek Harness',
     titleA: 'Plug into',
-    titleB: 'plugins that route every job to the right model',
-    sub: 'dsh-plugins is an open-source plugin organization for DeepSeek Harness (DSH). We build small, sharp plugins around the model seam and the web UI: auxiliary model routing, vision understanding, context compaction, an animated status buddy. Plug in, zero core changes.',
+    titleB: 'plugins that ride through every DSH upgrade',
+    sub: 'dsh-plugins is an open-source plugin organization for DeepSeek Harness (DSH). Built on dsh-loader\'s stable API, we ship small, sharp plugins around the model seam and the Web UI — model routing, command review, code review, animated status buddies. Plug in, and keep working through every DSH upgrade.',
     ctaPlugins: 'Browse plugins',
     ctaGithub: 'GitHub Org',
     terminal: {
@@ -32,7 +32,7 @@ export const en: Dict = {
       cmdAux: 'dsh plugin add @dsh-plugin/dsh-auxiliary',
       cmdBuddy: 'dsh plugin add @dsh-plugin/dsh-thought-buddy',
       line1: '✓ plugin installed · routes registered',
-      line2: '✓ 3 public repos · zero core changes',
+      line2: '✓ 7 open-source plugins · zero core changes',
     },
   },
 
@@ -46,7 +46,7 @@ export const en: Dict = {
   plugins: {
     eyebrow: 'plugins',
     title: 'Plug in. Each one does one thing.',
-    lead: 'Every plugin does exactly one thing, thoroughly: auxiliary re-routes model work, thought-buddy gives waiting a face.',
+    lead: 'A toolbox of small, sharp plugins around the model seam and the Web UI — model routing, command review, code review, a sidebar, a compatibility layer. Each one does exactly one thing, thoroughly.',
     viewRepo: 'Repository',
     viewNpm: 'npm',
     version: 'v',
@@ -68,7 +68,7 @@ export const en: Dict = {
     },
     buddy: {
       name: 'dsh-thought-buddy',
-      tag: 'JavaScript · BSD-3-Clause',
+      tag: 'TypeScript · BSD-3-Clause',
       tagline: 'A GrokBot-style animated avatar with a synchronized typewriter status line, right in front of "Deep diving...".',
       desc: 'A pure client-side plugin: while the model works, the "Deep diving..." pill grows a tiny Grok-style robot — it blinks, swaps expressions with a springy morph, wanders its gaze and gently bobs. All drawn live as SVG via requestAnimationFrame, zero runtime dependencies.',
       features: [
@@ -79,14 +79,77 @@ export const en: Dict = {
         { icon: 'motion', title: 'Reduced motion', desc: 'Respects prefers-reduced-motion, eases breathing and sway' },
       ],
     },
+    loader: {
+      name: 'dsh-loader',
+      tag: 'TypeScript · LGPL-3.0',
+      tagline: 'A version-aware runtime compatibility layer: dsh upgrades, plugins keep working.',
+      desc: 'A runtime compatibility shim for dsh (DeepSeek Harness) cordis bundle plugins. Through a version-aware adapter registry it decouples third-party plugins from dsh\'s internal service names, module paths, package names and RPC details — when dsh upgrades and breaks internal APIs, you only upgrade dshloader and plugins keep working unchanged.',
+      features: [
+        { icon: 'route', title: 'Stable API', desc: 'ctx.dshLoader on the host, window.__dshLoader__ in the browser, stable subpaths for package imports' },
+        { icon: 'shield', title: 'Service escape hatch', desc: 'ctx.dshLoader.services.get() reaches real cordis services on demand' },
+        { icon: 'file', title: 'Zero @deepseek-ai/* deps', desc: 'Every dsh package is reached through the loader\'s stable subpaths' },
+        { icon: 'hash', title: 'Version aware', desc: 'Adapts per version, absorbing internal renames (httpServer → webServer)' },
+        { icon: 'zap', title: 'Upgrade-proof', desc: 'A dsh upgrade only needs a dshloader upgrade — plugins stay untouched' },
+      ],
+    },
+    approve: {
+      name: 'dsh-approve-for-me',
+      tag: 'JavaScript · MIT',
+      tagline: 'Codex-style auto-review of commands plus an "Approve For Me" sandbox option, with a live review status bar in the Web GUI.',
+      desc: 'An all-in-one package (host + browser UI): it registers an approval answerer that auto-resolves command-approval prompts by mode — rule auto / full-auto / deny never, a lightweight-model review of permission escalations, and adds the approve-for-me and strict-review permission presets to the GUI.',
+      features: [
+        { icon: 'shield', title: 'Auto-review', desc: 'Rule-based auto, full-auto, and deny-never modes' },
+        { icon: 'eye', title: 'Lightweight-model review', desc: 'A review model rules on permission escalations or every tool call (ported from codex guardian)' },
+        { icon: 'alert', title: 'Fail closed', desc: 'Timeout / LLM failure / unparseable output → deny by default' },
+        { icon: 'check', title: 'Permission presets', desc: 'approve-for-me and strict-review, selectable from the GUI' },
+        { icon: 'zap', title: 'Circuit breaker', desc: 'Too many consecutive denials hands control back to a human' },
+      ],
+    },
+    review: {
+      name: 'dsh-code-review',
+      tag: 'JavaScript · GPL-3.0',
+      tagline: 'Turn-by-turn code-change review: Codex-style summary, resizable diff sidebar, guarded undo.',
+      desc: 'A community Web plugin that adds a "changes" utility to finished turns: a change summary, a draggable diff sidebar, a workspace-relative file tree, syntax highlighting and guarded undo for safe iteration in a shared workspace.',
+      features: [
+        { icon: 'git', title: 'Turn-level review', desc: 'See added/removed totals, open a turn, jump between changed files without leaving the chat' },
+        { icon: 'file', title: 'Diff & file tree together', desc: 'Unified diff on the left, searchable file tree on the right, draggable persisted divider' },
+        { icon: 'edit', title: 'Syntax-aware diffs', desc: 'Shiki tokenizing keeps multiline comments and strings in grammar state' },
+        { icon: 'undo', title: 'Guarded undo', desc: 'Snapshots + version guards + before/after chains, refusing ambiguous, stale or active changes' },
+        { icon: 'layout', title: 'Large & practical', desc: 'Breaks the 520px cap; collapses navigation on narrow windows' },
+      ],
+    },
+    sidebar: {
+      name: 'dsh-better-sidebar-loader',
+      tag: 'TypeScript · MIT',
+      tagline: 'A VSCode-style right sidebar (explorer/editor/terminal/git/browser) whose host half only goes through ctx.dshLoader.',
+      desc: 'A transcription of dsh-better-sidebar onto dshloader\'s stable API: the host half reaches dsh services ONLY through ctx.dshLoader with zero direct service access and zero @deepseek-ai/* runtime imports; the client half reuses the official client unchanged, mounted via dsh.client.inject.',
+      features: [
+        { icon: 'layout', title: 'VSCode-style sidebar', desc: 'explorer / editor / terminal / git / browser' },
+        { icon: 'route', title: 'dshLoader only', desc: 'The host injects only dshLoader, reaching services over its stable API' },
+        { icon: 'shield', title: 'Zero runtime imports', desc: 'No @deepseek-ai/* runtime imports; only dsh-loader as a dsh dependency' },
+        { icon: 'box', title: 'Client reuse', desc: 'The official client is reused unchanged through dsh.client.inject' },
+        { icon: 'zap', title: 'Upgrade-ready', desc: 'Internal service renames don\'t break the plugin (adapter registry)' },
+      ],
+    },
+    stable: {
+      name: 'dsh-stable-web-prompt',
+      tag: 'JavaScript · MIT',
+      tagline: 'Normalizes the port-dependent local URL in the dsh-web-app system prompt and moves it to the end, so changing the port no longer changes the prompt-cache prefix.',
+      desc: 'Normalizes the port-dependent local URL in the system prompt and moves it to the end of the prompt block, so changing the web port no longer changes the prompt-cache prefix and the prompt cache stays stable.',
+      features: [
+        { icon: 'hash', title: 'Stable cache prefix', desc: 'Port changes no longer change the prompt-cache prefix' },
+        { icon: 'swap', title: 'Normalize the local URL', desc: 'Normalizes the port-dependent local URL in the system prompt' },
+        { icon: 'zap', title: 'Moved to the end', desc: 'Moves that URL to the end of the prompt, isolating its effect on the cache' },
+      ],
+    },
   },
 
   features: {
-    eyebrow: 'auxiliary deep-dive',
-    title: 'Every job, on the right model',
-    lead: 'All of auxiliary rests on one pattern: recognize a call by its official marker, silently re-route it inside the llm/stream waterfall. Routes never interfere, and only activate when enabled with a complete provider/model pair.',
+    eyebrow: 'dsh-loader deep-dive',
+    title: 'One stable API, through every DSH upgrade',
+    lead: 'dsh-loader is the foundation of the org: a version-aware adapter registry that decouples plugins from dsh\'s internal service names, module paths, package names and RPC details. Plugins program only against a stable API, so no matter how dsh changes internally, they keep working.',
     how: 'How it works',
-    howText: 'Each route is a resident, pure pass-through listener — it only swaps provider/model and re-enters the seam when its own call category hits (purpose: compaction / session-title, or the approval contract). Everything else passes through untouched. The main session is never rerouted; the core is never modified.',
+    howText: 'Plugins reach the host only through ctx.dshLoader, the browser only through window.__dshLoader__ and stable subpaths; every call maps to dsh\'s current real services through the version-aware adapter registry. When a dsh upgrade breaks an internal API, you only upgrade dshloader and the plugins work unchanged — zero core changes.',
   },
 
   install: {
@@ -122,7 +185,7 @@ export const en: Dict = {
       },
       {
         title: 'npm · @dsh-plugin',
-        desc: 'Both plugins are published to the npm org scope, installable from GitHub source or local file/link.',
+        desc: 'The plugins are published to the npm org scope, installable from GitHub source or local file/link.',
         link: 'View packages',
         href: 'https://www.npmjs.com/org/dsh-plugin',
       },
@@ -137,7 +200,7 @@ export const en: Dict = {
       { icon: 'plug', title: 'Plug & play', desc: 'Install and it works: auxiliary reconfigures live on save, buddy appears on refresh.' },
       { icon: 'shield', title: 'No core changes', desc: 'Everything uses official DSH extension points — seams, waterfalls, slots. Core: untouched.' },
       { icon: 'book', title: 'Bilingual docs', desc: 'Every repo keeps a README plus a Simplified Chinese edition, with config and architecture.' },
-      { icon: 'check', title: 'Open licenses', desc: 'LGPL-3.0 and BSD-3-Clause — fork, improve, redistribute.' },
+      { icon: 'check', title: 'Open licenses', desc: 'LGPL-3.0, BSD-3-Clause, MIT and GPL-3.0 — fork, improve, redistribute.' },
     ],
     maintainer: 'Maintainer',
   },

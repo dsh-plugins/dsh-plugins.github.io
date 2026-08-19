@@ -5,23 +5,22 @@ import Reveal from './ui/Reveal.vue'
 
 const { t, d } = useI18n()
 
+/** dsh-loader deep-dive — the stable-API/adapter-registry story that anchors every org plugin. */
 const routes = [
-  { icon: 'eye', key: 'vision', cfg: 'vision.model', theme: 'brand' },
-  { icon: 'swap', key: 'handoff', cfg: 'vision.handoff: true', theme: 'cyan' },
-  { icon: 'stack', key: 'compact', cfg: 'compact.model', theme: 'brand' },
-  { icon: 'shield', key: 'approve', cfg: 'approve.model', theme: 'violet' },
-  { icon: 'fork', key: 'subagent', cfg: 'subagent.model', theme: 'brand' },
-  { icon: 'hash', key: 'title', cfg: 'title.model', theme: 'violet' },
-  { icon: 'image', key: 'imagegen', cfg: 'imagegen.model', theme: 'cyan' },
-  { icon: 'sparkle', key: 'marks', cfg: 'input: [text, image]', theme: 'brand' },
+  { icon: 'route', key: 'api', cfg: 'ctx.dshLoader', theme: 'brand' },
+  { icon: 'shield', key: 'escape', cfg: 'services.get(\'sessions\')', theme: 'violet' },
+  { icon: 'file', key: 'subpath', cfg: '@dsh-plugin/dsh-loader/*', theme: 'cyan' },
+  { icon: 'hash', key: 'adapt', cfg: 'httpServer → webServer', theme: 'brand' },
+  { icon: 'zap', key: 'upgrade', cfg: 'upgrade dshloader only', theme: 'cyan' },
 ] as const
 
 const flowLines = [
-  { prompt: 'llm/stream', text: 'waterfall listener · always resident, pure pass-through' },
-  { prompt: '├─ compact', text: "← purpose: 'compaction'" },
-  { prompt: '├─ title', text: "← purpose: 'session-title'" },
-  { prompt: '└─ approve', text: '← review contract · temp 0, no sessionId' },
-  { prompt: 'main session', text: '→ pass-through · never rerouted · core untouched' },
+  { prompt: 'plugin', text: 'programs only against the stable API' },
+  { prompt: '├─ ctx.dshLoader.web', text: '→ webServer' },
+  { prompt: '├─ ctx.dshLoader.settings', text: '→ settings' },
+  { prompt: '├─ services.get(…)', text: '→ real dsh services' },
+  { prompt: '└─ ui-subpaths', text: '→ dsh client packages' },
+  { prompt: 'adapter registry', text: '→ version-aware · core untouched' },
 ]
 </script>
 
@@ -42,8 +41,8 @@ const flowLines = [
             <span class="route-icon" :class="`route-icon--${r.theme}`">
               <IconGlyph :name="r.icon" :size="16" :stroke="1.8" />
             </span>
-            <h3 class="route-title">{{ d.plugins.auxiliary.features[i].title }}</h3>
-            <p class="route-desc">{{ d.plugins.auxiliary.features[i].desc }}</p>
+            <h3 class="route-title">{{ d.plugins.loader.features[i].title }}</h3>
+            <p class="route-desc">{{ d.plugins.loader.features[i].desc }}</p>
             <code class="route-cfg">{{ r.cfg }}</code>
           </article>
         </Reveal>

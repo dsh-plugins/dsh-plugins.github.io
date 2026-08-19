@@ -275,6 +275,18 @@ button {
   border-color: rgb(34 211 238 / 0.26);
 }
 
+.chip--emerald {
+  color: #b9f6dd;
+  background: rgb(52 211 153 / 0.13);
+  border-color: rgb(52 211 153 / 0.28);
+}
+
+.chip--amber {
+  color: #ffe3b3;
+  background: rgb(251 191 36 / 0.13);
+  border-color: rgb(251 191 36 / 0.28);
+}
+
 .chip--dot::before {
   content: '';
   width: 6px;
