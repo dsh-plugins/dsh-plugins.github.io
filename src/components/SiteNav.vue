@@ -34,12 +34,15 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 <template>
   <header class="nav" :class="{ 'nav--scrolled': scrolled }">
     <div class="nav-inner container-wide">
-      <a class="brand" href="#top" aria-label="dsh-plugins home">
+      <RouterLink class="brand" to="/" aria-label="dsh-plugins home">
         <LogoMark :size="30" />
         <span class="brand-name">dsh-<span class="brand-name--grad">plugins</span></span>
-      </a>
+      </RouterLink>
 
       <nav class="nav-links" aria-label="Primary">
+        <RouterLink to="/plugins" class="nav-link nav-link--market">
+          {{ t('nav.market') }}
+        </RouterLink>
         <a v-for="l in links" :key="l.key" :href="l.href" class="nav-link">
           {{ t(`nav.${l.key}`) }}
         </a>
@@ -71,6 +74,13 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 
     <Transition name="menu">
       <div v-if="menuOpen" class="nav-mobile">
+        <RouterLink
+          to="/plugins"
+          class="nav-mobile-link nav-mobile-link--market"
+          @click="menuOpen = false"
+        >
+          {{ t('nav.market') }}
+        </RouterLink>
         <a
           v-for="l in links"
           :key="l.key"

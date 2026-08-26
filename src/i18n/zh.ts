@@ -5,6 +5,7 @@
 export const zh = {
   nav: {
     plugins: '插件',
+    market: '插件市场',
     features: '特性',
     install: '安装',
     ecosystem: '生态',
@@ -13,6 +14,22 @@ export const zh = {
     github: 'GitHub 组织',
     lang: 'EN',
     langTitle: 'Switch to English',
+  },
+
+  market: {
+    eyebrow: '插件市场',
+    title: '插件市场',
+    lead: '从 dsh-plugin-market 实时聚合的插件目录——搜索、浏览，点击卡片进入项目主页（无主页则进入仓库）。',
+    searchPlaceholder: '搜索插件名称、ID 或描述…',
+    loading: '正在加载插件…',
+    error: '插件加载失败',
+    empty: '没有匹配的插件',
+    supports: '支持',
+    depends: '依赖',
+    conflicts: '冲突',
+    repo: '仓库',
+    issues: 'Issues',
+    supportTitle: '支持的 dsh 版本',
   },
 
   hero: {

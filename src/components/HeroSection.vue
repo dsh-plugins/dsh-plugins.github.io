@@ -47,10 +47,10 @@ const cmd = (id: PluginId) =>
       <!-- actions -->
       <Reveal :delay="180">
         <div class="hero-actions">
-          <a class="btn btn--primary" href="#plugins">
+          <RouterLink class="btn btn--primary" to="/plugins">
             {{ t('hero.ctaPlugins') }}
             <IconGlyph name="arrow" :size="15" :stroke="2" class="btn-icon" />
-          </a>
+          </RouterLink>
           <a class="btn btn--ghost" href="https://github.com/dsh-plugins" target="_blank" rel="noopener">
             <IconGlyph name="github" :size="15" :stroke="2" class="btn-icon" />
             {{ t('hero.ctaGithub') }}

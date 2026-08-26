@@ -7,6 +7,7 @@ import type { Dict } from './zh'
 export const en: Dict = {
   nav: {
     plugins: 'Plugins',
+    market: 'Market',
     features: 'Features',
     install: 'Install',
     ecosystem: 'Ecosystem',
@@ -15,6 +16,22 @@ export const en: Dict = {
     github: 'GitHub Org',
     lang: '中文',
     langTitle: '切换到中文',
+  },
+
+  market: {
+    eyebrow: 'Plugin Market',
+    title: 'Plugin Market',
+    lead: 'A live catalog aggregated from dsh-plugin-market — search, browse, and click a card to open its homepage (or its repository when there is no homepage).',
+    searchPlaceholder: 'Search plugins by name, id or description…',
+    loading: 'Loading plugins…',
+    error: 'Failed to load plugins',
+    empty: 'No plugins match your search',
+    supports: 'Supports',
+    depends: 'Depends on',
+    conflicts: 'Conflicts with',
+    repo: 'Repository',
+    issues: 'Issues',
+    supportTitle: 'Supported dsh versions',
   },
 
   hero: {
