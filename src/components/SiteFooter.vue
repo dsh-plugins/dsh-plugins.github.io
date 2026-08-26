@@ -1,17 +1,20 @@
 <script setup lang="ts">
 import { useI18n } from '../i18n'
+import { useRoute, useRouter } from 'vue-router'
 import { plugins } from '../data/plugins'
 import LogoMark from './ui/LogoMark.vue'
 import IconGlyph from './ui/IconGlyph.vue'
 
 const { t } = useI18n()
+const route = useRoute()
+const router = useRouter()
 
 const navLinks = [
-  { key: 'plugins', href: '#plugins' },
-  { key: 'features', href: '#features' },
-  { key: 'install', href: '#install' },
-  { key: 'ecosystem', href: '#ecosystem' },
-  { key: 'about', href: '#about' },
+  { key: 'plugins', target: 'plugins' },
+  { key: 'features', target: 'features' },
+  { key: 'install', target: 'install' },
+  { key: 'ecosystem', target: 'ecosystem' },
+  { key: 'about', target: 'about' },
 ] as const
 
 const linkItems = [
@@ -20,13 +23,31 @@ const linkItems = [
   { key: 'awesome', href: 'https://github.com/awesome-dsh-plugin/awesome-dsh-plugin' },
   { key: 'npm', href: 'https://www.npmjs.com/org/dsh-plugin' },
 ] as const
+
+/** Navigate to a home-page section, going home first if needed. */
+function goToSection(target: string) {
+  const scroll = () => {
+    document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' })
+  }
+  if (route.path === '/') {
+    scroll()
+  } else {
+    router.push('/').then(() => {
+      requestAnimationFrame(() => requestAnimationFrame(scroll))
+    })
+  }
+}
+
+function goTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 </script>
 
 <template>
   <footer class="footer">
     <div class="footer-inner container-wide">
       <div class="footer-brand">
-        <a class="footer-logo" href="#top">
+        <a class="footer-logo" href="#" @click.prevent="goTop">
           <LogoMark :size="30" />
           <span class="footer-name">dsh-plugins</span>
         </a>
@@ -40,7 +61,13 @@ const linkItems = [
 
       <nav class="footer-col" aria-label="Site">
         <h4 class="footer-heading">{{ t('footer.colNav') }}</h4>
-        <a v-for="l in navLinks" :key="l.key" class="footer-link" :href="l.href">
+        <a
+          v-for="l in navLinks"
+          :key="l.key"
+          class="footer-link"
+          href="#"
+          @click.prevent="goToSection(l.target)"
+        >
           {{ t(`nav.${l.key}`) }}
         </a>
       </nav>

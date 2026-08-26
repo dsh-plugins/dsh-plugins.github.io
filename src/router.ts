@@ -9,5 +9,8 @@ export const router = createRouter({
   routes: [
     { path: '/', name: 'home', component: HomeView },
     { path: '/plugins', name: 'plugins', component: PluginsMarketView },
+    // Legacy anchors (#features, #install, ...) and any unknown hash route
+    // fall back to the home page instead of a blank view.
+    { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
 })

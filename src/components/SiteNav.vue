@@ -1,20 +1,23 @@
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from '../i18n'
 import LogoMark from './ui/LogoMark.vue'
 import IconGlyph from './ui/IconGlyph.vue'
 
 const { t } = useI18n()
+const route = useRoute()
+const router = useRouter()
 
 const JOIN_URL =
   'https://github.com/dsh-plugins/.github/issues/new?template=%E5%8A%A0%E5%85%A5%E6%88%91%E4%BB%AC.yml'
 
 const links = [
-  { key: 'plugins', href: '#plugins' },
-  { key: 'features', href: '#features' },
-  { key: 'install', href: '#install' },
-  { key: 'ecosystem', href: '#ecosystem' },
-  { key: 'about', href: '#about' },
+  { key: 'plugins', target: 'plugins' },
+  { key: 'features', target: 'features' },
+  { key: 'install', target: 'install' },
+  { key: 'ecosystem', target: 'ecosystem' },
+  { key: 'about', target: 'about' },
 ] as const
 
 const scrolled = ref(false)
@@ -22,6 +25,26 @@ const menuOpen = ref(false)
 
 function onScroll() {
   scrolled.value = window.scrollY > 12
+}
+
+/**
+ * Navigate to a section on the home page. If we are already on "/", scroll
+ * directly; otherwise go home first, then scroll after the view renders.
+ * Hash routing owns "#", so in-page anchors are driven programmatically.
+ */
+function goToSection(target: string) {
+  menuOpen.value = false
+  const scroll = () => {
+    document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' })
+  }
+  if (route.path === '/') {
+    scroll()
+  } else {
+    router.push('/').then(() => {
+      // Wait one tick for the home view to mount.
+      requestAnimationFrame(() => requestAnimationFrame(scroll))
+    })
+  }
 }
 
 onMounted(() => {
@@ -43,7 +66,13 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
         <RouterLink to="/plugins" class="nav-link nav-link--market">
           {{ t('nav.market') }}
         </RouterLink>
-        <a v-for="l in links" :key="l.key" :href="l.href" class="nav-link">
+        <a
+          v-for="l in links"
+          :key="l.key"
+          class="nav-link"
+          href="#"
+          @click.prevent="goToSection(l.target)"
+        >
           {{ t(`nav.${l.key}`) }}
         </a>
       </nav>
@@ -84,9 +113,9 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
         <a
           v-for="l in links"
           :key="l.key"
-          :href="l.href"
           class="nav-mobile-link"
-          @click="menuOpen = false"
+          href="#"
+          @click.prevent="goToSection(l.target)"
         >
           {{ t(`nav.${l.key}`) }}
         </a>
