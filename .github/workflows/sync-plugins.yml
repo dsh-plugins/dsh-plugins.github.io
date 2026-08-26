@@ -8,6 +8,10 @@ on:
   repository_dispatch:
     types: [plugins-updated]
   workflow_dispatch:
+  # Fallback: if the market repo cannot dispatch (no PAT configured), still
+  # pick up changes at most 24h later.
+  schedule:
+    - cron: '0 0 * * *'
 
 permissions:
   contents: write
