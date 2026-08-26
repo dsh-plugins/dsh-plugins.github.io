@@ -1,0 +1,48 @@
+# Pulls the aggregated plugins.json from dsh-plugin-market and publishes it
+# as public/api/plugins.json. Triggered by repository_dispatch from the
+# market repo's aggregate workflow (event-type: plugins-updated), or manually.
+# Pushing public/api/plugins.json triggers deploy.yml (GitHub Pages).
+name: Sync plugins from market
+
+on:
+  repository_dispatch:
+    types: [plugins-updated]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-plugins
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download plugins.json from dsh-plugin-market
+        run: |
+          mkdir -p public/api
+          curl -fsSL https://raw.githubusercontent.com/dsh-plugins/dsh-plugin-market/main/plugins.json \
+            -o public/api/plugins.json
+          echo "Downloaded:"
+          head -c 400 public/api/plugins.json
+
+      - name: Validate JSON
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('public/api/plugins.json','utf8')); console.log('plugins.json is valid JSON')"
+
+      - name: Commit and push if changed
+        run: |
+          if ! git diff --quiet -- public/api/plugins.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add public/api/plugins.json
+            git commit -m "chore(api): 同步插件市场 plugins.json"
+            git push
+          else
+            echo "plugins.json unchanged, skipping commit"
+          fi
