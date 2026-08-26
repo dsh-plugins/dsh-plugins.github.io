@@ -1,7 +1,7 @@
 # Pulls the aggregated plugins.json from dsh-plugin-market, validates it,
 # and deploys the site (public/api/plugins.json) straight to GitHub Pages.
 # Triggered by repository_dispatch from the market repo's aggregate workflow
-# (event-type: plugins-updated), manually, or on a daily schedule fallback.
+# (event-type: plugins-updated), or manually.
 #
 # Note: committing with GITHUB_TOKEN would NOT re-trigger deploy.yml (GitHub
 # does not cascade workflows from token-triggered pushes), so this workflow
@@ -12,10 +12,6 @@ on:
   repository_dispatch:
     types: [plugins-updated]
   workflow_dispatch:
-  # Fallback: if the market repo cannot dispatch (no PAT configured), still
-  # pick up changes at most 24h later.
-  schedule:
-    - cron: '0 0 * * *'
 
 permissions:
   contents: read
