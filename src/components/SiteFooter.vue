@@ -70,6 +70,9 @@ function goTop() {
         >
           {{ t(`nav.${l.key}`) }}
         </a>
+        <RouterLink to="/launcher" class="footer-link">
+          {{ t('nav.launcher') }}
+        </RouterLink>
       </nav>
 
       <nav class="footer-col" aria-label="Links">

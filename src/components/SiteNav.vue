@@ -66,6 +66,9 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
         <RouterLink to="/plugins" class="nav-link nav-link--market">
           {{ t('nav.market') }}
         </RouterLink>
+        <RouterLink to="/launcher" class="nav-link nav-link--market">
+          {{ t('nav.launcher') }}
+        </RouterLink>
         <a
           v-for="l in links"
           :key="l.key"
@@ -109,6 +112,13 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
           @click="menuOpen = false"
         >
           {{ t('nav.market') }}
+        </RouterLink>
+        <RouterLink
+          to="/launcher"
+          class="nav-mobile-link nav-mobile-link--market"
+          @click="menuOpen = false"
+        >
+          {{ t('nav.launcher') }}
         </RouterLink>
         <a
           v-for="l in links"
