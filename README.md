@@ -61,6 +61,29 @@ The site is served by GitHub Pages from the `main` branch root:
 Content is generated from the live GitHub org (repos, versions, licenses) —
 update `src/data/plugins.ts` and the i18n dictionaries as plugins evolve.
 
+## Automated feeds
+
+Two workflows keep the static API snapshots fresh. Both write with
+`GITHUB_TOKEN`, which does not cascade into `deploy.yml`, so each workflow
+performs its own Pages deploy.
+
+| Feed | URL | Source | Trigger |
+| --- | --- | --- | --- |
+| Plugin market | `/api/plugins.json` | `dsh-plugin-market` repo | `repository_dispatch`, manual |
+| DSH news | `/api/news.md` | hand-maintained gist | hourly cron (`sync-news.yml`) |
+
+The news feed mirrors
+[DSH_NEWS.md](https://gist.github.com/Gu-ZT/f08daa33afb82f4b375e604039b92742#file-dsh_news-md)
+into `public/api/news.md`. `scripts/sync-news.mjs` downloads the gist, rejects
+responses that are empty, oversized, not UTF-8, or missing the expected
+Markdown headings, and normalizes line endings. When the content is unchanged
+the script reports `changed=false`, and the workflow skips the commit, build
+and deploy entirely.
+
+```bash
+node scripts/sync-news.mjs   # run locally to preview the snapshot
+```
+
 ## Regenerating the OG banner
 
 ```powershell

@@ -1,0 +1,6 @@
+.gitattributes text eol=lf
+
+# Generated snapshots are written with LF and compared line-ending-insensitively
+# by scripts/sync-news.mjs, so keep Git from rewriting them on checkout.
+public/api/news.md text eol=lf
+scripts/sync-news.mjs text eol=lf
