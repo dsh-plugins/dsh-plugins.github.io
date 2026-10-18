@@ -70,18 +70,26 @@ performs its own Pages deploy.
 | Feed | URL | Source | Trigger |
 | --- | --- | --- | --- |
 | Plugin market | `/api/plugins.json` | `dsh-plugin-market` repo | `repository_dispatch`, manual |
-| DSH news | `/api/news.md` | hand-maintained gist | hourly cron (`sync-news.yml`) |
+| DSH news | `/api/news.md` | deepseek-harness releases | hourly cron (`news.yml`) |
 
-The news feed mirrors
-[DSH_NEWS.md](https://gist.github.com/Gu-ZT/f08daa33afb82f4b375e604039b92742#file-dsh_news-md)
-into `public/api/news.md`. `scripts/sync-news.mjs` downloads the gist, rejects
-responses that are empty, oversized, not UTF-8, or missing the expected
-Markdown headings, and normalizes line endings. When the content is unchanged
-the script reports `changed=false`, and the workflow skips the commit, build
-and deploy entirely.
+The news feed is built from two inputs by `scripts/generate-news.mjs`:
+
+- `scripts/news/manual.md` is the hand-written baseline. Its header, curated
+  wording, highlight taglines (`>!…!<`) and older entries are copied verbatim
+  into the output. Edit this file to fix or rewrite an entry — the generator
+  never touches it.
+- The [deepseek-harness releases](https://github.com/deepseek-ai/deepseek-harness/releases)
+  supply entries only for versions the baseline does not cover yet, so a new
+  release appears on the feed without anyone editing the page. Only the Chinese
+  half of a release body is kept; section headings are normalized onto 新增功能
+  / 体验优化 / 问题修复 / 其他变更 / SDK, contributor handles move to the end of
+  each bullet, and announcements, blockquotes and the English half are dropped.
+
+Both inputs are deterministic, so when no release changed the script reports
+`changed=false` and the workflow skips the commit, build and deploy entirely.
 
 ```bash
-node scripts/sync-news.mjs   # run locally to preview the snapshot
+pnpm news     # rebuild public/api/news.md from manual.md + releases
 ```
 
 ## Regenerating the OG banner
