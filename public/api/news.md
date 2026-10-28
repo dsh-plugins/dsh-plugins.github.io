@@ -133,7 +133,7 @@
 - 桌面启动故障可获取诊断报告，并附上有界的近期插件操作记录，便于排查问题 @winewill
 - macOS Computer Use 新增系统与应用权限引导，支持长按并改善应用启动；应用授权可跨重启保留 @CreatixChu, @koalazf99
 - Headless 支持实验性 Auto 自动审核 @tianyicui
-- Ralph 循环与会话搜索继续随包分发，但默认从 GUI 隐藏；可在添加插件中输入包名显式启用，已有配置仍可管理 @ZiyaZhang
+- Ralph 循环与会话搜索继续随包分发，不再显示在实验性列表 @ZiyaZhang
 - 升级 pi-ai 至 1.3.0，并同步模型目录、端点与推理回放规则；完整工具参数格式错误会在执行任何工具前终止该次响应 @tianyicui
 - 未声明容量的自定义模型默认上下文与最大输出调整为十进制 1M/128K；较小端点应显式覆盖容量以避免延迟压缩 @LegGasai
 - Agent 在提示词组装与 pre-step 前固定本步模型，重试保留同一选择；插件应通过 agent.model 选择模型，agent/request 不再允许改路由 @kermanx
