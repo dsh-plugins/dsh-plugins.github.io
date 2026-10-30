@@ -35,6 +35,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Validate and sync catalogs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          pnpm test:market
+          pnpm sync:market
+
       - name: Build
         run: pnpm build
 

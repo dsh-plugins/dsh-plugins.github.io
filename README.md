@@ -108,3 +108,12 @@ msedge --headless=new --disable-gpu --force-device-scale-factor=1 `
 Site content © 2026 dsh-plugins organization. The plugins themselves are
 licensed separately (see `src/data/plugins.ts`): LGPL-3.0, BSD-3-Clause,
 MIT and GPL-3.0.
+
+## 插件市场目录
+
+`public/api/plugins.json` 保留市场描述符，`public/api/dsh-plugins.json` 提供官方 `format: 1` 索引。
+两个文件由 `pnpm sync:market` 一起生成，工作流每三小时执行，并在网站部署前同步。
+生成器读取 npm 的 latest/next 标签和 GitHub 的最新稳定版、预发布版标签；同版本优先 npm。
+任何网络或校验错误会终止部署。使用 `pnpm sync:market --input ../dsh-plugin-market/plugins.json` 可以从本地聚合文件生成。
+版本区间以分号分隔并取并集，预发布版本参与比较；官方索引中的范围转换为标准 SemVer 表达式。
+运行 `pnpm test:market` 验证范围与索引生成，运行 `pnpm build` 验证网站产物。

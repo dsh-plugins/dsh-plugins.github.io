@@ -3,3 +3,5 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - '@vue/language-core@3.3.10'
   - vue-tsc@3.3.10
+  - '@deepseek-ai/dsh-package-manifest@0.2.1-rc.5'
+  - '@deepseek-ai/dsh-plugin-market-index@0.2.1-rc.5'

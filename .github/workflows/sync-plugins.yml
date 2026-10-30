@@ -12,6 +12,8 @@ on:
   repository_dispatch:
     types: [plugins-updated]
   workflow_dispatch:
+  schedule:
+    - cron: '17 */3 * * *'
 
 permissions:
   contents: read
@@ -32,18 +34,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Download plugins.json from dsh-plugin-market
-        run: |
-          mkdir -p public/api
-          curl -fsSL https://raw.githubusercontent.com/dsh-plugins/dsh-plugin-market/main/plugins.json \
-            -o public/api/plugins.json
-          echo "Downloaded:"
-          head -c 400 public/api/plugins.json
-
-      - name: Validate JSON
-        run: |
-          node -e "JSON.parse(require('fs').readFileSync('public/api/plugins.json','utf8')); console.log('plugins.json is valid JSON')"
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -57,6 +47,13 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Validate and sync catalogs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          pnpm test:market
+          pnpm sync:market
 
       - name: Build
         run: pnpm build

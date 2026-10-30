@@ -9,14 +9,18 @@
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
     "typecheck": "vue-tsc -b",
-    "news": "node scripts/generate-news.mjs"
+    "news": "node scripts/generate-news.mjs",
+    "sync:market": "node scripts/sync-market.mjs",
+    "test:market": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
     "vue": "^3.5.41",
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
+    "@deepseek-ai/dsh-plugin-market-index": "0.2.1-rc.5",
     "@vitejs/plugin-vue": "^6.0.8",
+    "semver": "7.8.5",
     "typescript": "~5.9.3",
     "vite": "^7.3.6",
     "vue-tsc": "^3.3.10"
