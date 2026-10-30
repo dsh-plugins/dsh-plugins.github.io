@@ -7,6 +7,14 @@
 > 
 > — 古镇天Gugle
 
+## 2026/10/30
+
+### DeepSeek Harness 0.2.1-rc.5 发布
+
+#### 体验优化
+
+- 优化对话中思考内容的展示效果 @LegGasai
+
 ## 2026/10/28
 
 ### DeepSeek Harness 0.2.1-rc.4 发布
