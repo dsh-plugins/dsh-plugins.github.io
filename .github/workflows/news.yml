@@ -43,6 +43,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -66,6 +68,15 @@ jobs:
         if: steps.news.outputs.changed == 'true'
         run: pnpm install --frozen-lockfile
 
+      # Pages replaces the whole site, including the market catalogs.
+      - name: Validate and sync catalogs
+        if: steps.news.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          pnpm test:market
+          pnpm sync:market
+
       - name: Build
         if: steps.news.outputs.changed == 'true'
         run: pnpm build
@@ -85,17 +96,17 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Commit updated news
+      - name: Commit updated feeds
         if: steps.news.outputs.changed == 'true'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public/api/news.md
+          git add public/api/news.md public/api/plugins.json public/api/dsh-plugins.json
           if git diff --cached --quiet; then
             echo "Generated snapshot already matches, nothing to push"
             exit 0
           fi
-          git commit -m "chore(api): 从发布记录重新生成 DSH 新闻"
+          git commit -m "chore(api): 更新 DSH 新闻与插件市场"
           for attempt in 1 2 3; do
             if git push origin HEAD:main; then
               exit 0
@@ -103,5 +114,5 @@ jobs:
             echo "Push attempt ${attempt} rejected, rebasing onto the latest main"
             git pull --rebase --autostash origin main
           done
-          echo "Failed to push the news snapshot after 3 attempts" >&2
+          echo "Failed to push the feed snapshots after 3 attempts" >&2
           exit 1

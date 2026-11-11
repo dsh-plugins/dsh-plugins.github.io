@@ -1,11 +1,12 @@
 # Pulls the aggregated plugins.json from dsh-plugin-market, validates it,
-# and deploys the site (public/api/plugins.json) straight to GitHub Pages.
+# and deploys the site with both market catalogs to GitHub Pages.
 # Triggered by repository_dispatch from the market repo's aggregate workflow
-# (event-type: plugins-updated), or manually.
+# (event-type: plugins-updated), every three hours, or manually.
 #
 # Note: committing with GITHUB_TOKEN would NOT re-trigger deploy.yml (GitHub
 # does not cascade workflows from token-triggered pushes), so this workflow
 # performs the Pages deploy itself instead of relying on the push event.
+# Persist both catalogs after deployment so subsequent builds keep the snapshot.
 name: Sync plugins from market
 
 on:
@@ -16,13 +17,13 @@ on:
     - cron: '17 */3 * * *'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   sync-and-deploy:
@@ -33,6 +34,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -69,3 +72,23 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Commit updated catalogs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/api/plugins.json public/api/dsh-plugins.json
+          if git diff --cached --quiet; then
+            echo "Generated catalogs already match, nothing to push"
+            exit 0
+          fi
+          git commit -m "chore(api): 同步插件市场目录"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push attempt ${attempt} rejected, rebasing onto the latest main"
+            git pull --rebase --autostash origin main
+          done
+          echo "Failed to push the market snapshot after 3 attempts" >&2
+          exit 1

@@ -69,8 +69,13 @@ performs its own Pages deploy.
 
 | Feed | URL | Source | Trigger |
 | --- | --- | --- | --- |
-| Plugin market | `/api/plugins.json` | `dsh-plugin-market` repo | `repository_dispatch`, manual |
+| Plugin market | `/api/plugins.json`, `/api/dsh-plugins.json` | `dsh-plugin-market` repo + npm/GitHub versions | every three hours, `repository_dispatch`, manual |
 | DSH news | `/api/news.md` | deepseek-harness releases | hourly cron (`news.yml`) |
+
+Both feed workflows check out the latest `main` and commit their generated
+snapshots back to `main` after a successful deployment. News deployments also
+refresh and commit both market catalogs so publishing news keeps the market
+current. Unchanged snapshots do not create an extra commit.
 
 The news feed is built from two inputs by `scripts/generate-news.mjs`:
 
