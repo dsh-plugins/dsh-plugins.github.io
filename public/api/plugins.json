@@ -12,7 +12,7 @@
         "content": "审查并自动批准命令执行，新增「替我同意」沙箱权限选项"
       }
     ],
-    "support_versions": "[0.1.0-rc.6,0.2.0-rc.1)",
+    "support_versions": "[0.1.5,0.1.7-rc.2)",
     "urls": {
       "homepage": "https://github.com/dsh-plugins/dsh-approve-for-me",
       "repository": "https://github.com/dsh-plugins/dsh-approve-for-me",
@@ -22,7 +22,7 @@
       {
         "type": "dependency",
         "id": "@dsh-plugin/dsh-loader",
-        "versions": ">=1.3.0"
+        "versions": "^2.0.0-0"
       }
     ]
   },
@@ -39,7 +39,7 @@
         "content": "DeepSeek Harness 辅助模型插件"
       }
     ],
-    "support_versions": "[0.1.0-rc.6,0.2.0-rc.1)",
+    "support_versions": "[0.1.5,)",
     "urls": {
       "homepage": "https://github.com/dsh-plugins/dsh-auxiliary",
       "repository": "https://github.com/dsh-plugins/dsh-auxiliary",
@@ -49,7 +49,7 @@
       {
         "type": "dependency",
         "id": "@dsh-plugin/dsh-loader",
-        "versions": ">=1.3.0"
+        "versions": "^2.0.0-dev.41570953193"
       }
     ]
   },
@@ -66,7 +66,7 @@
         "content": "基于 dshloader 稳定 API 的 VSCode 风格右侧边栏（资源管理器 / 编辑器 / 终端 / Git / 浏览器）"
       }
     ],
-    "support_versions": "[0.1.0-rc.6,0.2.0-rc.1)",
+    "support_versions": "[0.1.0-rc.6,0.1.6-alpha.1)",
     "urls": {
       "homepage": "https://github.com/dsh-plugins/dsh-better-sidebar-loader",
       "repository": "https://github.com/dsh-plugins/dsh-better-sidebar-loader",
@@ -93,7 +93,7 @@
         "content": "逐轮代码变更摘要、审查标签页与受保护的撤销功能"
       }
     ],
-    "support_versions": "[0.1.0-rc.6,0.2.0-rc.1)",
+    "support_versions": "[0.1.0-rc.6,0.1.6-alpha.1)",
     "urls": {
       "homepage": "https://github.com/dsh-plugins/dsh-code-review",
       "repository": "https://github.com/dsh-plugins/dsh-code-review",
@@ -113,6 +113,33 @@
     ]
   },
   {
+    "id": "@dsh-plugin/dsh-force-read-skill",
+    "name": "DSH Force Read Skill",
+    "description": [
+      {
+        "language": "en-US",
+        "content": "Require the model to read an eligible skill before using other tools. Successful reads apply to the current session until context compaction."
+      },
+      {
+        "language": "zh-CN",
+        "content": "要求模型先读取符合配置的 SKILL，再使用其他工具。已读状态在当前会话内持续至下一次成功的上下文压缩。"
+      }
+    ],
+    "support_versions": "[0.1.5,)",
+    "urls": {
+      "homepage": "https://github.com/dsh-plugins/dsh-force-read-skill",
+      "repository": "https://github.com/dsh-plugins/dsh-force-read-skill",
+      "issues": "https://github.com/dsh-plugins/dsh-force-read-skill/issues"
+    },
+    "relationship": [
+      {
+        "type": "dependency",
+        "id": "@dsh-plugin/dsh-loader",
+        "versions": "^2.0.0-dev.42783642741"
+      }
+    ]
+  },
+  {
     "id": "@dsh-plugin/dsh-loader",
     "name": "DSH Loader",
     "description": [
@@ -125,7 +152,7 @@
         "content": "版本感知的运行时兼容层，让第三方插件在 dsh 升级后无需修改即可继续工作"
       }
     ],
-    "support_versions": "[0.1.0-rc.6,0.2.0-rc.1)",
+    "support_versions": "[0.1.5,)",
     "urls": {
       "homepage": "https://github.com/dsh-plugins/dsh-loader",
       "repository": "https://github.com/dsh-plugins/dsh-loader",
@@ -139,14 +166,14 @@
     "description": [
       {
         "language": "en-US",
-        "content": "User-Agent rewriting, HTTP/CONNECT/SOCKS5 proxy, and configurable request auto-retry in one Network settings tab"
+        "content": "User-Agent rewriting, HTTP/CONNECT/SOCKS5 proxy, and request retries. The next channel adds configurable response idle timeouts for HTTP and pi-ai."
       },
       {
         "language": "zh-CN",
-        "content": "User-Agent 改写、HTTP/CONNECT/SOCKS5 代理与可配置请求自动重试，统一在「网络设置」标签页"
+        "content": "支持 User-Agent 改写、HTTP/CONNECT/SOCKS5 代理和请求重试。开发版新增可配置的 HTTP 与 pi-ai 响应空闲超时。"
       }
     ],
-    "support_versions": "[0.1.0-rc.6,0.2.0-rc.1)",
+    "support_versions": "[0.1.5,)",
     "urls": {
       "homepage": "https://github.com/dsh-plugins/dsh-network-settings",
       "repository": "https://github.com/dsh-plugins/dsh-network-settings",
@@ -156,7 +183,34 @@
       {
         "type": "dependency",
         "id": "@dsh-plugin/dsh-loader",
-        "versions": ">=1.3.0"
+        "versions": "^2.0.0-0"
+      }
+    ]
+  },
+  {
+    "id": "@dsh-plugin/dsh-synapse",
+    "name": "DSH Synapse",
+    "description": [
+      {
+        "language": "en-US",
+        "content": "QQ and Discord chat bridging, GitHub PR/Issue review, local hybrid memory and Skill management powered by persistent DSH sessions"
+      },
+      {
+        "language": "zh-CN",
+        "content": "基于 DSH 驻留会话的 QQ 与 Discord 聊天桥接、GitHub PR/Issue 审查、本地混合记忆及 Skill 管理"
+      }
+    ],
+    "support_versions": "[0.1.5,)",
+    "urls": {
+      "homepage": "https://github.com/dsh-plugins/dsh-synapse",
+      "repository": "https://github.com/dsh-plugins/dsh-synapse",
+      "issues": "https://github.com/dsh-plugins/dsh-synapse/issues"
+    },
+    "relationship": [
+      {
+        "type": "dependency",
+        "id": "@dsh-plugin/dsh-loader",
+        "versions": "^2.0.0-dev.41617773595"
       }
     ]
   },
@@ -173,7 +227,7 @@
         "content": "在「Deep diving…」状态前插入动态小表情头像——GrokBot 风格 SVG 动画或 emoji 轮播"
       }
     ],
-    "support_versions": "[0.1.0-rc.6,0.2.0-rc.1)",
+    "support_versions": "[0.1.5,)",
     "urls": {
       "homepage": "https://github.com/dsh-plugins/dsh-thought-buddy",
       "repository": "https://github.com/dsh-plugins/dsh-thought-buddy",
@@ -183,7 +237,34 @@
       {
         "type": "dependency",
         "id": "@dsh-plugin/dsh-loader",
-        "versions": ">=1.3.0"
+        "versions": "^2.0.0-dev.42783642741"
+      }
+    ]
+  },
+  {
+    "id": "@dsh-plugin/dsh-web-search",
+    "name": "DSH Web Search (Browser)",
+    "description": [
+      {
+        "language": "en-US",
+        "content": "Local browser tools browser_web_search and browser_web_fetch with validated search results, text or Markdown extraction, and optional persistent browser sessions."
+      },
+      {
+        "language": "zh-CN",
+        "content": "通过本机浏览器提供 browser_web_search 和 browser_web_fetch，支持搜索结果校验、纯文本或 Markdown 提取，以及可选的持久化浏览器会话。"
+      }
+    ],
+    "support_versions": "[0.1.5,)",
+    "urls": {
+      "homepage": "https://github.com/dsh-plugins/dsh-web-search",
+      "repository": "https://github.com/dsh-plugins/dsh-web-search",
+      "issues": "https://github.com/dsh-plugins/dsh-web-search/issues"
+    },
+    "relationship": [
+      {
+        "type": "dependency",
+        "id": "@dsh-plugin/dsh-loader",
+        "versions": "^2.0.0-0"
       }
     ]
   }
