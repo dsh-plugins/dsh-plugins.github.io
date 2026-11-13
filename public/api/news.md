@@ -7,6 +7,18 @@
 > 
 > — 古镇天Gugle
 
+## 2026/11/13
+
+### DeepSeek Harness 0.2.2-rc.3 发布
+
+#### 新增功能
+
+- 新增实验性「DeepSeek 会话导入」插件，支持将 DeepSeek App 或网页版的历史会话导入工作区，并继续对话 @imccyu
+
+#### 问题修复
+
+- 修复 Windows 桌面版应用内更新可能失败、无法自动重新打开的问题 @winewill
+
 ## 2026/11/11
 
 ### DeepSeek Harness 0.2.2-rc.2 发布
