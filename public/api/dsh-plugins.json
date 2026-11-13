@@ -83,7 +83,11 @@
     },
     {
       "name": "@dsh-plugin/dsh-auxiliary",
-      "title": "DSH Auxiliary",
+      "title": {
+        "en": "Auxiliary models",
+        "zh": "辅助模型"
+      },
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.43486458003/icon.svg",
       "description": {
         "en-us": "Auxiliary models for DeepSeek Harness",
         "zh-cn": "DeepSeek Harness 辅助模型插件",
@@ -96,8 +100,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.42774945902",
-          "publishTimestamp": 1794295564,
+          "version": "2.0.0-dev.43486458003",
+          "publishTimestamp": 1794597047,
           "source": {
             "type": "npm"
           },
