@@ -264,8 +264,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43411993464",
-          "publishTimestamp": 1794567191,
+          "version": "2.0.0-dev.43473963317",
+          "publishTimestamp": 1794591487,
           "source": {
             "type": "npm"
           },
