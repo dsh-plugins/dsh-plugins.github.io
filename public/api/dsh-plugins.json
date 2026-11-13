@@ -599,7 +599,7 @@
         "en": "Interface experience",
         "zh": "界面体验"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-ui-experience@1.0.0-dev.43488936935/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-ui-experience@1.0.0-dev.43493974985/icon.svg",
       "description": {
         "en-us": "Makes the interface follow the Material You palette matugen generates on the system and unifies the interface border width, both toggled from a settings row.",
         "zh-cn": "让界面跟随系统 matugen 生成的 Material You 配色，并统一界面边框宽度，均可在设置行内开关。",
@@ -612,8 +612,8 @@
       },
       "versions": [
         {
-          "version": "1.0.0-dev.43488936935",
-          "publishTimestamp": 1794596910,
+          "version": "1.0.0-dev.43493974985",
+          "publishTimestamp": 1794598786,
           "source": {
             "type": "npm"
           },
