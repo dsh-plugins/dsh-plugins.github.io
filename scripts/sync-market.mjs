@@ -7,6 +7,7 @@ import { normalizeRange, validateRelationship } from './version-range.mjs';
 
 const sourceUrl = 'https://raw.githubusercontent.com/dsh-plugins/dsh-plugin-market/main/plugins.json';
 const indexUrl = 'https://dsh-plug.in/api/dsh-plugins.json';
+const languageId = /^[a-z]{2,8}(?:-[a-z0-9]{1,8})*$/i;
 
 async function fetchJson(url, optional = false) {
   const headers = { 'User-Agent': 'dsh-plugins-market' };
@@ -29,10 +30,110 @@ function localizedDescription(value) {
   }
   const result = {};
   for (const { language, content } of value) {
+    if (typeof language !== 'string' || !languageId.test(language)) {
+      throw new Error(`description: 无效语言键 ${language}`);
+    }
     result[language.toLowerCase()] = content;
   }
+  return languageAliases(result);
+}
+
+function languageAliases(result) {
   result.en ??= result['en-us'] ?? Object.values(result)[0];
+  if (result['zh-cn'] !== undefined) {
+    result.zh ??= result['zh-cn'];
+  }
   return result;
+}
+
+function resourcePath(value, context, wildcard = false) {
+  if (typeof value !== 'string') {
+    throw new Error(`${context}: 资源必须声明为包内相对路径`);
+  }
+  const path = value.startsWith('./') ? value.slice(2) : value;
+  if (path.split('/').some((part) => !/^[\w.@+*-]+$/.test(part) || part === '.' || part === '..')
+    || (path.match(/\*/g)?.length ?? 0) !== (wildcard ? 1 : 0)) {
+    throw new Error(`${context}: 无效资源路径 ${value}`);
+  }
+  return path;
+}
+
+async function npmMetadata(manifest, request) {
+  if (!manifest) {
+    return {};
+  }
+  const context = `${manifest.name}@${manifest.version}`;
+  const exports = manifest.exports ?? {};
+  const locales = Object.entries(exports).filter(([key]) => /^\.\/locale\/[^/]+\.json$/.test(key));
+  const explicitLanguages = new Set(locales.filter(([key]) => !key.includes('*'))
+    .map(([key]) => key.slice('./locale/'.length, -'.json'.length).toLowerCase()));
+  const icon = manifest.icon ?? exports['./icon'];
+  if (!locales.length && icon === undefined) {
+    return {};
+  }
+  const base = `https://cdn.jsdelivr.net/npm/${context}/`;
+  const listing = await request(`https://data.jsdelivr.com/v1/package/npm/${context}/flat`);
+  if (!Array.isArray(listing?.files)) {
+    throw new Error(`${context}: CDN 文件列表无效`);
+  }
+  const files = new Map(listing.files.map((file) => [file.name, file]));
+  const titles = {};
+  const resources = new Map();
+  for (const [key, target] of locales) {
+    const exportedLanguage = key.slice('./locale/'.length, -'.json'.length);
+    const wildcard = exportedLanguage === '*';
+    if (!wildcard && !languageId.test(exportedLanguage)) {
+      throw new Error(`${context} ${key}: 无效语言键`);
+    }
+    const path = resourcePath(target, `${context} ${key}`, wildcard);
+    if (wildcard) {
+      const [prefix, suffix] = path.split('*');
+      for (const file of files.values()) {
+        const name = file.name.slice(1);
+        if (name.startsWith(prefix) && name.endsWith(suffix)) {
+          const language = name.slice(prefix.length, name.length - suffix.length);
+          if (languageId.test(language) && !explicitLanguages.has(language.toLowerCase())) {
+            resources.set(language, name);
+          }
+        }
+      }
+    } else {
+      resources.set(key.slice('./locale/'.length, -'.json'.length), path);
+    }
+  }
+  if (locales.length && !resources.size) {
+    throw new Error(`${context}: 已声明的 locale 资源缺失`);
+  }
+  const assertFile = (path, limit) => {
+    const file = files.get(`/${path}`);
+    if (!file || !Number.isInteger(file.size) || file.size <= 0 || file.size > limit) {
+      throw new Error(`${context}: 资源 ${path} 缺失、为空或超过 ${limit} 字节`);
+    }
+  };
+  for (const [language, path] of [...resources].sort(([a], [b]) => a.localeCompare(b))) {
+    assertFile(path, 1024 * 1024);
+    const locale = await request(`${base}${path}`);
+    const title = locale?.meta?.title;
+    if (title !== undefined) {
+      if (typeof title !== 'string' || !title.trim()) {
+        throw new Error(`${context} ${path}: meta.title 必须为非空字符串`);
+      }
+      titles[language.toLowerCase()] = title;
+    }
+  }
+  const metadata = {};
+  if (Object.keys(titles).length) {
+    metadata.title = languageAliases(titles);
+  }
+  if (icon !== undefined) {
+    const path = resourcePath(icon, `${context} icon`);
+    if (!/\.(svg|png|jpe?g|webp)$/i.test(path)) {
+      throw new Error(`${context}: 不支持的图标格式 ${path}`);
+    }
+    assertFile(path, 256 * 1024);
+    metadata.icon = `${base}${path}`;
+  }
+  return metadata;
 }
 
 function timestamp(value, context) {
@@ -75,7 +176,8 @@ async function npmVersions(plugin, request) {
     });
   }
   const latest = pack.versions?.[pack['dist-tags']?.latest];
-  return { versions, directory: latest?.repository?.directory };
+  const manifest = pack.versions?.[pack['dist-tags']?.next] ?? latest;
+  return { versions, directory: latest?.repository?.directory, manifest };
 }
 
 function githubRepository(plugin) {
@@ -160,6 +262,7 @@ export async function generateIndex(plugins, { request = fetchJson, progress = c
     entries.push({
       name: git.name ?? plugin.id,
       title: plugin.name,
+      ...await npmMetadata(npm.manifest, request),
       ...(plugin.description === undefined ? {} : { description: localizedDescription(plugin.description) }),
       ...(plugin.urls?.homepage ? { homepage: plugin.urls.homepage } : {}),
       ...(plugin.urls?.repository ? { repository: { url: plugin.urls.repository, ...(npm.directory ? { directory: npm.directory } : {}) } } : {}),
