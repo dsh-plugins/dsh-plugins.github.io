@@ -286,6 +286,41 @@
       ]
     },
     {
+      "name": "@dsh-plugin/dsh-model-prompt",
+      "title": "DSH Model Prompt",
+      "description": {
+        "en-us": "Matches prompt files against the current model and injects their guidance into the system prompt, replacing the prompt head when the model changes.",
+        "zh-cn": "按当前模型匹配提示词文件并向系统提示词注入专用指导，切换模型时替换头部而不是追加过期内容。",
+        "en": "Matches prompt files against the current model and injects their guidance into the system prompt, replacing the prompt head when the model changes."
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-model-prompt",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-model-prompt"
+      },
+      "versions": [
+        {
+          "version": "0.1.0-dev.43478631080",
+          "publishTimestamp": 1794593133,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-0"
+          }
+        },
+        {
+          "version": "0.0.1",
+          "publishTimestamp": 1794590934,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-0"
+          }
+        }
+      ]
+    },
+    {
       "name": "@dsh-plugin/dsh-network-settings",
       "title": "DSH Network Settings",
       "description": {
@@ -316,6 +351,76 @@
           },
           "engines": {
             "dsh": ">=0.1.5"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@dsh-plugin/dsh-spellcheck-off",
+      "title": "DSH Spellcheck Off",
+      "description": {
+        "en-us": "Turns off browser spellcheck for every text input in the DSH Web UI, removing the red squiggles shown while typing Chinese, code, and proper nouns.",
+        "zh-cn": "关闭 DSH Web 界面所有文本输入框的浏览器原生拼写检查，消除输入中文、代码、专有名词时出现的红色波浪下划线。",
+        "en": "Turns off browser spellcheck for every text input in the DSH Web UI, removing the red squiggles shown while typing Chinese, code, and proper nouns."
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-spellcheck-off",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-spellcheck-off"
+      },
+      "versions": [
+        {
+          "version": "0.1.0-dev.43478645375",
+          "publishTimestamp": 1794593066,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-0"
+          }
+        },
+        {
+          "version": "0.0.1",
+          "publishTimestamp": 1794590901,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@dsh-plugin/dsh-subagent-intro",
+      "title": "DSH Subagent Intro",
+      "description": {
+        "en-us": "Injects a configurable introduction of subagent models right before the subagent tool description, so the model knows what each subagent model is good at before delegating.",
+        "zh-cn": "在子代理工具说明之前注入可配置的子代理模型介绍，让模型在委派前就知道每个子代理模型擅长什么、适合在什么场景使用。",
+        "en": "Injects a configurable introduction of subagent models right before the subagent tool description, so the model knows what each subagent model is good at before delegating."
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-subagent-intro",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-subagent-intro"
+      },
+      "versions": [
+        {
+          "version": "0.1.0-dev.43478637992",
+          "publishTimestamp": 1794594346,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-0"
+          }
+        },
+        {
+          "version": "0.0.1",
+          "publishTimestamp": 1794590984,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-0"
           }
         }
       ]
