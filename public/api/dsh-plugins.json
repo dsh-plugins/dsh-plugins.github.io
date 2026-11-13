@@ -6,6 +6,41 @@
   },
   "plugins": [
     {
+      "name": "@dsh-plugin/dsh-agent-plan-entry",
+      "title": "DSH Agent Plan Entry",
+      "description": {
+        "en-us": "Adds the enter_plan_mode tool and reminds the agent to plan first for medium or complex tasks, delivering plan-mode guidance at the conversation tail so entering or leaving plan mode never rewrites the cached prompt prefix.",
+        "zh-cn": "提供 enter_plan_mode 工具，并在中等或复杂任务上提醒 Agent 先规划；计划模式指引搬到对话尾部，进入或退出计划模式都不再重写已缓存的提示词前缀。",
+        "en": "Adds the enter_plan_mode tool and reminds the agent to plan first for medium or complex tasks, delivering plan-mode guidance at the conversation tail so entering or leaving plan mode never rewrites the cached prompt prefix."
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-agent-plan-entry",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-agent-plan-entry"
+      },
+      "versions": [
+        {
+          "version": "1.3.0-dev.43450955544",
+          "publishTimestamp": 1794583461,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.2 <0.3.0"
+          }
+        },
+        {
+          "version": "0.0.1",
+          "publishTimestamp": 1794582963,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.2 <0.3.0"
+          }
+        }
+      ]
+    },
+    {
       "name": "@dsh-plugin/dsh-approve-for-me",
       "title": "DSH Approve For Me",
       "description": {
@@ -141,6 +176,41 @@
           },
           "engines": {
             "dsh": ">=0.1.0-rc.6 <0.1.6-alpha.1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@dsh-plugin/dsh-dynamic-tools",
+      "title": "DSH Dynamic Tools",
+      "description": {
+        "en-us": "Freezes the tool declaration list after a session's first step and delivers tools that appear later as trailing context, so a mid-conversation tool change no longer invalidates the cached prompt prefix.",
+        "zh-cn": "会话首步之后冻结请求中的工具声明列表，之后出现的工具以对话尾部消息下发，中途的工具变化不再让已缓存的提示词前缀失效。",
+        "en": "Freezes the tool declaration list after a session's first step and delivers tools that appear later as trailing context, so a mid-conversation tool change no longer invalidates the cached prompt prefix."
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-dynamic-tools",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-dynamic-tools"
+      },
+      "versions": [
+        {
+          "version": "0.1.0-dev.43450988228",
+          "publishTimestamp": 1794583143,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.2 <0.3.0"
+          }
+        },
+        {
+          "version": "0.0.1",
+          "publishTimestamp": 1794582889,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.2 <0.3.0"
           }
         }
       ]
