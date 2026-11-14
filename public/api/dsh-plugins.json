@@ -325,7 +325,7 @@
         "en": "Git panel",
         "zh": "Git 面板"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-git-sidebar@0.1.0-dev.43620812361/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-git-sidebar@0.1.0-dev.43633024013/icon.svg",
       "description": {
         "en-us": "Adds a Git panel to the right Sidebar that manages the session worktree's repository: branch and upstream state, staging per file or per group, committing with a diff view, commit history lanes, branch switching, stash, fetch/pull/push, and per-hunk conflict resolution.",
         "zh-cn": "在右侧栏新增 Git 面板，直接管理会话工作目录所在的仓库：分支与上游状态、按文件或分组暂存、带差异视图的提交、提交历史泳道图、分支切换、储藏、fetch/pull/push，以及逐区冲突解决。",
@@ -338,8 +338,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43620812361",
-          "publishTimestamp": 1794677149,
+          "version": "0.1.0-dev.43633024013",
+          "publishTimestamp": 1794685133,
           "source": {
             "type": "npm"
           },
@@ -685,7 +685,7 @@
         "en": "Shell selection",
         "zh": "Shell 选择"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-shell-select@1.0.0-dev.43576395667/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-shell-select@1.0.1-dev.43624951028/icon.svg",
       "description": {
         "en-us": "Choose the shell every agent command runs in — PowerShell, cmd, Git Bash, WSL, bash, zsh, fish or sh — with discovery, an explicit path override, per-shell status facts, a fixed self-test, and a refusal before any process exists when the selected shell cannot be confined.",
         "zh-cn": "选择每个智能体命令运行所用的 Shell——PowerShell、cmd、Git Bash、WSL、bash、zsh、fish 或 sh；支持自动探测、显式路径覆盖、逐 Shell 状态事实、固定自检，并在所选 Shell 无法被沙箱限制时于任何进程创建前拒绝执行。",
@@ -698,8 +698,8 @@
       },
       "versions": [
         {
-          "version": "1.0.0",
-          "publishTimestamp": 1794644346,
+          "version": "1.0.1-dev.43624951028",
+          "publishTimestamp": 1794679881,
           "source": {
             "type": "npm"
           },
@@ -708,8 +708,8 @@
           }
         },
         {
-          "version": "1.0.0-dev.43576395667",
-          "publishTimestamp": 1794645382,
+          "version": "1.0.0",
+          "publishTimestamp": 1794644346,
           "source": {
             "type": "npm"
           },
