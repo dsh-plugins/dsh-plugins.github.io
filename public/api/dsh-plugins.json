@@ -360,6 +360,46 @@
       ]
     },
     {
+      "name": "@dsh-plugin/dsh-mode-builder",
+      "title": {
+        "en": "Mode builder",
+        "zh": "模式构建器"
+      },
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-mode-builder@0.1.0-dev.43570880713/icon.svg",
+      "description": {
+        "en-us": "Derive custom Agent modes from Standard, Minimal, PTC, Creator, or any existing mode in the plugin settings page: pick the tools and SKILL a mode keeps, then choose the new mode when starting a session.",
+        "zh-cn": "在插件配置页从标准、极简、PTC、创造或任意既有模式派生自定义 Agent 模式：勾选要保留的工具与 SKILL，新建会话时直接选用。",
+        "en": "Derive custom Agent modes from Standard, Minimal, PTC, Creator, or any existing mode in the plugin settings page: pick the tools and SKILL a mode keeps, then choose the new mode when starting a session.",
+        "zh": "在插件配置页从标准、极简、PTC、创造或任意既有模式派生自定义 Agent 模式：勾选要保留的工具与 SKILL，新建会话时直接选用。"
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-mode-builder",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-mode-builder"
+      },
+      "versions": [
+        {
+          "version": "0.1.0-dev.43570880713",
+          "publishTimestamp": 1794641165,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.1 <0.3.0"
+          }
+        },
+        {
+          "version": "0.0.1",
+          "publishTimestamp": 1794640940,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.1 <0.3.0"
+          }
+        }
+      ]
+    },
+    {
       "name": "@dsh-plugin/dsh-model-prompt",
       "title": {
         "en": "Model Prompts",
