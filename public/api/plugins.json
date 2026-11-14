@@ -228,6 +228,32 @@
     ]
   },
   {
+    "id": "@dsh-plugin/dsh-git-sidebar",
+    "name": {
+      "zh": "Git 面板",
+      "zh-CN": "Git 面板",
+      "en": "Git panel",
+      "en-US": "Git panel"
+    },
+    "description": [
+      {
+        "language": "en-US",
+        "content": "Adds a Git panel to the right Sidebar that manages the session worktree's repository: branch and upstream state, staging per file or per group, committing with a diff view, commit history lanes, branch switching, stash, fetch/pull/push, and per-hunk conflict resolution."
+      },
+      {
+        "language": "zh-CN",
+        "content": "在右侧栏新增 Git 面板，直接管理会话工作目录所在的仓库：分支与上游状态、按文件或分组暂存、带差异视图的提交、提交历史泳道图、分支切换、储藏、fetch/pull/push，以及逐区冲突解决。"
+      }
+    ],
+    "support_versions": ">=0.2.0-0",
+    "urls": {
+      "homepage": "https://github.com/dsh-plugins/dsh-git-sidebar",
+      "repository": "https://github.com/dsh-plugins/dsh-git-sidebar",
+      "issues": "https://github.com/dsh-plugins/dsh-git-sidebar/issues"
+    },
+    "relationship": []
+  },
+  {
     "id": "@dsh-plugin/dsh-gradle-tasks",
     "name": {
       "zh": "Gradle 任务",
