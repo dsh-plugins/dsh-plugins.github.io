@@ -169,7 +169,7 @@
         "ru": "Провайдер Claude",
         "zh": "Claude 提供商"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-claude-provider@0.9.0-dev.43597979470/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-claude-provider@0.9.1-dev.43603692324/icon.svg",
       "description": {
         "en-us": "Adds a dedicated Claude provider type with an Anthropic Messages form, a per-model adaptive thinking switch, thinking budgets for budget-driven models, paginated Anthropic model discovery that fills recorded capacities for known Claude models, a per-route prompt-cache lifetime, and mixed 5-minute/1-hour cache lifetimes per request section.",
         "zh-cn": "新增专用的 Claude 提供商类型，提供 Anthropic Messages 表单、逐模型自适应思考开关、预算思考模型的思考 token 预算、分页的 Anthropic 模型探测并为已知 Claude 模型预填录制的容量参数，以及按路由设置的提示缓存时长与按请求分段混合的 5 分钟／1 小时缓存时长。",
@@ -182,8 +182,8 @@
       },
       "versions": [
         {
-          "version": "0.9.0",
-          "publishTimestamp": 1794662117,
+          "version": "0.9.1-dev.43603692324",
+          "publishTimestamp": 1794665736,
           "source": {
             "type": "npm"
           },
@@ -192,8 +192,8 @@
           }
         },
         {
-          "version": "0.9.0-dev.43597979470",
-          "publishTimestamp": 1794661833,
+          "version": "0.9.0",
+          "publishTimestamp": 1794662117,
           "source": {
             "type": "npm"
           },
