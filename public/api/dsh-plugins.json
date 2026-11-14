@@ -87,7 +87,7 @@
         "en": "Auxiliary models",
         "zh": "辅助模型"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.43611093722/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.43640592094/icon.svg",
       "description": {
         "en-us": "Auxiliary models for DeepSeek Harness",
         "zh-cn": "DeepSeek Harness 辅助模型插件",
@@ -100,8 +100,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43611093722",
-          "publishTimestamp": 1794670762,
+          "version": "2.0.0-dev.43640592094",
+          "publishTimestamp": 1794690297,
           "source": {
             "type": "npm"
           },
@@ -445,7 +445,7 @@
         "en": "Mode builder",
         "zh": "模式构建器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-mode-builder@0.1.0-dev.43570880713/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-mode-builder@0.1.0-dev.43640633451/icon.svg",
       "description": {
         "en-us": "Derive custom Agent modes from Standard, Minimal, PTC, Creator, or any existing mode in the plugin settings page: pick the tools and SKILL a mode keeps, then choose the new mode when starting a session.",
         "zh-cn": "在插件配置页从标准、极简、PTC、创造或任意既有模式派生自定义 Agent 模式：勾选要保留的工具与 SKILL，新建会话时直接选用。",
@@ -458,8 +458,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43570880713",
-          "publishTimestamp": 1794641165,
+          "version": "0.1.0-dev.43640633451",
+          "publishTimestamp": 1794690275,
           "source": {
             "type": "npm"
           },
@@ -565,7 +565,7 @@
         "en": "Network settings",
         "zh": "网络设置"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-network-settings@2.0.0-dev.43611112749/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-network-settings@2.0.0-dev.43640605951/icon.svg",
       "description": {
         "en-us": "User-Agent rewriting, HTTP/CONNECT/SOCKS5 proxy, and request retries. The next channel adds configurable response idle timeouts for HTTP and pi-ai.",
         "zh-cn": "支持 User-Agent 改写、HTTP/CONNECT/SOCKS5 代理和请求重试。开发版新增可配置的 HTTP 与 pi-ai 响应空闲超时。",
@@ -578,8 +578,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43611112749",
-          "publishTimestamp": 1794670791,
+          "version": "2.0.0-dev.43640605951",
+          "publishTimestamp": 1794690336,
           "source": {
             "type": "npm"
           },
@@ -605,7 +605,7 @@
         "en": "Prompt Router",
         "zh": "提示词路由"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-prompt-router@0.1.0-dev.43573985551/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-prompt-router@0.1.0-dev.43640508356/icon.svg",
       "description": {
         "en-us": "Assemble each session's system prompt and tool whitelist from the YAML frontmatter of AGENTS.md and SKILL.md, a bound custom mode, and live runtime probes. Pinned rules are never truncated, scoped rules are budgeted by byte size, and a per-session guard rejects tools outside the whitelist.",
         "zh-cn": "按 AGENTS.md / SKILL.md 的 YAML 头部规则、已绑定的自定义模式与运行时探测，为每个会话动态拼装系统提示词与工具白名单：pinned 规则固顶不截断，scoped 规则按字节预算裁剪，白名单外的工具由会话守卫拒绝。",
@@ -618,8 +618,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43573985551",
-          "publishTimestamp": 1794643580,
+          "version": "0.1.0-dev.43640508356",
+          "publishTimestamp": 1794690201,
           "source": {
             "type": "npm"
           },
@@ -645,7 +645,7 @@
         "en": "Session tree",
         "zh": "树状会话"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-session-tree@0.1.0-dev.43560031784/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-session-tree@0.1.0-dev.43640513725/icon.svg",
       "description": {
         "en-us": "Tree-structured conversations for the official DSH chat: switch message branches, edit user messages in place, recall pending or sent input, and retry assistant replies. Stores the complete tree separately and exports the active path in the official session format.",
         "zh-cn": "为官方 DSH 聊天提供树状会话：切换消息分支、原位编辑用户消息、撤回答复和待发送输入、重试助手回复。完整树独立保存，激活路径以官方会话格式导出。",
@@ -658,8 +658,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43560031784",
-          "publishTimestamp": 1794633395,
+          "version": "0.1.0-dev.43640513725",
+          "publishTimestamp": 1794690197,
           "source": {
             "type": "npm"
           },
@@ -685,7 +685,7 @@
         "en": "Shell selection",
         "zh": "Shell 选择"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-shell-select@1.0.1-dev.43624951028/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-shell-select@1.0.1-dev.43640495628/icon.svg",
       "description": {
         "en-us": "Choose the shell every agent command runs in — PowerShell, cmd, Git Bash, WSL, bash, zsh, fish or sh — with discovery, an explicit path override, per-shell status facts, a fixed self-test, and a refusal before any process exists when the selected shell cannot be confined.",
         "zh-cn": "选择每个智能体命令运行所用的 Shell——PowerShell、cmd、Git Bash、WSL、bash、zsh、fish 或 sh；支持自动探测、显式路径覆盖、逐 Shell 状态事实、固定自检，并在所选 Shell 无法被沙箱限制时于任何进程创建前拒绝执行。",
@@ -698,8 +698,8 @@
       },
       "versions": [
         {
-          "version": "1.0.1-dev.43624951028",
-          "publishTimestamp": 1794679881,
+          "version": "1.0.1-dev.43640495628",
+          "publishTimestamp": 1794690305,
           "source": {
             "type": "npm"
           },
@@ -885,7 +885,7 @@
         "en": "Thought buddy",
         "zh": "思考搭子"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-thought-buddy@2.0.0-dev.43611131021/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-thought-buddy@2.0.0-dev.43640621392/icon.svg",
       "description": {
         "en-us": "A dynamic little avatar animation before the DeepSeek Harness \"deep diving\" state — GrokBot-style SVG animation or emoji carousel",
         "zh-cn": "在「Deep diving…」状态前插入动态小表情头像——GrokBot 风格 SVG 动画或 emoji 轮播",
@@ -898,8 +898,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43611131021",
-          "publishTimestamp": 1794670809,
+          "version": "2.0.0-dev.43640621392",
+          "publishTimestamp": 1794690258,
           "source": {
             "type": "npm"
           },
@@ -965,7 +965,7 @@
         "en": "Web Search (Browser)",
         "zh": "网页搜索（浏览器）"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-web-search@2.0.0-dev.43573820528/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-web-search@2.0.0-dev.43640501700/icon.svg",
       "description": {
         "en-us": "Local browser tools browser_web_search and browser_web_fetch with validated search results, text or Markdown extraction, and optional persistent browser sessions.",
         "zh-cn": "通过本机浏览器提供 browser_web_search 和 browser_web_fetch，支持搜索结果校验、纯文本或 Markdown 提取，以及可选的持久化浏览器会话。",
@@ -978,8 +978,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43573820528",
-          "publishTimestamp": 1794643477,
+          "version": "2.0.0-dev.43640501700",
+          "publishTimestamp": 1794690262,
           "source": {
             "type": "npm"
           },
