@@ -765,7 +765,7 @@
         "en": "Web Search (Browser)",
         "zh": "网页搜索（浏览器）"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-web-search@2.0.0-dev.43351719519/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-web-search@2.0.0-dev.43573820528/icon.svg",
       "description": {
         "en-us": "Local browser tools browser_web_search and browser_web_fetch with validated search results, text or Markdown extraction, and optional persistent browser sessions.",
         "zh-cn": "通过本机浏览器提供 browser_web_search 和 browser_web_fetch，支持搜索结果校验、纯文本或 Markdown 提取，以及可选的持久化浏览器会话。",
@@ -778,8 +778,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43351719519",
-          "publishTimestamp": 1794536897,
+          "version": "2.0.0-dev.43573820528",
+          "publishTimestamp": 1794643477,
           "source": {
             "type": "npm"
           },
