@@ -338,6 +338,32 @@
     "relationship": []
   },
   {
+    "id": "@dsh-plugin/dsh-monaco",
+    "name": {
+      "zh": "Monaco 编辑器",
+      "zh-CN": "Monaco 编辑器",
+      "en": "Monaco editor",
+      "en-US": "Monaco editor"
+    },
+    "description": [
+      {
+        "language": "en-US",
+        "content": "Opens workspace text and code files in Monaco inside the right sidebar, editable and savable in place with a version guard against concurrent disk changes, and lets other plugins register languages, highlight rules, themes, commands and actions."
+      },
+      {
+        "language": "zh-CN",
+        "content": "在右侧边栏用 Monaco 打开工作区里的文本与代码文件，可直接编辑并保存，保存带版本守卫以防覆盖磁盘上的并发修改；同时向其他插件开放语言、高亮规则、主题、命令与动作的注册接口。"
+      }
+    ],
+    "support_versions": "[0.2.2-rc.2,0.3.0)",
+    "urls": {
+      "homepage": "https://github.com/dsh-plugins/dsh-monaco",
+      "repository": "https://github.com/dsh-plugins/dsh-monaco",
+      "issues": "https://github.com/dsh-plugins/dsh-monaco/issues"
+    },
+    "relationship": []
+  },
+  {
     "id": "@dsh-plugin/dsh-network-settings",
     "name": {
       "zh": "网络设置",
