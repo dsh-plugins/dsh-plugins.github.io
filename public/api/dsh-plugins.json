@@ -285,7 +285,7 @@
         "en": "Force read skill",
         "zh": "强制阅读 SKILL"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-force-read-skill@0.3.0-dev.43611106282/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-force-read-skill@0.3.0-dev.43640599338/icon.svg",
       "description": {
         "en-us": "Require the model to read an eligible skill before using other tools. Successful reads apply to the current session until context compaction.",
         "zh-cn": "要求模型先读取符合配置的 SKILL，再使用其他工具。已读状态在当前会话内持续至下一次成功的上下文压缩。",
@@ -298,8 +298,8 @@
       },
       "versions": [
         {
-          "version": "0.3.0-dev.43611106282",
-          "publishTimestamp": 1794670772,
+          "version": "0.3.0-dev.43640599338",
+          "publishTimestamp": 1794690433,
           "source": {
             "type": "npm"
           },
@@ -405,7 +405,7 @@
         "en": "Plugin loader",
         "zh": "插件加载器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.43611084704/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.43640739411/icon.svg",
       "description": {
         "en-us": "A version-aware runtime compatibility shim that keeps third-party plugins working unchanged across dsh upgrades",
         "zh-cn": "版本感知的运行时兼容层，让第三方插件在 dsh 升级后无需修改即可继续工作",
@@ -418,8 +418,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43611084704",
-          "publishTimestamp": 1794670860,
+          "version": "2.0.0-dev.43640739411",
+          "publishTimestamp": 1794690512,
           "source": {
             "type": "npm"
           },
@@ -845,7 +845,7 @@
         "en": "Synapse bridge",
         "zh": "Synapse 桥接"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-synapse@0.1.0-dev.43611121269/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-synapse@0.1.0-dev.43640615392/icon.svg",
       "description": {
         "en-us": "QQ and Discord chat bridging, GitHub PR/Issue review, local hybrid memory and Skill management powered by persistent DSH sessions",
         "zh-cn": "基于 DSH 驻留会话的 QQ 与 Discord 聊天桥接、GitHub PR/Issue 审查、本地混合记忆及 Skill 管理",
@@ -858,8 +858,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43611121269",
-          "publishTimestamp": 1794670925,
+          "version": "0.1.0-dev.43640615392",
+          "publishTimestamp": 1794690485,
           "source": {
             "type": "npm"
           },
