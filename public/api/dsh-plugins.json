@@ -325,7 +325,7 @@
         "en": "Git panel",
         "zh": "Git 面板"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-git-sidebar@0.1.0-dev.43616286549/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-git-sidebar@0.1.0-dev.43620812361/icon.svg",
       "description": {
         "en-us": "Adds a Git panel to the right Sidebar that manages the session worktree's repository: branch and upstream state, staging per file or per group, committing with a diff view, commit history lanes, branch switching, stash, fetch/pull/push, and per-hunk conflict resolution.",
         "zh-cn": "在右侧栏新增 Git 面板，直接管理会话工作目录所在的仓库：分支与上游状态、按文件或分组暂存、带差异视图的提交、提交历史泳道图、分支切换、储藏、fetch/pull/push，以及逐区冲突解决。",
@@ -338,8 +338,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43616286549",
-          "publishTimestamp": 1794674185,
+          "version": "0.1.0-dev.43620812361",
+          "publishTimestamp": 1794677149,
           "source": {
             "type": "npm"
           },
