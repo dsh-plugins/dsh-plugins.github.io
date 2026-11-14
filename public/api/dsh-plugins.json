@@ -394,6 +394,46 @@
       ]
     },
     {
+      "name": "@dsh-plugin/dsh-session-tree",
+      "title": {
+        "en": "Session tree",
+        "zh": "树状会话"
+      },
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-session-tree@0.1.0-dev.43560031784/icon.svg",
+      "description": {
+        "en-us": "Tree-structured conversations for the official DSH chat: switch message branches, edit user messages in place, recall pending or sent input, and retry assistant replies. Stores the complete tree separately and exports the active path in the official session format.",
+        "zh-cn": "为官方 DSH 聊天提供树状会话：切换消息分支、原位编辑用户消息、撤回答复和待发送输入、重试助手回复。完整树独立保存，激活路径以官方会话格式导出。",
+        "en": "Tree-structured conversations for the official DSH chat: switch message branches, edit user messages in place, recall pending or sent input, and retry assistant replies. Stores the complete tree separately and exports the active path in the official session format.",
+        "zh": "为官方 DSH 聊天提供树状会话：切换消息分支、原位编辑用户消息、撤回答复和待发送输入、重试助手回复。完整树独立保存，激活路径以官方会话格式导出。"
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-session-tree",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-session-tree"
+      },
+      "versions": [
+        {
+          "version": "0.1.0-dev.43560031784",
+          "publishTimestamp": 1794633395,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": "0.2.2-rc.1 || 0.2.2-rc.2"
+          }
+        },
+        {
+          "version": "0.0.1",
+          "publishTimestamp": 1794590211,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": "0.2.2-rc.1 || 0.2.2-rc.2"
+          }
+        }
+      ]
+    },
+    {
       "name": "@dsh-plugin/dsh-spellcheck-off",
       "title": {
         "en": "Disable Spellcheck",
