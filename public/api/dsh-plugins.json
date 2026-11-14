@@ -87,7 +87,7 @@
         "en": "Auxiliary models",
         "zh": "辅助模型"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.43583475957/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.43611093722/icon.svg",
       "description": {
         "en-us": "Auxiliary models for DeepSeek Harness",
         "zh-cn": "DeepSeek Harness 辅助模型插件",
@@ -100,8 +100,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43583475957",
-          "publishTimestamp": 1794650833,
+          "version": "2.0.0-dev.43611093722",
+          "publishTimestamp": 1794670762,
           "source": {
             "type": "npm"
           },
@@ -245,7 +245,7 @@
         "en": "Dynamic tools",
         "zh": "动态工具加载"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-dynamic-tools@0.1.0-dev.43582542989/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-dynamic-tools@0.1.0-dev.43611140243/icon.svg",
       "description": {
         "en-us": "Freezes the tool declaration list after a session's first step and delivers tools that appear later as trailing context, so a mid-conversation tool change no longer invalidates the cached prompt prefix.",
         "zh-cn": "会话首步之后冻结请求中的工具声明列表，之后出现的工具以对话尾部消息下发，中途的工具变化不再让已缓存的提示词前缀失效。",
@@ -258,8 +258,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43582542989",
-          "publishTimestamp": 1794650099,
+          "version": "0.1.0-dev.43611140243",
+          "publishTimestamp": 1794670777,
           "source": {
             "type": "npm"
           },
@@ -285,7 +285,7 @@
         "en": "Force read skill",
         "zh": "强制阅读 SKILL"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-force-read-skill@0.3.0-dev.43575947111/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-force-read-skill@0.3.0-dev.43611106282/icon.svg",
       "description": {
         "en-us": "Require the model to read an eligible skill before using other tools. Successful reads apply to the current session until context compaction.",
         "zh-cn": "要求模型先读取符合配置的 SKILL，再使用其他工具。已读状态在当前会话内持续至下一次成功的上下文压缩。",
@@ -298,8 +298,8 @@
       },
       "versions": [
         {
-          "version": "0.3.0-dev.43575947111",
-          "publishTimestamp": 1794645042,
+          "version": "0.3.0-dev.43611106282",
+          "publishTimestamp": 1794670772,
           "source": {
             "type": "npm"
           },
@@ -365,7 +365,7 @@
         "en": "Plugin loader",
         "zh": "插件加载器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.43582745196/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.43611084704/icon.svg",
       "description": {
         "en-us": "A version-aware runtime compatibility shim that keeps third-party plugins working unchanged across dsh upgrades",
         "zh-cn": "版本感知的运行时兼容层，让第三方插件在 dsh 升级后无需修改即可继续工作",
@@ -378,8 +378,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43582745196",
-          "publishTimestamp": 1794650313,
+          "version": "2.0.0-dev.43611084704",
+          "publishTimestamp": 1794670860,
           "source": {
             "type": "npm"
           },
@@ -485,7 +485,7 @@
         "en": "Monaco editor",
         "zh": "Monaco 编辑器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-monaco@0.1.0-dev.43600078069/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-monaco@0.1.0-dev.43611147450/icon.svg",
       "description": {
         "en-us": "Opens workspace text and code files in Monaco inside the right sidebar, editable and savable in place with a version guard against concurrent disk changes, and lets other plugins register languages, highlight rules, themes, commands and actions.",
         "zh-cn": "在右侧边栏用 Monaco 打开工作区里的文本与代码文件，可直接编辑并保存，保存带版本守卫以防覆盖磁盘上的并发修改；同时向其他插件开放语言、高亮规则、主题、命令与动作的注册接口。",
@@ -498,8 +498,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43600078069",
-          "publishTimestamp": 1794663170,
+          "version": "0.1.0-dev.43611147450",
+          "publishTimestamp": 1794670788,
           "source": {
             "type": "npm"
           },
@@ -525,7 +525,7 @@
         "en": "Network settings",
         "zh": "网络设置"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-network-settings@2.0.0-dev.43486433711/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-network-settings@2.0.0-dev.43611112749/icon.svg",
       "description": {
         "en-us": "User-Agent rewriting, HTTP/CONNECT/SOCKS5 proxy, and request retries. The next channel adds configurable response idle timeouts for HTTP and pi-ai.",
         "zh-cn": "支持 User-Agent 改写、HTTP/CONNECT/SOCKS5 代理和请求重试。开发版新增可配置的 HTTP 与 pi-ai 响应空闲超时。",
@@ -538,8 +538,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43486433711",
-          "publishTimestamp": 1794596015,
+          "version": "2.0.0-dev.43611112749",
+          "publishTimestamp": 1794670791,
           "source": {
             "type": "npm"
           },
@@ -805,7 +805,7 @@
         "en": "Synapse bridge",
         "zh": "Synapse 桥接"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-synapse@0.1.0-dev.43486441846/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-synapse@0.1.0-dev.43611121269/icon.svg",
       "description": {
         "en-us": "QQ and Discord chat bridging, GitHub PR/Issue review, local hybrid memory and Skill management powered by persistent DSH sessions",
         "zh-cn": "基于 DSH 驻留会话的 QQ 与 Discord 聊天桥接、GitHub PR/Issue 审查、本地混合记忆及 Skill 管理",
@@ -818,8 +818,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43486441846",
-          "publishTimestamp": 1794596197,
+          "version": "0.1.0-dev.43611121269",
+          "publishTimestamp": 1794670925,
           "source": {
             "type": "npm"
           },
@@ -845,7 +845,7 @@
         "en": "Thought buddy",
         "zh": "思考搭子"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-thought-buddy@2.0.0-dev.43486449182/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-thought-buddy@2.0.0-dev.43611131021/icon.svg",
       "description": {
         "en-us": "A dynamic little avatar animation before the DeepSeek Harness \"deep diving\" state — GrokBot-style SVG animation or emoji carousel",
         "zh-cn": "在「Deep diving…」状态前插入动态小表情头像——GrokBot 风格 SVG 动画或 emoji 轮播",
@@ -858,8 +858,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43486449182",
-          "publishTimestamp": 1794595968,
+          "version": "2.0.0-dev.43611131021",
+          "publishTimestamp": 1794670809,
           "source": {
             "type": "npm"
           },
