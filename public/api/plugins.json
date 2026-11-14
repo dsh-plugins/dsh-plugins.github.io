@@ -228,6 +228,32 @@
     ]
   },
   {
+    "id": "@dsh-plugin/dsh-gradle-tasks",
+    "name": {
+      "zh": "Gradle 任务",
+      "zh-CN": "Gradle 任务",
+      "en": "Gradle Tasks",
+      "en-US": "Gradle Tasks"
+    },
+    "description": [
+      {
+        "language": "en-US",
+        "content": "Browse every task of the current Gradle project in the DSH right Sidebar, grouped into folders by the group each task declares; double-click one to run it with the project wrapper and a chosen JDK, with the build output streamed back into the panel terminal."
+      },
+      {
+        "language": "zh-CN",
+        "content": "在 DSH 右侧边栏浏览当前 Gradle 项目的全部任务，按声明的 group 分文件夹展示；双击任务即可用项目 wrapper 和选定的 JDK 运行，输出实时回传到面板终端。"
+      }
+    ],
+    "support_versions": "[0.2.2-rc.2,0.3.0)",
+    "urls": {
+      "homepage": "https://github.com/dsh-plugins/dsh-gradle-tasks",
+      "repository": "https://github.com/dsh-plugins/dsh-gradle-tasks",
+      "issues": "https://github.com/dsh-plugins/dsh-gradle-tasks/issues"
+    },
+    "relationship": []
+  },
+  {
     "id": "@dsh-plugin/dsh-loader",
     "name": {
       "zh": "插件加载器",

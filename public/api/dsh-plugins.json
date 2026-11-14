@@ -320,6 +320,46 @@
       ]
     },
     {
+      "name": "@dsh-plugin/dsh-gradle-tasks",
+      "title": {
+        "en": "Gradle Tasks",
+        "zh": "Gradle 任务"
+      },
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-gradle-tasks@0.1.0-dev.43590112403/icon.svg",
+      "description": {
+        "en-us": "Browse every task of the current Gradle project in the DSH right Sidebar, grouped into folders by the group each task declares; double-click one to run it with the project wrapper and a chosen JDK, with the build output streamed back into the panel terminal.",
+        "zh-cn": "在 DSH 右侧边栏浏览当前 Gradle 项目的全部任务，按声明的 group 分文件夹展示；双击任务即可用项目 wrapper 和选定的 JDK 运行，输出实时回传到面板终端。",
+        "en": "Browse every task of the current Gradle project in the DSH right Sidebar, grouped into folders by the group each task declares; double-click one to run it with the project wrapper and a chosen JDK, with the build output streamed back into the panel terminal.",
+        "zh": "在 DSH 右侧边栏浏览当前 Gradle 项目的全部任务，按声明的 group 分文件夹展示；双击任务即可用项目 wrapper 和选定的 JDK 运行，输出实时回传到面板终端。"
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-gradle-tasks",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-gradle-tasks"
+      },
+      "versions": [
+        {
+          "version": "0.1.0-dev.43590112403",
+          "publishTimestamp": 1794655810,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.2 <0.3.0"
+          }
+        },
+        {
+          "version": "0.0.1",
+          "publishTimestamp": 1794654509,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.2 <0.3.0"
+          }
+        }
+      ]
+    },
+    {
       "name": "@dsh-plugin/dsh-loader",
       "title": {
         "en": "Plugin loader",
