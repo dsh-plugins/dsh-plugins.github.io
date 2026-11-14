@@ -560,6 +560,46 @@
       ]
     },
     {
+      "name": "@dsh-plugin/dsh-shell-select",
+      "title": {
+        "en": "Shell selection",
+        "zh": "Shell 选择"
+      },
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-shell-select@1.0.0-dev.43574212718/icon.svg",
+      "description": {
+        "en-us": "Choose the shell every agent command runs in — PowerShell, cmd, Git Bash, WSL, bash, zsh, fish or sh — with discovery, an explicit path override, per-shell status facts, a fixed self-test, and a refusal before any process exists when the selected shell cannot be confined.",
+        "zh-cn": "选择每个智能体命令运行所用的 Shell——PowerShell、cmd、Git Bash、WSL、bash、zsh、fish 或 sh；支持自动探测、显式路径覆盖、逐 Shell 状态事实、固定自检，并在所选 Shell 无法被沙箱限制时于任何进程创建前拒绝执行。",
+        "en": "Choose the shell every agent command runs in — PowerShell, cmd, Git Bash, WSL, bash, zsh, fish or sh — with discovery, an explicit path override, per-shell status facts, a fixed self-test, and a refusal before any process exists when the selected shell cannot be confined.",
+        "zh": "选择每个智能体命令运行所用的 Shell——PowerShell、cmd、Git Bash、WSL、bash、zsh、fish 或 sh；支持自动探测、显式路径覆盖、逐 Shell 状态事实、固定自检，并在所选 Shell 无法被沙箱限制时于任何进程创建前拒绝执行。"
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-shell-select",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-shell-select"
+      },
+      "versions": [
+        {
+          "version": "1.0.0",
+          "publishTimestamp": 1794644346,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-0 <0.3.0"
+          }
+        },
+        {
+          "version": "1.0.0-dev.43574212718",
+          "publishTimestamp": 1794643730,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-0 <0.3.0"
+          }
+        }
+      ]
+    },
+    {
       "name": "@dsh-plugin/dsh-spellcheck-off",
       "title": {
         "en": "Disable Spellcheck",
