@@ -87,7 +87,7 @@
         "en": "Auxiliary models",
         "zh": "辅助模型"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.43568696822/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.43583475957/icon.svg",
       "description": {
         "en-us": "Auxiliary models for DeepSeek Harness",
         "zh-cn": "DeepSeek Harness 辅助模型插件",
@@ -100,8 +100,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43568696822",
-          "publishTimestamp": 1794639597,
+          "version": "2.0.0-dev.43583475957",
+          "publishTimestamp": 1794650833,
           "source": {
             "type": "npm"
           },
@@ -245,7 +245,7 @@
         "en": "Dynamic tools",
         "zh": "动态工具加载"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-dynamic-tools@0.1.0-dev.43450988228/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-dynamic-tools@0.1.0-dev.43582542989/icon.svg",
       "description": {
         "en-us": "Freezes the tool declaration list after a session's first step and delivers tools that appear later as trailing context, so a mid-conversation tool change no longer invalidates the cached prompt prefix.",
         "zh-cn": "会话首步之后冻结请求中的工具声明列表，之后出现的工具以对话尾部消息下发，中途的工具变化不再让已缓存的提示词前缀失效。",
@@ -258,8 +258,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43450988228",
-          "publishTimestamp": 1794583143,
+          "version": "0.1.0-dev.43582542989",
+          "publishTimestamp": 1794650099,
           "source": {
             "type": "npm"
           },
@@ -325,7 +325,7 @@
         "en": "Plugin loader",
         "zh": "插件加载器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.43575304991/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.43582745196/icon.svg",
       "description": {
         "en-us": "A version-aware runtime compatibility shim that keeps third-party plugins working unchanged across dsh upgrades",
         "zh-cn": "版本感知的运行时兼容层，让第三方插件在 dsh 升级后无需修改即可继续工作",
@@ -338,8 +338,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43575304991",
-          "publishTimestamp": 1794644645,
+          "version": "2.0.0-dev.43582745196",
+          "publishTimestamp": 1794650313,
           "source": {
             "type": "npm"
           },
