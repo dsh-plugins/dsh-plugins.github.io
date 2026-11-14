@@ -236,12 +236,35 @@ async function gitVersions(plugin, directory, request) {
   return { name, versions };
 }
 
+/** 描述符语言键统一小写；缺少 en 时复制 en-us，缺少 zh 时复制 zh-cn。 */
+function descriptorName(title, fallback) {
+  if (!title || typeof title !== 'object') {
+    return fallback;
+  }
+  const en = title.en ?? title['en-us'];
+  const zh = title.zh ?? title['zh-cn'];
+  if (en === undefined && zh === undefined) {
+    return fallback;
+  }
+  const result = {};
+  if (zh !== undefined) {
+    result.zh = zh;
+    result['zh-CN'] = zh;
+  }
+  if (en !== undefined) {
+    result.en = en;
+    result['en-US'] = en;
+  }
+  return result;
+}
+
 /** 同一份描述符生成两种目录；所有请求和校验完成后才能写入部署目录。 */
-export async function generateIndex(plugins, { request = fetchJson, progress = console.log } = {}) {
+export async function generateCatalogs(plugins, { request = fetchJson, progress = console.log } = {}) {
   if (!Array.isArray(plugins)) {
     throw new Error('市场描述符必须是数组');
   }
   const entries = [];
+  const descriptors = [];
   for (const [position, plugin] of plugins.entries()) {
     progress(`[${position + 1}/${plugins.length}] 正在读取 ${plugin.id}`);
     const range = normalizeRange(plugin.support_versions, `${plugin.id}.support_versions`);
@@ -259,19 +282,21 @@ export async function generateIndex(plugins, { request = fetchJson, progress = c
     if (!versions.size) {
       throw new Error(`${plugin.id}: npm 和 GitHub 均无可收录的版本`);
     }
+    const metadata = await npmMetadata(npm.manifest, request);
     entries.push({
       name: git.name ?? plugin.id,
       title: plugin.name,
-      ...await npmMetadata(npm.manifest, request),
+      ...metadata,
       ...(plugin.description === undefined ? {} : { description: localizedDescription(plugin.description) }),
       ...(plugin.urls?.homepage ? { homepage: plugin.urls.homepage } : {}),
       ...(plugin.urls?.repository ? { repository: { url: plugin.urls.repository, ...(npm.directory ? { directory: npm.directory } : {}) } } : {}),
       versions: [...versions.values()].sort((a, b) => semver.rcompare(a.version, b.version)),
     });
+    descriptors.push({ ...plugin, name: descriptorName(metadata.title, plugin.name) });
   }
   const index = { format: 1, title: { en: 'DSH Plugins', 'zh-cn': 'DSH 插件市场' }, plugins: entries };
   parseMarketIndex(index, indexUrl);
-  return index;
+  return { index, plugins: descriptors };
 }
 
 async function main() {
@@ -279,8 +304,8 @@ async function main() {
   if (args.length !== 0 && (args.length !== 2 || args[0] !== '--input')) {
     throw new Error('用法: pnpm sync:market [--input 本地聚合文件]');
   }
-  const plugins = args.length ? JSON.parse(await readFile(resolve(args[1]), 'utf8')) : await fetchJson(sourceUrl);
-  const index = await generateIndex(plugins);
+  const source = args.length ? JSON.parse(await readFile(resolve(args[1]), 'utf8')) : await fetchJson(sourceUrl);
+  const { index, plugins } = await generateCatalogs(source);
   const output = resolve(dirname(fileURLToPath(import.meta.url)), '../public/api');
   await mkdir(output, { recursive: true });
   await writeFile(resolve(output, 'plugins.json'), `${JSON.stringify(plugins, null, 2)}\n`, 'utf8');

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { useI18n } from '../i18n'
-import { fetchPlugins, pickDescription, type MarketPluginResult } from '../api/plugins'
+import { fetchPlugins, nameTexts, pickDescription, pickName, type MarketPluginResult } from '../api/plugins'
 import IconGlyph from '../components/ui/IconGlyph.vue'
 
 const { t } = useI18n()
@@ -31,7 +31,7 @@ const filtered = computed(() => {
       : plugin.support_versions ?? ''
     return (
       plugin.id.toLowerCase().includes(q) ||
-      plugin.name.toLowerCase().includes(q) ||
+      nameTexts(plugin).some((name) => name.toLowerCase().includes(q)) ||
       desc.includes(q) ||
       support.toLowerCase().includes(q)
     )
@@ -104,7 +104,7 @@ function stop(e: MouseEvent) {
               <IconGlyph name="box" :size="20" :stroke="1.8" />
             </div>
             <div class="card-id">
-              <h2 class="card-name">{{ result.plugin.name }}</h2>
+              <h2 class="card-name">{{ pickName(result.plugin) }}</h2>
               <code class="card-pkg">{{ result.plugin.id }}</code>
             </div>
             <IconGlyph v-if="cardLink(result)" name="external" :size="15" :stroke="1.8" class="card-ext" />

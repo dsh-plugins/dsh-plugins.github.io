@@ -22,7 +22,8 @@ export interface PluginUrls {
 
 export interface MarketPlugin {
   id: string
-  name: string
+  /** 单语言名称，或按语言键给出的多语言名称。 */
+  name: string | Record<string, string>
   description?: string | PluginDescription[]
   support_versions?: string | string[]
   urls?: PluginUrls
@@ -45,6 +46,19 @@ export function pickDescription(plugin: MarketPlugin): string {
   const lang = document.documentElement.lang === 'zh-CN' ? 'zh-CN' : 'en-US'
   const match = desc.find((d) => d.language === lang)
   return (match ?? desc[0])?.content ?? ''
+}
+
+/** 插件名称按当前语言取值，语言对象缺少当前语言时回退到 en 与首个取值。 */
+export function pickName(plugin: MarketPlugin): string {
+  const name = plugin.name
+  if (typeof name === 'string') return name
+  const lang = document.documentElement.lang === 'zh-CN' ? 'zh-cn' : 'en'
+  return name[lang] ?? name[lang.split('-')[0]!] ?? name.en ?? Object.values(name)[0] ?? ''
+}
+
+/** 名称的全部语言取值，搜索需要覆盖当前语言以外的文本。 */
+export function nameTexts(plugin: MarketPlugin): string[] {
+  return typeof plugin.name === 'string' ? [plugin.name] : Object.values(plugin.name)
 }
 
 export async function fetchPlugins(): Promise<MarketPluginResult[]> {

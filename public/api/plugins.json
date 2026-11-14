@@ -1,7 +1,12 @@
 [
   {
     "id": "@dsh-plugin/dsh-agent-plan-entry",
-    "name": "DSH Agent Plan Entry",
+    "name": {
+      "zh": "Agent 计划模式入口",
+      "zh-CN": "Agent 计划模式入口",
+      "en": "Agent plan mode entry",
+      "en-US": "Agent plan mode entry"
+    },
     "description": [
       {
         "language": "en-US",
@@ -49,7 +54,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-auxiliary",
-    "name": "DSH Auxiliary",
+    "name": {
+      "zh": "辅助模型",
+      "zh-CN": "辅助模型",
+      "en": "Auxiliary models",
+      "en-US": "Auxiliary models"
+    },
     "description": [
       {
         "language": "en-US",
@@ -103,7 +113,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-claude-provider",
-    "name": "DSH Claude Provider",
+    "name": {
+      "zh": "Claude 提供商",
+      "zh-CN": "Claude 提供商",
+      "en": "Claude provider",
+      "en-US": "Claude provider"
+    },
     "description": [
       {
         "language": "en-US",
@@ -156,7 +171,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-dynamic-tools",
-    "name": "DSH Dynamic Tools",
+    "name": {
+      "zh": "动态工具加载",
+      "zh-CN": "动态工具加载",
+      "en": "Dynamic tools",
+      "en-US": "Dynamic tools"
+    },
     "description": [
       {
         "language": "en-US",
@@ -177,7 +197,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-force-read-skill",
-    "name": "DSH Force Read Skill",
+    "name": {
+      "zh": "强制阅读 SKILL",
+      "zh-CN": "强制阅读 SKILL",
+      "en": "Force read skill",
+      "en-US": "Force read skill"
+    },
     "description": [
       {
         "language": "en-US",
@@ -204,7 +229,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-loader",
-    "name": "DSH Loader",
+    "name": {
+      "zh": "插件加载器",
+      "zh-CN": "插件加载器",
+      "en": "Plugin loader",
+      "en-US": "Plugin loader"
+    },
     "description": [
       {
         "language": "en-US",
@@ -225,7 +255,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-model-prompt",
-    "name": "DSH Model Prompt",
+    "name": {
+      "zh": "模型专用提示词",
+      "zh-CN": "模型专用提示词",
+      "en": "Model Prompts",
+      "en-US": "Model Prompts"
+    },
     "description": [
       {
         "language": "en-US",
@@ -246,7 +281,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-network-settings",
-    "name": "DSH Network Settings",
+    "name": {
+      "zh": "网络设置",
+      "zh-CN": "网络设置",
+      "en": "Network settings",
+      "en-US": "Network settings"
+    },
     "description": [
       {
         "language": "en-US",
@@ -273,7 +313,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-session-tree",
-    "name": "DSH Session Tree",
+    "name": {
+      "zh": "树状会话",
+      "zh-CN": "树状会话",
+      "en": "Session tree",
+      "en-US": "Session tree"
+    },
     "description": [
       {
         "language": "en-US",
@@ -300,7 +345,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-spellcheck-off",
-    "name": "DSH Spellcheck Off",
+    "name": {
+      "zh": "禁用拼写检查",
+      "zh-CN": "禁用拼写检查",
+      "en": "Disable Spellcheck",
+      "en-US": "Disable Spellcheck"
+    },
     "description": [
       {
         "language": "en-US",
@@ -321,7 +371,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-subagent-control",
-    "name": "DSH Subagent Control",
+    "name": {
+      "zh": "子代理控制",
+      "zh-CN": "子代理控制",
+      "en": "Subagent control",
+      "en-US": "Subagent control"
+    },
     "description": [
       {
         "language": "en-US",
@@ -342,7 +397,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-subagent-intro",
-    "name": "DSH Subagent Intro",
+    "name": {
+      "zh": "子代理介绍提示词",
+      "zh-CN": "子代理介绍提示词",
+      "en": "Subagent model introduction",
+      "en-US": "Subagent model introduction"
+    },
     "description": [
       {
         "language": "en-US",
@@ -363,7 +423,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-synapse",
-    "name": "DSH Synapse",
+    "name": {
+      "zh": "Synapse 桥接",
+      "zh-CN": "Synapse 桥接",
+      "en": "Synapse bridge",
+      "en-US": "Synapse bridge"
+    },
     "description": [
       {
         "language": "en-US",
@@ -390,7 +455,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-thought-buddy",
-    "name": "DSH Thought Buddy",
+    "name": {
+      "zh": "思考搭子",
+      "zh-CN": "思考搭子",
+      "en": "Thought buddy",
+      "en-US": "Thought buddy"
+    },
     "description": [
       {
         "language": "en-US",
@@ -417,7 +487,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-ui-experience",
-    "name": "DSH UI Experience",
+    "name": {
+      "zh": "界面体验",
+      "zh-CN": "界面体验",
+      "en": "Interface experience",
+      "en-US": "Interface experience"
+    },
     "description": [
       {
         "language": "en-US",
@@ -438,7 +513,12 @@
   },
   {
     "id": "@dsh-plugin/dsh-web-search",
-    "name": "DSH Web Search (Browser)",
+    "name": {
+      "zh": "网页搜索（浏览器）",
+      "zh-CN": "网页搜索（浏览器）",
+      "en": "Web Search (Browser)",
+      "en-US": "Web Search (Browser)"
+    },
     "description": [
       {
         "language": "en-US",

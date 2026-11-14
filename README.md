@@ -118,9 +118,10 @@ MIT and GPL-3.0.
 
 `public/api/plugins.json` 保留市场描述符，`public/api/dsh-plugins.json` 提供官方 `format: 1` 索引。
 两个文件由 `pnpm sync:market` 一起生成，工作流每三小时执行，并在网站部署前同步。
+`plugins.json` 的 `name` 可以是字符串或语言对象；生成器复用官方索引的 npm locale `meta.title`，按 `{zh, en, en-US, zh-CN}` 输出（中文族取 `zh`/`zh-cn`，英文族取 `en`/`en-us`，缺一族时只输出该族两键），没有本地化标题的条目保留描述符字符串。
 生成器读取 npm 的 latest/next 标签和 GitHub 的最新稳定版、预发布版标签；同版本优先 npm。
 描述采用市场描述符，语言键统一小写；缺少 `en` 时优先复制 `en-us`，否则使用首个语言文本；缺少 `zh` 时复制 `zh-cn`，显式提供的 `zh` 优先。
-显示名称与图标优先读取 npm `next` 对应的精确版本；没有 `next` 时读取 `latest`。生成器通过 jsDelivr 文件列表发现 `exports` 声明的 `./locale/*.json` 或具体 locale 路径，从各语言 JSON 的 `meta.title` 生成多语言 `title`，并按相同规则补充默认语言键。语言键归一化后，精确导出优先于通配导出。
+显示名称与图标优先读取 npm `next` 对应的精确版本；没有 `next` 时读取 `latest`。生成器通过 jsDelivr 文件列表发现 `exports` 声明的 `./locale/*.json` 或具体 locale 路径，从各语言 JSON 的 `meta.title` 生成多语言 `title` 与 `plugins.json` 的 `name` 对象，并按相同规则补充默认语言键。语言键归一化后，精确导出优先于通配导出。
 图标优先使用包的顶层 `icon`，其次使用 `exports["./icon"]`；生成的 `icon` 为固定精确版本的 `https://cdn.jsdelivr.net/npm/<包名>@<版本>/<资源路径>`，支持 SVG、PNG、JPEG 和 WebP。资源声明使用包内相对路径字符串；locale 最大 1 MiB，图标最大 256 KiB。
 未声明资源或没有 locale 标题时保留描述符名称，未声明图标时省略 `icon`。已声明文件缺失、路径非法、标题非法或 CDN 请求失败会终止生成，避免将不完整的目录发布上线。
 任何网络或校验错误会终止部署。使用 `pnpm sync:market --input ../dsh-plugin-market/plugins.json` 可以从本地聚合文件生成。
