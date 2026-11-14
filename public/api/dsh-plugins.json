@@ -169,7 +169,7 @@
         "ru": "Провайдер Claude",
         "zh": "Claude 提供商"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-claude-provider@0.8.0-dev.43563127132/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-claude-provider@0.8.0-dev.43574311959/icon.svg",
       "description": {
         "en-us": "Adds a dedicated Claude provider type with an Anthropic Messages form, a per-model adaptive thinking switch, thinking budgets for budget-driven models, and paginated Anthropic model discovery that fills recorded capacities for known Claude models.",
         "zh-cn": "新增专用的 Claude 提供商类型，提供 Anthropic Messages 表单、逐模型自适应思考开关、预算思考模型的思考 token 预算，以及分页的 Anthropic 模型探测，并为已知 Claude 模型预填录制的容量参数。",
@@ -192,8 +192,8 @@
           }
         },
         {
-          "version": "0.8.0-dev.43563127132",
-          "publishTimestamp": 1794635365,
+          "version": "0.8.0-dev.43574311959",
+          "publishTimestamp": 1794643862,
           "source": {
             "type": "npm"
           },
@@ -475,6 +475,46 @@
           },
           "engines": {
             "dsh": ">=0.1.5"
+          }
+        }
+      ]
+    },
+    {
+      "name": "@dsh-plugin/dsh-prompt-router",
+      "title": {
+        "en": "Prompt Router",
+        "zh": "提示词路由"
+      },
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-prompt-router@0.1.0-dev.43573985551/icon.svg",
+      "description": {
+        "en-us": "Assemble each session's system prompt and tool whitelist from the YAML frontmatter of AGENTS.md and SKILL.md, a bound custom mode, and live runtime probes. Pinned rules are never truncated, scoped rules are budgeted by byte size, and a per-session guard rejects tools outside the whitelist.",
+        "zh-cn": "按 AGENTS.md / SKILL.md 的 YAML 头部规则、已绑定的自定义模式与运行时探测，为每个会话动态拼装系统提示词与工具白名单：pinned 规则固顶不截断，scoped 规则按字节预算裁剪，白名单外的工具由会话守卫拒绝。",
+        "en": "Assemble each session's system prompt and tool whitelist from the YAML frontmatter of AGENTS.md and SKILL.md, a bound custom mode, and live runtime probes. Pinned rules are never truncated, scoped rules are budgeted by byte size, and a per-session guard rejects tools outside the whitelist.",
+        "zh": "按 AGENTS.md / SKILL.md 的 YAML 头部规则、已绑定的自定义模式与运行时探测，为每个会话动态拼装系统提示词与工具白名单：pinned 规则固顶不截断，scoped 规则按字节预算裁剪，白名单外的工具由会话守卫拒绝。"
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-prompt-router",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-prompt-router"
+      },
+      "versions": [
+        {
+          "version": "0.1.0-dev.43573985551",
+          "publishTimestamp": 1794643580,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": "0.2.2-rc.1 || 0.2.2-rc.2"
+          }
+        },
+        {
+          "version": "0.0.1",
+          "publishTimestamp": 1794643135,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": "0.2.2-rc.1 || 0.2.2-rc.2"
           }
         }
       ]
