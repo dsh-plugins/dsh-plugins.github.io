@@ -285,7 +285,7 @@
         "en": "Force read skill",
         "zh": "强制阅读 SKILL"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-force-read-skill@0.2.0-dev.43486415085/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-force-read-skill@0.3.0-dev.43575947111/icon.svg",
       "description": {
         "en-us": "Require the model to read an eligible skill before using other tools. Successful reads apply to the current session until context compaction.",
         "zh-cn": "要求模型先读取符合配置的 SKILL，再使用其他工具。已读状态在当前会话内持续至下一次成功的上下文压缩。",
@@ -298,8 +298,8 @@
       },
       "versions": [
         {
-          "version": "0.2.0-dev.43486415085",
-          "publishTimestamp": 1794595950,
+          "version": "0.3.0-dev.43575947111",
+          "publishTimestamp": 1794645042,
           "source": {
             "type": "npm"
           },
@@ -325,7 +325,7 @@
         "en": "Plugin loader",
         "zh": "插件加载器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.43494735845/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.43575304991/icon.svg",
       "description": {
         "en-us": "A version-aware runtime compatibility shim that keeps third-party plugins working unchanged across dsh upgrades",
         "zh-cn": "版本感知的运行时兼容层，让第三方插件在 dsh 升级后无需修改即可继续工作",
@@ -338,8 +338,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43494735845",
-          "publishTimestamp": 1794599235,
+          "version": "2.0.0-dev.43575304991",
+          "publishTimestamp": 1794644645,
           "source": {
             "type": "npm"
           },
@@ -565,7 +565,7 @@
         "en": "Shell selection",
         "zh": "Shell 选择"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-shell-select@1.0.0-dev.43574212718/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-shell-select@1.0.0-dev.43575325175/icon.svg",
       "description": {
         "en-us": "Choose the shell every agent command runs in — PowerShell, cmd, Git Bash, WSL, bash, zsh, fish or sh — with discovery, an explicit path override, per-shell status facts, a fixed self-test, and a refusal before any process exists when the selected shell cannot be confined.",
         "zh-cn": "选择每个智能体命令运行所用的 Shell——PowerShell、cmd、Git Bash、WSL、bash、zsh、fish 或 sh；支持自动探测、显式路径覆盖、逐 Shell 状态事实、固定自检，并在所选 Shell 无法被沙箱限制时于任何进程创建前拒绝执行。",
@@ -588,8 +588,8 @@
           }
         },
         {
-          "version": "1.0.0-dev.43574212718",
-          "publishTimestamp": 1794643730,
+          "version": "1.0.0-dev.43575325175",
+          "publishTimestamp": 1794644550,
           "source": {
             "type": "npm"
           },
