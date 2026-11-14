@@ -87,7 +87,7 @@
         "en": "Auxiliary models",
         "zh": "辅助模型"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.43486458003/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.43568696822/icon.svg",
       "description": {
         "en-us": "Auxiliary models for DeepSeek Harness",
         "zh-cn": "DeepSeek Harness 辅助模型插件",
@@ -100,8 +100,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43486458003",
-          "publishTimestamp": 1794597047,
+          "version": "2.0.0-dev.43568696822",
+          "publishTimestamp": 1794639597,
           "source": {
             "type": "npm"
           },
@@ -685,7 +685,7 @@
         "en": "Interface experience",
         "zh": "界面体验"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-ui-experience@1.0.0-dev.43523254861/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-ui-experience@1.0.0-dev.43568313249/icon.svg",
       "description": {
         "en-us": "Makes the interface follow the Material You palette matugen generates on the system and unifies the interface border width, both toggled from a settings row.",
         "zh-cn": "让界面跟随系统 matugen 生成的 Material You 配色，并统一界面边框宽度，均可在设置行内开关。",
@@ -698,8 +698,8 @@
       },
       "versions": [
         {
-          "version": "1.0.0-dev.43523254861",
-          "publishTimestamp": 1794610798,
+          "version": "1.0.0-dev.43568313249",
+          "publishTimestamp": 1794639276,
           "source": {
             "type": "npm"
           },
