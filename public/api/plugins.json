@@ -454,6 +454,31 @@
     ]
   },
   {
+    "id": "@dsh-plugin/dsh-rich-presence",
+    "name": {
+      "zh": "Discord 活动状态",
+      "zh-CN": "Discord 活动状态",
+      "en": "Rich presence",
+      "en-US": "Rich presence"
+    },
+    "description": [
+      {
+        "language": "en-US",
+        "content": "Show the running agent's activity, model, and token usage in Discord Rich Presence, preserving session statistics across replay, resume, and compaction."
+      },
+      {
+        "language": "zh-CN",
+        "content": "在 Discord Rich Presence 中展示运行中智能体的活动、模型和 Token 用量，并在会话重放、恢复和压缩后保留统计数据。"
+      }
+    ],
+    "support_versions": ">=0.2.2-rc.2 <0.3.0",
+    "urls": {
+      "homepage": "https://github.com/dsh-plugins/dsh-rich-presence",
+      "repository": "https://github.com/dsh-plugins/dsh-rich-presence",
+      "issues": "https://github.com/dsh-plugins/dsh-rich-presence/issues"
+    }
+  },
+  {
     "id": "@dsh-plugin/dsh-session-tree",
     "name": {
       "zh": "树状会话",

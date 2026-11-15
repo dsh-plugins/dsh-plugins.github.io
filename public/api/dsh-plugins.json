@@ -640,6 +640,46 @@
       ]
     },
     {
+      "name": "@dsh-plugin/dsh-rich-presence",
+      "title": {
+        "en": "Rich presence",
+        "zh": "Discord 活动状态"
+      },
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-rich-presence@0.4.0-dev.43711497271/icon.svg",
+      "description": {
+        "en-us": "Show the running agent's activity, model, and token usage in Discord Rich Presence, preserving session statistics across replay, resume, and compaction.",
+        "zh-cn": "在 Discord Rich Presence 中展示运行中智能体的活动、模型和 Token 用量，并在会话重放、恢复和压缩后保留统计数据。",
+        "en": "Show the running agent's activity, model, and token usage in Discord Rich Presence, preserving session statistics across replay, resume, and compaction.",
+        "zh": "在 Discord Rich Presence 中展示运行中智能体的活动、模型和 Token 用量，并在会话重放、恢复和压缩后保留统计数据。"
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-rich-presence",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-rich-presence"
+      },
+      "versions": [
+        {
+          "version": "0.4.0-dev.43711497271",
+          "publishTimestamp": 1794744053,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.2 <0.3.0"
+          }
+        },
+        {
+          "version": "0.0.1",
+          "publishTimestamp": 1794743406,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.2 <0.3.0"
+          }
+        }
+      ]
+    },
+    {
       "name": "@dsh-plugin/dsh-session-tree",
       "title": {
         "en": "Session tree",
