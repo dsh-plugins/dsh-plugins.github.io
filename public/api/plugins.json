@@ -193,7 +193,13 @@
       "repository": "https://github.com/dsh-plugins/dsh-dynamic-tools",
       "issues": "https://github.com/dsh-plugins/dsh-dynamic-tools/issues"
     },
-    "relationship": []
+    "relationship": [
+      {
+        "type": "dependency",
+        "id": "@dsh-plugin/dsh-loader",
+        "versions": "^2.0.0-dev.43799314028"
+      }
+    ]
   },
   {
     "id": "@dsh-plugin/dsh-force-read-skill",
