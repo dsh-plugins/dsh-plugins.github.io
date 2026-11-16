@@ -312,6 +312,43 @@
     "relationship": []
   },
   {
+    "id": "@dsh-plugin/dsh-markdown-translation",
+    "name": {
+      "zh": "思考翻译格式增强",
+      "zh-CN": "思考翻译格式增强",
+      "en": "Reasoning Markdown Translation",
+      "en-US": "Reasoning Markdown Translation"
+    },
+    "description": [
+      {
+        "language": "en-US",
+        "content": "Preserve Markdown in streaming reasoning translations, with official translation and dsh-auxiliary model support."
+      },
+      {
+        "language": "zh-CN",
+        "content": "保护思考翻译的 Markdown 格式，支持流式翻译，兼容官方翻译及 dsh-auxiliary 模型选择。"
+      }
+    ],
+    "support_versions": ">=0.2.2-alpha.2 <0.2.3-0",
+    "urls": {
+      "homepage": "https://github.com/dsh-plugins/dsh-markdown-translation",
+      "repository": "https://github.com/dsh-plugins/dsh-markdown-translation",
+      "issues": "https://github.com/dsh-plugins/dsh-markdown-translation/issues"
+    },
+    "relationship": [
+      {
+        "type": "dependency",
+        "id": "@dsh-plugin/dsh-loader",
+        "versions": "^2.0.0-dev.43799314028"
+      },
+      {
+        "type": "dependency",
+        "id": "@deepseek-ai/dsh-experimental-cot-translation-bundle",
+        "versions": ">=0.2.2-alpha.2 <0.2.3-0"
+      }
+    ]
+  },
+  {
     "id": "@dsh-plugin/dsh-mode-builder",
     "name": {
       "zh": "模式构建器",
