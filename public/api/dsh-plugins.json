@@ -920,6 +920,46 @@
       ]
     },
     {
+      "name": "@dsh-plugin/dsh-subagent-panel",
+      "title": {
+        "zh": "外部子智能体面板",
+        "en": "外部子智能体面板"
+      },
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-subagent-panel@0.1.0-dev.43813167367/icon.svg",
+      "description": {
+        "en-us": "Open Codex and Claude Code tasks from the native subagent list to view live tool calls and intermediate output in the sidebar, and continue their native sessions. Requires the corresponding official subagent provider.",
+        "zh-cn": "从原生子智能体列表打开 Codex、Claude Code 任务，在侧栏查看实时工具调用与中间输出，并在原生会话中继续发送消息。需启用对应的官方子智能体插件。",
+        "en": "Open Codex and Claude Code tasks from the native subagent list to view live tool calls and intermediate output in the sidebar, and continue their native sessions. Requires the corresponding official subagent provider.",
+        "zh": "从原生子智能体列表打开 Codex、Claude Code 任务，在侧栏查看实时工具调用与中间输出，并在原生会话中继续发送消息。需启用对应的官方子智能体插件。"
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-subagent-panel",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-subagent-panel"
+      },
+      "versions": [
+        {
+          "version": "0.1.0-dev.43813167367",
+          "publishTimestamp": 1794808709,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.3 <0.2.3"
+          }
+        },
+        {
+          "version": "0.0.1",
+          "publishTimestamp": 1794808151,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.3 <0.2.3"
+          }
+        }
+      ]
+    },
+    {
       "name": "@dsh-plugin/dsh-synapse",
       "title": {
         "en": "Synapse bridge",
