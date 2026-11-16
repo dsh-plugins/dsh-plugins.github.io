@@ -11,7 +11,7 @@
         "en": "Agent plan mode entry",
         "zh": "Agent 计划模式入口"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-agent-plan-entry@1.3.0-dev.43450955544/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-agent-plan-entry@1.3.0-dev.43855638306/icon.svg",
       "description": {
         "en-us": "Adds the enter_plan_mode tool and reminds the agent to plan first for medium or complex tasks, delivering plan-mode guidance at the conversation tail so entering or leaving plan mode never rewrites the cached prompt prefix.",
         "zh-cn": "提供 enter_plan_mode 工具，并在中等或复杂任务上提醒 Agent 先规划；计划模式指引搬到对话尾部，进入或退出计划模式都不再重写已缓存的提示词前缀。",
@@ -24,8 +24,8 @@
       },
       "versions": [
         {
-          "version": "1.3.0-dev.43450955544",
-          "publishTimestamp": 1794583461,
+          "version": "1.3.0-dev.43855638306",
+          "publishTimestamp": 1794827674,
           "source": {
             "type": "npm"
           },
