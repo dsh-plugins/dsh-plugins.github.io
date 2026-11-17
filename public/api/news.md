@@ -7,6 +7,15 @@
 > 
 > — 古镇天Gugle
 
+## 2026/11/17
+
+### DeepSeek Harness 0.2.2-rc.4 发布
+
+#### 问题修复
+
+- 优化模型请求收到异常消息响应时的表现 @turtle2099
+- 修复 LiveShare 在桌面端无法创建分享的问题 @mektpoy
+
 ## 2026/11/13
 
 ### DeepSeek Harness 0.2.2-rc.3 发布
