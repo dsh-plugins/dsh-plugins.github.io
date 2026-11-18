@@ -1125,7 +1125,7 @@
         "en": "Workspace groups",
         "zh": "工作区分区"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-workspace-group@0.1.0-dev.44231007558/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-workspace-group@0.1.0-dev.44234143750/icon.svg",
       "description": {
         "en-us": "Organize DSH workspaces into collapsible groups. Move workspaces with the context menu or drag and drop, automatically collapse workspace sessions while dragging, and persist group membership.",
         "zh-cn": "为 DSH 工作区创建可折叠分区，通过右键菜单或拖动归类；拖动时自动收起工作区会话列表，并保存分区和工作区归属。",
@@ -1138,8 +1138,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.44231007558",
-          "publishTimestamp": 1794972819,
+          "version": "0.1.0-dev.44234143750",
+          "publishTimestamp": 1794974596,
           "source": {
             "type": "npm"
           },
