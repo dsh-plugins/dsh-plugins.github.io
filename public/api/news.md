@@ -7,6 +7,14 @@
 > 
 > — 古镇天Gugle
 
+## 2026/11/18
+
+### DeepSeek Harness 0.2.2-rc.5 发布
+
+#### 体验优化
+
+- DeepSeek 模型使用 DeepSeek 服务端搜索，搜索不按次收费；其他模型默认使用 DeepSeek Search API @LegGasai
+
 ## 2026/11/17
 
 ### DeepSeek Harness 0.2.2-rc.4 发布
