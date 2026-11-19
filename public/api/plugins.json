@@ -465,6 +465,38 @@
     ]
   },
   {
+    "id": "@dsh-plugin/dsh-npm-mirror",
+    "name": {
+      "zh": "npm 镜像",
+      "zh-CN": "npm 镜像",
+      "en": "npm Mirrors",
+      "en-US": "npm Mirrors"
+    },
+    "description": [
+      {
+        "language": "en-US",
+        "content": "Manage and prioritize npm registries from the DSH Add Plugin menu."
+      },
+      {
+        "language": "zh-CN",
+        "content": "在 DSH 添加插件菜单中编辑 npm 仓库名称、URL 和尝试顺序。"
+      }
+    ],
+    "support_versions": "0.2.2-rc.3",
+    "urls": {
+      "homepage": "https://github.com/dsh-plugins/dsh-npm-mirror",
+      "repository": "https://github.com/dsh-plugins/dsh-npm-mirror",
+      "issues": "https://github.com/dsh-plugins/dsh-npm-mirror/issues"
+    },
+    "relationship": [
+      {
+        "type": "dependency",
+        "id": "@dsh-plugin/dsh-loader",
+        "versions": "2.0.0-dev.43799314028"
+      }
+    ]
+  },
+  {
     "id": "@dsh-plugin/dsh-prompt-router",
     "name": {
       "zh": "提示词路由",
