@@ -645,7 +645,7 @@
         "en": "npm Mirrors",
         "zh": "npm 镜像"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-npm-mirror@0.1.0-dev.44679048716/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-npm-mirror@0.1.0-dev.44701808819/icon.svg",
       "description": {
         "en-us": "Manage and prioritize npm registries from the DSH Add Plugin menu.",
         "zh-cn": "在 DSH 添加插件菜单中编辑 npm 仓库名称、URL 和尝试顺序。",
@@ -658,8 +658,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.44679048716",
-          "publishTimestamp": 1795151531,
+          "version": "0.1.0-dev.44701808819",
+          "publishTimestamp": 1795163054,
           "source": {
             "type": "npm"
           },
