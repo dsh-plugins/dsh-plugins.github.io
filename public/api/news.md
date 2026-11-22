@@ -7,6 +7,97 @@
 > 
 > — 古镇天Gugle
 
+## 2026/11/22
+
+### DeepSeek Harness 0.2.3-alpha.1 发布
+
+#### 新增功能
+
+- 插件市场支持添加 Git 仓库作为插件来源，私有仓库中的插件也能浏览和安装 @acehinnnqru
+- 新增实验性时间线插件，可查看智能体任务树、阻塞事项和进展报告，点击进度条可展开任务树，任务与报告语言可选跟随对话 @Magolor
+- 新增代码审阅页面，可集中查看本人相关的 GitHub PR，浏览描述和变更，并在页内与智能体协作审阅 @LegGasai
+- 代码审阅插件新增扩展机制，插件可添加自己的审阅视图和行注解，并在工具栏、文件菜单和评论框中加入自定义操作；同时支持评审和合并 GitLab @LegGasai
+- 新增会话状态区域，可集中查看工作目录、变更请求、子智能体、任务和插件状态，支持在较窄窗口停靠及拖动调整分区顺序 @LegGasai
+- 新增会话已读/未读状态，完成后提醒未读，可用菜单或快捷键切换；改善最近会话切换并保留侧栏状态 @Saafo, @imccyu
+- Web 连接模式新增远程登录，可使用独立登录链接或设备配对方式访问，并提供标准化连接鉴权 API 供插件注册 @EricMoin, @imccyu
+- 插件页支持统一管理连接器账号，MCP 支持 OAuth 授权与凭据自动刷新；CLI 应用插件共用账号管理和上游技能下载能力 @grllll
+- 新增可选的 Linear、Notion、腾讯文档、飞书、企业微信、腾讯会议和钉钉连接器插件，可在插件页连接或授权后在对话中使用相应服务 @grllll
+
+#### 体验优化
+
+- 简化模型菜单中的智能体团队入口，开关与开销说明移到二级面板 @Yifffan
+- 修复子智能体模型选择与消息来源识别，授权设置及时生效，并完善结果汇报和关键发现通知 @Dudu-0223
+- 改善子代理、分支会话阅读与创建体验，继承历史与新消息之间显示分隔线 @turtle2099, @Yifffan, @imccyu
+- 加快会话列表与 @ 引用候选的加载 @turtle2099, @turtle1999
+- 优化搜索列表的模糊与跨语言匹配，例如输入 cpt 可找到 /compact；新建会话时可按名称或目录路径搜索工作区 @turtle1999, @acehinnnqru
+- 优化自动化任务的推荐、删除确认和会话标记，新增「每周回顾」推荐 @ZiyaZhang, @turtle2099, @turtle1999
+- 优化 DeepSeek 图片上传，多张图片并发上传，遇到限流时自动重试 @CreatixChu
+- 改善 web_fetch 网络失败时的提示，显示可读的失败原因和处理建议 @turtle2099, @Elevator14B
+- 优化代码审阅与工作树体验，变更请求列表更紧凑、可折叠，GitHub PR 状态更新更及时，变更浏览更清晰；工作树可自定义分支名、从远端分支创建，并在首条消息发出后创建 @LegGasai, @imccyu, @turtle2099
+- 改善长会话中流式输出、轮次导航和拖动右侧栏时的响应，减少大型 Markdown 表格和列表在对话与文档预览中的卡顿 @turtle2099, @imccyu, @std-microblock
+- 优化界面显示与列表交互，统一图标、对齐和间距，改善侧栏滚动与拖动排序，修复多处显示问题 @turtle2099, @grllll, @yixiangihsiang, @shigma, @std4453, @oraluben, @winewill, @07akioni
+- Office 技能统一通过 /office 提供 Word、PowerPoint 和 Excel 指引，旧格式命令和自定义配置需迁移；内置 Python 提供 pypdf，Office 指引也说明如何用它处理已有 PDF @yudshj
+- 可从对话中的压缩记录在右侧栏预览手动或自动生成的上下文压缩摘要 @yudshj
+- 桌面版可从应用菜单直接打开「设置」，菜单同步显示当前生效的单步快捷键 @lsdsjy
+- 在空白输入框按 ↑ 可召回本会话已发送的消息文本，再用 ↑/↓ 浏览，不覆盖正在编辑的草稿 @std4453
+- 文件右键菜单新增「添加到对话」，可直接插入引用并继续编辑，不会自动发送 @Kaige-Gao
+- 可将普通会话从列表拖到右侧栏打开并继续对话，无需离开当前会话 @turtle2099, @Yifffan, @liukx0205
+- 可在「模型」设置中自定义内置目录模型的推理档位，关闭自定义后沿用目录默认档位 @LegGasai
+- 优化共享会话在各功能中的支持度，读者可以参与更多操作 @mektpoy
+
+#### 问题修复
+
+- 修复切换模型后首个请求超出上下文时会话卡住的问题，自动恢复和 /compact 改用最近回答的模型生成摘要 @LegGasai
+- 修复 DeepSeek 图片上传问题：服务无响应时不再每次请求都长时间等待，取消上传不再导致运行时退出 @CreatixChu, @LegGasai
+- 修复在 Python wheel 等单文件运行时中恢复旧版会话失败的问题 @Magolor
+- 修复在 PTC 程序中通过 gh 或 git push 操作的 PR 不出现在代码审阅面板的问题 @LegGasai
+- 修复 macOS 上输入框按 Home/End 会滚动对话的问题，现在移到当前行首或行末 @ZiyaZhang
+- 修复浏览器拒绝剪贴板写入时复制按钮无效的问题 @turtle2099, @turtle1999
+- 修复 Windows 安装完成时拖动导致输入卡住和关闭按钮失效，以及卸载后残留系统登记、清理失败未报告的问题 @winewill
+- 修复 Windows 桌面版用「在应用中打开」启动 VS Code、Cursor 等编辑器失败的问题 @turtle2099, @huoyaoyuan, @turtle1999
+- 修复桌面版打开用量、充值页面后 Cmd+W 无法关闭窗口的问题 @turtle2099, @turtle1999
+- 修复只创建或编辑过自动化任务的会话也显示时钟标记的问题 @Magolor
+- 修复切换会话时草稿附件丢失的问题，上传和图片预览也会保留 @mektpoy
+- 修正插件管理的重启指引，变更已生效时不再要求重启 @turtle2099, @turtle1999
+- 修复不存在的 @ 路径被显示为文件引用的问题 @LegGasai
+- 修复实验性个性化页面无法在后台创建的问题 @Dudu-0223
+- 修复 read 和 glob 在处理大文件或大量结果后持续占用过多内存的问题 @turtle2099, @imccyu
+- 修复新建文件引用和文件标签在会话切换工作目录后可能指向错误文件的问题；依赖 fileAddressFor 返回相对地址的插件需适配 @LegGasai
+- 修复智能体团队任务领取失败时提示不明确的问题，已完成或删除的任务不再提示写入范围重叠 @Dudu-0223
+- 修复 Web 应用通用安装图标显示为直角方块的问题，改用透明圆角 @EricMoin
+- 修复桌面诊断历史因文件身份误判或 Windows 临时打开失败而遗漏部分操作记录的问题 @Chinesezjc
+- 修复手动输入 @ 路径时字符顺序打乱、光标位置错误的问题 @LegGasai
+- 修复经 pi 接入的模型发送超限图片时未正确缩图的问题，发送前按尺寸和字节上限缩图，原始附件不变；自定义图片配置需按升级指南适配 @CreatixChu
+- 修复在同一主机的多个端口登录 Web 版后，旧登录状态累积可能导致页面打不开的问题 @LegGasai
+- 修复点击模型选择菜单里的分组标题或空白处时，菜单意外关闭的问题 @shigma
+
+#### 其他变更
+
+- 调整系统提示词与 SDK 时区处理：系统指令按来源增量更新，压缩后重建；SDK 普通提示可逐条指定时区，未指定时使用可识别的运行时时区，自定义集成需按升级指南适配 @Tuyixiang, @yudshj
+- 同步 Cordis 上游至 4.0.0-rc.12，并更新 Loader 与 Include；调整相关 API、YAML 解析和配置校验，插件与自定义配置需按升级指南迁移 @shigma
+- 调整 Cordis 检查工具，将创造模式的多个工具合并为 cordis_inspect，并在标准模式默认启用，支持查询运行中的 DSH 版本 @turtle1999, @turtle2099, @Dudu-0223
+- 原 Cordis 插件配置由仅支持后端读取调整为同时支持前端读取，并对 volatile 类型配置支持实时同步 @imccyu
+- 启用 HMR 时，--patch 覆盖文件修改后无需重启即可生效 @shigma
+- 调整插件设置与启停入口，插件页可直接打开设置，「内置插件」设置跳转到插件管理 @turtle2099, @LegGasai, @turtle1999
+- 调整 Computer Use，macOS 统一系统键鼠输入授权，Windows 新增实验性支持；并改善操作稳定性与设置指引 @huoyaoyuan, @agicy, @CreatixChu, @Dudu-0223, @kermanx
+- 调整 Computer Use 的接入方式，可通过 cua-mcp 以 MCP 服务器形式提供外部调用，标准模式以及 SDK、headless 等接入也默认可用 cua_run_code @LegGasai, @turtle1999
+- 调整 PTC 运行与结果展示：Node PTC 默认在调用间保留变量，支持重复声明、用 inspect 展示文本、图片和工具结果，并截断超限输出；移除 Python PTC 支持 @kermanx, @imccyu, @turtle1999, @turtle2099, @Dudu-0223, @sjw1231, @tianyicui
+- 调整各类工具的失败结果，统一携带结构化错误名与错误码，部分已有错误码按升级指南改名 @sjw1231
+- 规范模块的导出入口，移除仅供测试的导出和旧子路径，类型改从 /types 或包根导入 @imccyu
+- 调整会话状态迁到新包 dsh-client-ui-session-status，读取会话状态的插件需在 inject 中声明 @imccyu
+- 调整客户端插件产物结构，样式改由框架在挂载时安装，CSS Modules 类名格式变化 @imccyu
+- 调整会话 cwd，文件视图与 workspace-write 边界随之切换，工作树 Git 写操作需额外授权；移除 working_directory 和委派 cwd 参数，工作树改用 enter_worktree / exit_worktree，旧会话恢复到原项目 @LegGasai
+- 默认开启个性化推荐插件，推荐直接显示在智能体回答中 @ZiyaZhang, @Dudu-0223
+- 恢复实验性「持久终端」的启停与详情入口，安装后默认关闭 @LegGasai
+- 调整会话存储，支持实验性 SQLite 后端，需手动配置启用，默认仍使用 JSONL @liukx0205
+- DeepSeek 的 API 密钥提供方现显示为「DeepSeek API」，以区别于 DeepSeek 账号；模型、搜索和网页抓取统一通过 ctx.deepseekAuth 获取授权，自定义组合与相关插件需按升级指南迁移 @turtle2099, @LegGasai, @liyao, @yudshj
+- 调整分支会话创建接口，自定义分支调用需同时提供完整历史和父会话来源（parentSource） @liukx0205
+- 扩展会话工具，提供可选的只读工作区和会话列表；Web 的跨会话消息工具默认关闭，启用后智能体可按用户要求向同一运行时的其他普通会话发送文本，支持跨工作区 @Dudu-0223
+- 调整 SDK 恢复会话接口，支持指定 permissionMode 覆盖原有权限 @koalazf99
+- 调整 list_agents，同时返回子智能体并发占用、上限和成员列表；读取结构化结果的调用方需改从 agents 字段查找成员 @Dudu-0223
+- 扩展输入框接口，插件可为不同会话的空白输入框提供行内提示，不改动用户草稿 @EricMoin
+- 新增可选的 MCP 工具按需加载模式，减少模型请求的上下文占用 @grllll
+
 ## 2026/11/18
 
 ### DeepSeek Harness 0.2.2-rc.5 发布
