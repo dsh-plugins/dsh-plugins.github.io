@@ -87,7 +87,7 @@
         "en": "Auxiliary models",
         "zh": "辅助模型"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.44672587241/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.45162175667/icon.svg",
       "description": {
         "en-us": "Auxiliary models for DeepSeek Harness",
         "zh-cn": "DeepSeek Harness 辅助模型插件",
@@ -100,8 +100,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.44672587241",
-          "publishTimestamp": 1795148013,
+          "version": "2.0.0-dev.45162175667",
+          "publishTimestamp": 1795432304,
           "source": {
             "type": "npm"
           },
@@ -245,7 +245,7 @@
         "en": "Dynamic tools",
         "zh": "动态工具加载"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-dynamic-tools@0.1.0-dev.45110446452/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-dynamic-tools@0.1.0-dev.45138053160/icon.svg",
       "description": {
         "en-us": "Freezes the tool declaration list after a session's first step and delivers tools that appear later as trailing context, so a mid-conversation tool change no longer invalidates the cached prompt prefix.",
         "zh-cn": "会话首步之后冻结请求中的工具声明列表，之后出现的工具以对话尾部消息下发，中途的工具变化不再让已缓存的提示词前缀失效。",
@@ -258,8 +258,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.45110446452",
-          "publishTimestamp": 1795407389,
+          "version": "0.1.0-dev.45138053160",
+          "publishTimestamp": 1795422453,
           "source": {
             "type": "npm"
           },
@@ -405,7 +405,7 @@
         "en": "Plugin loader",
         "zh": "插件加载器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.45113504100/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.45160670240/icon.svg",
       "description": {
         "en-us": "A version-aware runtime compatibility shim that keeps third-party plugins working unchanged across dsh upgrades",
         "zh-cn": "版本感知的运行时兼容层，让第三方插件在 dsh 升级后无需修改即可继续工作",
@@ -418,8 +418,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.45113504100",
-          "publishTimestamp": 1795409301,
+          "version": "2.0.0-dev.45160670240",
+          "publishTimestamp": 1795431775,
           "source": {
             "type": "npm"
           },
@@ -1165,7 +1165,7 @@
         "en": "Workspace groups",
         "zh": "工作区分区"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-workspace-group@0.1.0-dev.44282498136/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-workspace-group@0.1.0-dev.45139132305/icon.svg",
       "description": {
         "en-us": "Organize DSH workspaces into collapsible groups. Move workspaces with the context menu or drag and drop, automatically collapse workspace sessions while dragging, and persist group membership.",
         "zh-cn": "为 DSH 工作区创建可折叠分区，通过右键菜单或拖动归类；拖动时自动收起工作区会话列表，并保存分区和工作区归属。",
@@ -1178,8 +1178,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.44282498136",
-          "publishTimestamp": 1794996865,
+          "version": "0.1.0-dev.45139132305",
+          "publishTimestamp": 1795422803,
           "source": {
             "type": "npm"
           },
