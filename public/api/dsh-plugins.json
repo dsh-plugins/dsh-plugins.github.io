@@ -445,7 +445,7 @@
         "en": "Reasoning Markdown Translation",
         "zh": "思考翻译格式增强"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-markdown-translation@0.1.0-dev.43813082121/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-markdown-translation@0.1.0-dev.45329477934/icon.svg",
       "description": {
         "en-us": "Preserve Markdown in streaming reasoning translations, with official translation and dsh-auxiliary model support.",
         "zh-cn": "保护思考翻译的 Markdown 格式，支持流式翻译，兼容官方翻译及 dsh-auxiliary 模型选择。",
@@ -458,13 +458,13 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43813082121",
-          "publishTimestamp": 1794808574,
+          "version": "0.1.0-dev.45329477934",
+          "publishTimestamp": 1795496223,
           "source": {
             "type": "npm"
           },
           "engines": {
-            "dsh": ">=0.2.2-alpha.2 <0.2.3-0"
+            "dsh": ">=0.2.2-alpha.3 <0.2.3-0 || >=0.2.3-alpha.2 <0.2.4-0"
           }
         },
         {
