@@ -605,7 +605,7 @@
         "en": "Monaco editor",
         "zh": "Monaco 编辑器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-monaco@0.2.0-dev.44504705832/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-monaco@0.2.0-dev.45439858583/icon.svg",
       "description": {
         "en-us": "Opens workspace text and code files in Monaco inside the right sidebar, editable and savable in place with a version guard against concurrent disk changes, and lets other plugins register languages, highlight rules, themes, commands and actions.",
         "zh-cn": "在右侧边栏用 Monaco 打开工作区里的文本与代码文件，可直接编辑并保存，保存带版本守卫以防覆盖磁盘上的并发修改；同时向其他插件开放语言、高亮规则、主题、命令与动作的注册接口。",
@@ -618,8 +618,8 @@
       },
       "versions": [
         {
-          "version": "0.2.0-dev.44504705832",
-          "publishTimestamp": 1795083878,
+          "version": "0.2.0-dev.45439858583",
+          "publishTimestamp": 1795539340,
           "source": {
             "type": "npm"
           },
