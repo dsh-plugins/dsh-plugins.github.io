@@ -560,6 +560,46 @@
       ]
     },
     {
+      "name": "@dsh-plugin/dsh-model-selector",
+      "title": {
+        "en": "Model Selector",
+        "zh": "模型选择器"
+      },
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-model-selector@0.1.0-dev.45342971851/icon.svg",
+      "description": {
+        "en-us": "Four model picker layouts for the DeepSeek Harness composer, with searchable models, reasoning controls, and an animated Ultra mode for Agent Teams.",
+        "zh-cn": "为 DeepSeek Harness 输入框提供四种模型选择器样式，支持搜索模型、选择推理强度和带动效的 Ultra 团队协作档位。",
+        "en": "Four model picker layouts for the DeepSeek Harness composer, with searchable models, reasoning controls, and an animated Ultra mode for Agent Teams.",
+        "zh": "为 DeepSeek Harness 输入框提供四种模型选择器样式，支持搜索模型、选择推理强度和带动效的 Ultra 团队协作档位。"
+      },
+      "homepage": "https://github.com/dsh-plugins/dsh-model-selector",
+      "repository": {
+        "url": "https://github.com/dsh-plugins/dsh-model-selector"
+      },
+      "versions": [
+        {
+          "version": "0.1.0-dev.45342971851",
+          "publishTimestamp": 1795503011,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.3"
+          }
+        },
+        {
+          "version": "0.0.1",
+          "publishTimestamp": 1795502165,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.3"
+          }
+        }
+      ]
+    },
+    {
       "name": "@dsh-plugin/dsh-monaco",
       "title": {
         "en": "Monaco editor",
@@ -1165,7 +1205,7 @@
         "en": "Workspace groups",
         "zh": "工作区分区"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-workspace-group@0.1.0-dev.45139132305/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-workspace-group@0.1.0-dev.45343432795/icon.svg",
       "description": {
         "en-us": "Organize DSH workspaces into collapsible groups. Move workspaces with the context menu or drag and drop, automatically collapse workspace sessions while dragging, and persist group membership.",
         "zh-cn": "为 DSH 工作区创建可折叠分区，通过右键菜单或拖动归类；拖动时自动收起工作区会话列表，并保存分区和工作区归属。",
@@ -1178,8 +1218,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.45139132305",
-          "publishTimestamp": 1795422803,
+          "version": "0.1.0-dev.45343432795",
+          "publishTimestamp": 1795503177,
           "source": {
             "type": "npm"
           },

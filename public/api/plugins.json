@@ -413,6 +413,38 @@
     "relationship": []
   },
   {
+    "id": "@dsh-plugin/dsh-model-selector",
+    "name": {
+      "zh": "模型选择器",
+      "zh-CN": "模型选择器",
+      "en": "Model Selector",
+      "en-US": "Model Selector"
+    },
+    "description": [
+      {
+        "language": "en-US",
+        "content": "Four model picker layouts for the DeepSeek Harness composer, with searchable models, reasoning controls, and an animated Ultra mode for Agent Teams."
+      },
+      {
+        "language": "zh-CN",
+        "content": "为 DeepSeek Harness 输入框提供四种模型选择器样式，支持搜索模型、选择推理强度和带动效的 Ultra 团队协作档位。"
+      }
+    ],
+    "support_versions": "[0.2.2-rc.3,)",
+    "urls": {
+      "homepage": "https://github.com/dsh-plugins/dsh-model-selector",
+      "repository": "https://github.com/dsh-plugins/dsh-model-selector",
+      "issues": "https://github.com/dsh-plugins/dsh-model-selector/issues"
+    },
+    "relationship": [
+      {
+        "type": "dependency",
+        "id": "@dsh-plugin/dsh-loader",
+        "versions": "^2.0.0-dev.45160670240"
+      }
+    ]
+  },
+  {
     "id": "@dsh-plugin/dsh-monaco",
     "name": {
       "zh": "Monaco 编辑器",
