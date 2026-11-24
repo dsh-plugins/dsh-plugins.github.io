@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { generateCatalogs } from './sync-market.mjs';
+import { matchesRange } from './version-range.mjs';
 
 const plugin = {
   id: '@foo/bar', name: 'Foo', support_versions: '[0.1.0-rc.6,0.2.0-rc.1);[0.2.1-rc.4,)',
@@ -47,6 +48,41 @@ test('双渠道去重优先 npm，并保留 GitHub 独有预发布版本', async
   assert.equal(entry.description.en, 'Example');
   assert.equal(entry.description['zh-cn'], '示例');
   assert.equal(entry.description.zh, '示例');
+});
+
+test('按发布版本判断兼容性，只有清单未声明时使用描述符', async () => {
+  const data = fixture();
+  const request = data.request;
+  data.request = async (url, optional) => {
+    const result = await request(url, optional);
+    if (url.startsWith('https://registry.npmjs.org/')) {
+      result.versions['1.0.0'].engines = { dsh: '0.2.2-rc.3' };
+      result.versions['1.1.0-rc.1'].engines = { dsh: '>=0.2.3-alpha.2 <0.2.4-0' };
+    } else if (url.includes('raw.githubusercontent.com') && result.version === '1.2.0-rc.1') {
+      result.engines = { dsh: '>=0.2.4-alpha.1 <0.2.5-0' };
+    }
+    return result;
+  };
+  const { index: { plugins: [{ versions }] } } = await generateCatalogs([plugin], data);
+  assert.deepEqual(versions.filter((v) => matchesRange(v.engines.dsh, '0.2.3-alpha.2')).map((v) => v.version), ['1.1.0-rc.1']);
+  assert.deepEqual(versions.filter((v) => matchesRange(v.engines.dsh, '0.2.4-alpha.1')).map((v) => v.version), ['1.2.0-rc.1']);
+  assert.equal(versions[2].source.type, 'npm');
+  assert.equal(versions[2].engines.dsh, '0.2.2-rc.3');
+  const { index } = await generateCatalogs([plugin], fixture());
+  assert.ok(index.plugins[0].versions.every((v) => matchesRange(v.engines.dsh, '0.2.3-alpha.2')));
+});
+
+test('显式清单版本范围无效时报告包名与版本', async () => {
+  const data = fixture();
+  const request = data.request;
+  data.request = async (url, optional) => {
+    const result = await request(url, optional);
+    if (url.startsWith('https://registry.npmjs.org/')) {
+      result.versions['1.0.0'].engines = { dsh: '[0.2.2,)' };
+    }
+    return result;
+  };
+  await assert.rejects(generateCatalogs([plugin], data), /@foo\/bar@1\.0\.0: 无效的 engines.dsh/);
 });
 
 test('缺失 npm 包或 next 标签时仍收录有效的 GitHub 版本', async () => {

@@ -150,6 +150,17 @@ function assertBundle(manifest, name, version) {
   }
 }
 
+function manifestEngines(manifest) {
+  const range = manifest.engines?.dsh;
+  if (range === undefined) {
+    return undefined;
+  }
+  if (typeof range !== 'string' || !range.trim() || semver.validRange(range, { includePrerelease: true }) === null) {
+    throw new Error(`${manifest.name}@${manifest.version}: 无效的 engines.dsh`);
+  }
+  return { dsh: range.trim() };
+}
+
 async function npmVersions(plugin, request) {
   if (plugin.id.startsWith('github:')) {
     return { versions: [], directory: undefined };
@@ -173,6 +184,7 @@ async function npmVersions(plugin, request) {
       version,
       publishTimestamp: timestamp(pack.time?.[version], `${plugin.id}@${version}`),
       source: { type: 'npm' },
+      engines: manifestEngines(manifest),
     });
   }
   const latest = pack.versions?.[pack['dist-tags']?.latest];
@@ -231,6 +243,7 @@ async function gitVersions(plugin, directory, request) {
       version: tag.version,
       publishTimestamp: timestamp(details.commit?.committer?.date, `${repo}/${commit}`),
       source: { type: 'git', url: `https://github.com/${repo}`, commit, ...(directory ? { path: directory } : {}) },
+      engines: manifestEngines(manifest),
     });
   }
   return { name, versions };
@@ -276,7 +289,7 @@ export async function generateCatalogs(plugins, { request = fetchJson, progress 
     const versions = new Map();
     for (const entry of [...npm.versions, ...git.versions]) {
       if (!versions.has(entry.version)) {
-        versions.set(entry.version, { ...entry, engines: { dsh: range } });
+        versions.set(entry.version, { ...entry, engines: entry.engines ?? { dsh: range } });
       }
     }
     if (!versions.size) {
