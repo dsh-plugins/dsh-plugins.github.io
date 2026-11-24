@@ -405,7 +405,7 @@
         "en": "Plugin loader",
         "zh": "插件加载器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.45160670240/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.45328381034/icon.svg",
       "description": {
         "en-us": "A version-aware runtime compatibility shim that keeps third-party plugins working unchanged across dsh upgrades",
         "zh-cn": "版本感知的运行时兼容层，让第三方插件在 dsh 升级后无需修改即可继续工作",
@@ -418,8 +418,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.45160670240",
-          "publishTimestamp": 1795431775,
+          "version": "2.0.0-dev.45328381034",
+          "publishTimestamp": 1795495699,
           "source": {
             "type": "npm"
           },
@@ -714,7 +714,7 @@
             "type": "npm"
           },
           "engines": {
-            "dsh": ">=0.2.2-alpha.1"
+            "dsh": "0.2.2-rc.1 || 0.2.2-rc.2"
           }
         }
       ]
@@ -794,7 +794,7 @@
             "type": "npm"
           },
           "engines": {
-            "dsh": ">=0.2.2-alpha.1"
+            "dsh": "0.2.2-rc.1 || 0.2.2-rc.2"
           }
         }
       ]
@@ -824,7 +824,7 @@
             "type": "npm"
           },
           "engines": {
-            "dsh": ">=0.2.2-0 <0.3.0"
+            "dsh": ">=0.2.2-0"
           }
         },
         {
@@ -834,7 +834,7 @@
             "type": "npm"
           },
           "engines": {
-            "dsh": ">=0.2.2-0 <0.3.0"
+            "dsh": ">=0.2.2-0"
           }
         }
       ]
@@ -965,7 +965,7 @@
         "zh": "外部子智能体面板",
         "en": "外部子智能体面板"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-subagent-panel@0.1.0-dev.43813167367/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-subagent-panel@0.1.0-dev.45325618326/icon.svg",
       "description": {
         "en-us": "Open Codex and Claude Code tasks from the native subagent list to view live tool calls and intermediate output in the sidebar, and continue their native sessions. Requires the corresponding official subagent provider.",
         "zh-cn": "从原生子智能体列表打开 Codex、Claude Code 任务，在侧栏查看实时工具调用与中间输出，并在原生会话中继续发送消息。需启用对应的官方子智能体插件。",
@@ -978,8 +978,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43813167367",
-          "publishTimestamp": 1794808709,
+          "version": "0.1.0-dev.45325618326",
+          "publishTimestamp": 1795494402,
           "source": {
             "type": "npm"
           },
