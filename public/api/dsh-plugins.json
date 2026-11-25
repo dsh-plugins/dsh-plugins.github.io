@@ -325,7 +325,7 @@
         "en": "Git panel",
         "zh": "Git 面板"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-git-sidebar@0.1.0-dev.45329723482/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-git-sidebar@0.1.0-dev.45574158484/icon.svg",
       "description": {
         "en-us": "Adds a Git panel to the right Sidebar that manages the session worktree's repository: branch and upstream state, staging per file or per group, committing with a diff view, commit history lanes, branch switching, stash, fetch/pull/push, and per-hunk conflict resolution.",
         "zh-cn": "在右侧栏新增 Git 面板，直接管理会话工作目录所在的仓库：分支与上游状态、按文件或分组暂存、带差异视图的提交、提交历史泳道图、分支切换、储藏、fetch/pull/push，以及逐区冲突解决。",
@@ -338,13 +338,13 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.45329723482",
-          "publishTimestamp": 1795496363,
+          "version": "0.1.0-dev.45574158484",
+          "publishTimestamp": 1795594528,
           "source": {
             "type": "npm"
           },
           "engines": {
-            "dsh": ">=0.2.3-alpha.2 <0.2.4-0"
+            "dsh": ">=0.2.2-rc.3 <0.2.3-0 || >=0.2.3-alpha.2 <0.2.4-0"
           }
         },
         {
@@ -445,7 +445,7 @@
         "en": "Reasoning Markdown Translation",
         "zh": "思考翻译格式增强"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-markdown-translation@0.1.0-dev.45329477934/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-markdown-translation@0.1.0-dev.45574211155/icon.svg",
       "description": {
         "en-us": "Preserve Markdown in streaming reasoning translations, with official translation and dsh-auxiliary model support.",
         "zh-cn": "保护思考翻译的 Markdown 格式，支持流式翻译，兼容官方翻译及 dsh-auxiliary 模型选择。",
@@ -458,8 +458,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.45329477934",
-          "publishTimestamp": 1795496223,
+          "version": "0.1.0-dev.45574211155",
+          "publishTimestamp": 1795594469,
           "source": {
             "type": "npm"
           },
@@ -685,7 +685,7 @@
         "en": "npm Mirrors",
         "zh": "npm 镜像"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-npm-mirror@0.1.0-dev.45331072891/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-npm-mirror@0.1.0-dev.45574178689/icon.svg",
       "description": {
         "en-us": "Manage and prioritize npm registries from the DSH Add Plugin menu.",
         "zh-cn": "在 DSH 添加插件菜单中编辑 npm 仓库名称、URL 和尝试顺序。",
@@ -698,13 +698,13 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.45331072891",
-          "publishTimestamp": 1795497051,
+          "version": "0.1.0-dev.45574178689",
+          "publishTimestamp": 1795594459,
           "source": {
             "type": "npm"
           },
           "engines": {
-            "dsh": ">=0.2.3-alpha.2 <0.2.4-0"
+            "dsh": ">=0.2.2-rc.3 <0.2.3-0 || >=0.2.3-alpha.2 <0.2.4-0"
           }
         },
         {
@@ -805,7 +805,7 @@
         "en": "Session tree",
         "zh": "树状会话"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-session-tree@0.1.0-dev.45329747353/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-session-tree@0.1.0-dev.45574194865/icon.svg",
       "description": {
         "en-us": "Tree-structured conversations for the official DSH chat: switch message branches, edit user messages in place, recall pending or sent input, and retry assistant replies. Stores the complete tree separately and exports the active path in the official session format.",
         "zh-cn": "为官方 DSH 聊天提供树状会话：切换消息分支、原位编辑用户消息、撤回答复和待发送输入、重试助手回复。完整树独立保存，激活路径以官方会话格式导出。",
@@ -818,13 +818,13 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.45329747353",
-          "publishTimestamp": 1795496363,
+          "version": "0.1.0-dev.45574194865",
+          "publishTimestamp": 1795594458,
           "source": {
             "type": "npm"
           },
           "engines": {
-            "dsh": "0.2.2-rc.1 || 0.2.2-rc.2 || 0.2.2-rc.3 || >=0.2.3-alpha.2 <0.2.4-0"
+            "dsh": "0.2.2-rc.1 || 0.2.2-rc.2 || 0.2.2-rc.3 || 0.2.2-rc.4 || 0.2.2-rc.5 || >=0.2.3-alpha.2 <0.2.4-0"
           }
         },
         {
