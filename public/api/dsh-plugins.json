@@ -405,7 +405,7 @@
         "en": "Plugin loader",
         "zh": "插件加载器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.45328381034/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.45572825995/icon.svg",
       "description": {
         "en-us": "A version-aware runtime compatibility shim that keeps third-party plugins working unchanged across dsh upgrades",
         "zh-cn": "版本感知的运行时兼容层，让第三方插件在 dsh 升级后无需修改即可继续工作",
@@ -418,8 +418,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.45328381034",
-          "publishTimestamp": 1795495699,
+          "version": "2.0.0-dev.45572825995",
+          "publishTimestamp": 1795593992,
           "source": {
             "type": "npm"
           },
