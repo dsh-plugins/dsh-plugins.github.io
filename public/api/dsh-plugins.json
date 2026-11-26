@@ -87,7 +87,7 @@
         "en": "Auxiliary models",
         "zh": "辅助模型"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.45597086947/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-auxiliary@2.0.0-dev.45752150723/icon.svg",
       "description": {
         "en-us": "Auxiliary models for DeepSeek Harness",
         "zh-cn": "DeepSeek Harness 辅助模型插件",
@@ -100,8 +100,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.45597086947",
-          "publishTimestamp": 1795603652,
+          "version": "2.0.0-dev.45752150723",
+          "publishTimestamp": 1795665681,
           "source": {
             "type": "npm"
           },
@@ -169,7 +169,7 @@
         "ru": "Провайдер Claude",
         "zh": "Claude 提供商"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-claude-provider@0.9.1-dev.45750836877/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-claude-provider@0.9.1-dev.45752160374/icon.svg",
       "description": {
         "en-us": "Adds a dedicated Claude provider type with an Anthropic Messages form, a per-model adaptive thinking switch, thinking budgets for budget-driven models, paginated Anthropic model discovery that fills recorded capacities for known Claude models, a per-route prompt-cache lifetime, and mixed 5-minute/1-hour cache lifetimes per request section.",
         "zh-cn": "新增专用的 Claude 提供商类型，提供 Anthropic Messages 表单、逐模型自适应思考开关、预算思考模型的思考 token 预算、分页的 Anthropic 模型探测并为已知 Claude 模型预填录制的容量参数，以及按路由设置的提示缓存时长与按请求分段混合的 5 分钟／1 小时缓存时长。",
@@ -182,8 +182,8 @@
       },
       "versions": [
         {
-          "version": "0.9.1-dev.45750836877",
-          "publishTimestamp": 1795664909,
+          "version": "0.9.1-dev.45752160374",
+          "publishTimestamp": 1795665655,
           "source": {
             "type": "npm"
           },
@@ -405,7 +405,7 @@
         "en": "Plugin loader",
         "zh": "插件加载器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.45572825995/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-loader@2.0.0-dev.45752173879/icon.svg",
       "description": {
         "en-us": "A version-aware runtime compatibility shim that keeps third-party plugins working unchanged across dsh upgrades",
         "zh-cn": "版本感知的运行时兼容层，让第三方插件在 dsh 升级后无需修改即可继续工作",
@@ -418,8 +418,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.45572825995",
-          "publishTimestamp": 1795593992,
+          "version": "2.0.0-dev.45752173879",
+          "publishTimestamp": 1795665703,
           "source": {
             "type": "npm"
           },
@@ -485,7 +485,7 @@
         "en": "Mode builder",
         "zh": "模式构建器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-mode-builder@0.1.0-dev.43640633451/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-mode-builder@0.1.0-dev.45752148624/icon.svg",
       "description": {
         "en-us": "Derive custom Agent modes from Standard, Minimal, PTC, Creator, or any existing mode in the plugin settings page: pick the tools and SKILL a mode keeps, then choose the new mode when starting a session.",
         "zh-cn": "在插件配置页从标准、极简、PTC、创造或任意既有模式派生自定义 Agent 模式：勾选要保留的工具与 SKILL，新建会话时直接选用。",
@@ -498,8 +498,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43640633451",
-          "publishTimestamp": 1794690275,
+          "version": "0.1.0-dev.45752148624",
+          "publishTimestamp": 1795665843,
           "source": {
             "type": "npm"
           },
@@ -525,7 +525,7 @@
         "en": "Model Prompts",
         "zh": "模型专用提示词"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-model-prompt@0.1.0-dev.45741158744/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-model-prompt@0.1.0-dev.45752148357/icon.svg",
       "description": {
         "en-us": "Matches prompt files against the current model and injects their guidance into the system prompt, replacing the prompt head when the model changes.",
         "zh-cn": "按当前模型匹配提示词文件并向系统提示词注入专用指导，切换模型时替换头部而不是追加过期内容。",
@@ -538,8 +538,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.45741158744",
-          "publishTimestamp": 1795659613,
+          "version": "0.1.0-dev.45752148357",
+          "publishTimestamp": 1795665608,
           "source": {
             "type": "npm"
           },
@@ -565,7 +565,7 @@
         "en": "Model Selector",
         "zh": "模型选择器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-model-selector@0.1.0-dev.45342971851/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-model-selector@0.1.0-dev.45752160603/icon.svg",
       "description": {
         "en-us": "Four model picker layouts for the DeepSeek Harness composer, with searchable models, reasoning controls, and an animated Ultra mode for Agent Teams.",
         "zh-cn": "为 DeepSeek Harness 输入框提供四种模型选择器样式，支持搜索模型、选择推理强度和带动效的 Ultra 团队协作档位。",
@@ -578,8 +578,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.45342971851",
-          "publishTimestamp": 1795503011,
+          "version": "0.1.0-dev.45752160603",
+          "publishTimestamp": 1795665673,
           "source": {
             "type": "npm"
           },
@@ -645,7 +645,7 @@
         "en": "Network settings",
         "zh": "网络设置"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-network-settings@2.0.0-dev.43640605951/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-network-settings@2.0.0-dev.45752171871/icon.svg",
       "description": {
         "en-us": "User-Agent rewriting, HTTP/CONNECT/SOCKS5 proxy, and request retries. The next channel adds configurable response idle timeouts for HTTP and pi-ai.",
         "zh-cn": "支持 User-Agent 改写、HTTP/CONNECT/SOCKS5 代理和请求重试。开发版新增可配置的 HTTP 与 pi-ai 响应空闲超时。",
@@ -658,8 +658,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.43640605951",
-          "publishTimestamp": 1794690336,
+          "version": "2.0.0-dev.45752171871",
+          "publishTimestamp": 1795665687,
           "source": {
             "type": "npm"
           },
@@ -845,7 +845,7 @@
         "en": "Shell selection",
         "zh": "Shell 选择"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-shell-select@1.0.1-dev.43640495628/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-shell-select@1.0.1-dev.45752453227/icon.svg",
       "description": {
         "en-us": "Choose the shell every agent command runs in — PowerShell, cmd, Git Bash, WSL, bash, zsh, fish or sh — with discovery, an explicit path override, per-shell status facts, a fixed self-test, and a refusal before any process exists when the selected shell cannot be confined.",
         "zh-cn": "选择每个智能体命令运行所用的 Shell——PowerShell、cmd、Git Bash、WSL、bash、zsh、fish 或 sh；支持自动探测、显式路径覆盖、逐 Shell 状态事实、固定自检，并在所选 Shell 无法被沙箱限制时于任何进程创建前拒绝执行。",
@@ -858,8 +858,8 @@
       },
       "versions": [
         {
-          "version": "1.0.1-dev.43640495628",
-          "publishTimestamp": 1794690305,
+          "version": "1.0.1-dev.45752453227",
+          "publishTimestamp": 1795665835,
           "source": {
             "type": "npm"
           },
@@ -965,7 +965,7 @@
         "en": "Subagent model introduction",
         "zh": "子代理介绍提示词"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-subagent-intro@0.1.0-dev.45749469119/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-subagent-intro@0.1.0-dev.45752159673/icon.svg",
       "description": {
         "en-us": "Injects a configurable introduction of subagent models right before the subagent tool description, so the model knows what each subagent model is good at before delegating.",
         "zh-cn": "在子代理工具说明之前注入可配置的子代理模型介绍，让模型在委派前就知道每个子代理模型擅长什么、适合在什么场景使用。",
@@ -978,8 +978,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.45749469119",
-          "publishTimestamp": 1795664032,
+          "version": "0.1.0-dev.45752159673",
+          "publishTimestamp": 1795665685,
           "source": {
             "type": "npm"
           },
@@ -1165,7 +1165,7 @@
         "en": "Web Search (Browser)",
         "zh": "网页搜索（浏览器）"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-web-search@2.0.0-dev.45107096028/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-web-search@2.0.0-dev.45752165861/icon.svg",
       "description": {
         "en-us": "Local browser tools browser_web_search and browser_web_fetch with validated search results, text or Markdown extraction, and optional persistent browser sessions.",
         "zh-cn": "通过本机浏览器提供 browser_web_search 和 browser_web_fetch，支持搜索结果校验、纯文本或 Markdown 提取，以及可选的持久化浏览器会话。",
@@ -1178,8 +1178,8 @@
       },
       "versions": [
         {
-          "version": "2.0.0-dev.45107096028",
-          "publishTimestamp": 1795405214,
+          "version": "2.0.0-dev.45752165861",
+          "publishTimestamp": 1795665652,
           "source": {
             "type": "npm"
           },
