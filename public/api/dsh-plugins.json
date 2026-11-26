@@ -169,7 +169,7 @@
         "ru": "Провайдер Claude",
         "zh": "Claude 提供商"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-claude-provider@0.9.1-dev.45752160374/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-claude-provider@0.9.1-dev.45768479121/icon.svg",
       "description": {
         "en-us": "Adds a dedicated Claude provider type with an Anthropic Messages form, a per-model adaptive thinking switch, thinking budgets for budget-driven models, paginated Anthropic model discovery that fills recorded capacities for known Claude models, a per-route prompt-cache lifetime, and mixed 5-minute/1-hour cache lifetimes per request section.",
         "zh-cn": "新增专用的 Claude 提供商类型，提供 Anthropic Messages 表单、逐模型自适应思考开关、预算思考模型的思考 token 预算、分页的 Anthropic 模型探测并为已知 Claude 模型预填录制的容量参数，以及按路由设置的提示缓存时长与按请求分段混合的 5 分钟／1 小时缓存时长。",
@@ -182,8 +182,8 @@
       },
       "versions": [
         {
-          "version": "0.9.1-dev.45752160374",
-          "publishTimestamp": 1795665655,
+          "version": "0.9.1-dev.45768479121",
+          "publishTimestamp": 1795674734,
           "source": {
             "type": "npm"
           },
@@ -1002,10 +1002,10 @@
     {
       "name": "@dsh-plugin/dsh-subagent-panel",
       "title": {
-        "zh": "外部子智能体面板",
-        "en": "外部子智能体面板"
+        "en": "External subagent panel",
+        "zh": "外部子智能体面板"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-subagent-panel@0.1.0-dev.45325618326/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-subagent-panel@0.1.0-dev.45768304118/icon.svg",
       "description": {
         "en-us": "Open Codex and Claude Code tasks from the native subagent list to view live tool calls and intermediate output in the sidebar, and continue their native sessions. Requires the corresponding official subagent provider.",
         "zh-cn": "从原生子智能体列表打开 Codex、Claude Code 任务，在侧栏查看实时工具调用与中间输出，并在原生会话中继续发送消息。需启用对应的官方子智能体插件。",
@@ -1018,8 +1018,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.45325618326",
-          "publishTimestamp": 1795494402,
+          "version": "0.1.0-dev.45768304118",
+          "publishTimestamp": 1795674658,
           "source": {
             "type": "npm"
           },
