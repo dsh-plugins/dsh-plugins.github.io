@@ -965,7 +965,7 @@
         "en": "Subagent model introduction",
         "zh": "子代理介绍提示词"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-subagent-intro@0.1.0-dev.43582193966/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-subagent-intro@0.1.0-dev.45749469119/icon.svg",
       "description": {
         "en-us": "Injects a configurable introduction of subagent models right before the subagent tool description, so the model knows what each subagent model is good at before delegating.",
         "zh-cn": "在子代理工具说明之前注入可配置的子代理模型介绍，让模型在委派前就知道每个子代理模型擅长什么、适合在什么场景使用。",
@@ -978,8 +978,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.43582193966",
-          "publishTimestamp": 1794649763,
+          "version": "0.1.0-dev.45749469119",
+          "publishTimestamp": 1795664032,
           "source": {
             "type": "npm"
           },
