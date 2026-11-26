@@ -525,7 +525,7 @@
         "en": "Model Prompts",
         "zh": "模型专用提示词"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-model-prompt@0.1.0-dev.45752148357/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-model-prompt@0.1.0-dev.45789519286/icon.svg",
       "description": {
         "en-us": "Matches prompt files against the current model and injects their guidance into the system prompt, replacing the prompt head when the model changes.",
         "zh-cn": "按当前模型匹配提示词文件并向系统提示词注入专用指导，切换模型时替换头部而不是追加过期内容。",
@@ -538,8 +538,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.45752148357",
-          "publishTimestamp": 1795665608,
+          "version": "0.1.0-dev.45789519286",
+          "publishTimestamp": 1795684411,
           "source": {
             "type": "npm"
           },
@@ -565,7 +565,7 @@
         "en": "Model Selector",
         "zh": "模型选择器"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-model-selector@0.1.0-dev.45752160603/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@dsh-plugin/dsh-model-selector@0.1.0-dev.45789229339/icon.svg",
       "description": {
         "en-us": "Four model picker layouts for the DeepSeek Harness composer, with searchable models, reasoning controls, and an animated Ultra mode for Agent Teams.",
         "zh-cn": "为 DeepSeek Harness 输入框提供四种模型选择器样式，支持搜索模型、选择推理强度和带动效的 Ultra 团队协作档位。",
@@ -578,8 +578,8 @@
       },
       "versions": [
         {
-          "version": "0.1.0-dev.45752160603",
-          "publishTimestamp": 1795665673,
+          "version": "0.1.0-dev.45789229339",
+          "publishTimestamp": 1795684341,
           "source": {
             "type": "npm"
           },
